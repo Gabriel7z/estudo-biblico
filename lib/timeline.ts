@@ -1,0 +1,123 @@
+import type { TimeEvent } from "@/lib/types";
+
+export const timeline: TimeEvent[] = [
+  {
+    id: "ur",
+    when: "tradição patriarcal",
+    title: "De Ur a Canaã",
+    text: "Um clã deixa o sul da Mesopotâmia, passa por Harã e vive entre as cidades de Canaã sem governá-las.",
+    era: "patriarcas",
+  },
+  {
+    id: "egito-jose",
+    when: "fim da história de José",
+    title: "A família desce ao Egito",
+    text: "A fome empurra Jacó para o delta. Gósen vira casa. O livro seguinte vai herdar essa hospitalidade já esquecida.",
+    era: "patriarcas",
+  },
+  {
+    id: "saida",
+    when: "cerca de 1446 ou o século XIII a.C.",
+    title: "A saída do Egito",
+    text: "Moisés confronta um faraó sem nome. O povo deixa Ramessés. A data fica em aberto entre as duas janelas de estudo.",
+    era: "exodo",
+  },
+  {
+    id: "sinai",
+    when: "o terceiro mês da saída",
+    title: "A aliança no Sinai",
+    text: "Dez palavras, a tenda e o acampamento. Pela primeira vez Israel tem uma ordem própria, ainda sem terra.",
+    era: "exodo",
+  },
+  {
+    id: "nebo",
+    when: "fim dos quarenta anos",
+    title: "Moisés no Nebo",
+    text: "Da serra de Moabe dá para ver Jericó, a montanha e o Neguebe. Moisés morre. Josué atravessa.",
+    era: "exodo",
+  },
+  {
+    id: "juizes",
+    when: "Bronze final e Ferro I",
+    title: "Cidades-estado e juízes",
+    text: "A terra é um tabuleiro de reis locais. Israel se firma na serra. Na costa, os filisteus. Não há rei em Israel.",
+    era: "juizes",
+  },
+  {
+    id: "unido",
+    when: "cerca de 1050–930 a.C.",
+    title: "Saul, Davi e Salomão",
+    text: "Nasce a monarquia. Jerusalém vira capital e, com Salomão, ganha templo. O reino unido é curto.",
+    era: "monarquia",
+  },
+  {
+    id: "cisma",
+    when: "cerca de 930 a.C.",
+    title: "O reino se parte",
+    text: "Israel ao norte, Judá ao sul. Sisaque, do Egito, sobe contra Jerusalém nos dias de Roboão.",
+    era: "dividido",
+  },
+  {
+    id: "onri",
+    when: "século IX a.C.",
+    title: "Samaria e a casa de Onri",
+    text: "Onri funda uma capital. A estela de Mesa nomeia Israel. Elias enfrenta o culto de corte no norte.",
+    era: "dividido",
+  },
+  {
+    id: "samaria",
+    when: "722 a.C.",
+    title: "Cai Samaria",
+    text: "A Assíria desfaz o reino do norte e deporta sua gente. Judá fica, menor, em volta de Jerusalém.",
+    era: "dividido",
+  },
+  {
+    id: "senaqueribe",
+    when: "701 a.C.",
+    title: "Senaqueribe diante de Jerusalém",
+    text: "Ezequias resiste. Os anais assírios e 2 Reis contam o cerco em vozes diferentes, e a cidade não cai.",
+    era: "exilio",
+  },
+  {
+    id: "josias",
+    when: "622–609 a.C.",
+    title: "A reforma de Josias",
+    text: "Um livro da lei é lido no templo. Josias morre em Megido, na estrada, diante do faraó Neco.",
+    era: "dividido",
+  },
+  {
+    id: "jerusalem",
+    when: "597 e 586 a.C.",
+    title: "Cai Jerusalém",
+    text: "Nabucodonosor leva o rei, queima o templo e desloca o centro da vida de Judá para a Babilônia.",
+    era: "exilio",
+  },
+  {
+    id: "ciro",
+    when: "539–538 a.C.",
+    title: "Ciro e o edito",
+    text: "A Pérsia toma Babilônia. Um edito abre o retorno. O arco de Abraão é percorrido de volta.",
+    era: "persia",
+  },
+  {
+    id: "templo",
+    when: "cerca de 516 a.C.",
+    title: "O segundo templo",
+    text: "Ageu e Zacarias empurram a obra. Yehud é província, não reino. O templo volta sem o trono de Davi.",
+    era: "persia",
+  },
+  {
+    id: "neemias",
+    when: "século V a.C. em diante",
+    title: "Esdras, Neemias, Malaquias",
+    text: "O muro, a leitura pública da lei e os últimos profetas do cânon hebraico. A terra é pequena; o livro, central.",
+    era: "persia",
+  },
+];
+
+export const methodNote = [
+  "Este atlas lê o Antigo Testamento como escritura e, ao mesmo tempo, senta o texto num mapa. Onde a própria Bíblia dá o nome, o nome fica. Onde a data, o faraó ou o traçado da rota são reconstrução, isso é dito em voz alta.",
+  "Há duas janelas clássicas para o êxodo. A primeira conta os 480 anos de 1 Reis 6:1 antes do templo de Salomão e cai por volta de 1446 a.C. A segunda conversa com a cidade de Ramessés e com a estela de Merneptá, de cerca de 1208 a.C., e procura a saída no século XIII. As duas ficam abertas.",
+  "O mapa é a geografia real: dá para arrastar, aproximar e inclinar o relevo. A linha cor de cobre continua sendo a reconstrução tradicional do sul, associada a Jebel Musa, não um caminho medido no chão. Há propostas que encurtam a rota ou mudam o monte para Midiã. Mara, Elim, Pitom e Sucote ficam no ponto em que os atlas de estudo costumam colocá-los.",
+  "A ordem dos livros segue a Bíblia protestante, a mais comum nas edições brasileiras de estudo. A Bíblia hebraica organiza o mesmo núcleo em Lei, Profetas e Escritos. A Bíblia católica inclui também os deuterocanônicos, alguns já no período grego, depois do mapa persa. O miolo da história — de Abraão ao retorno — é compartilhado.",
+];
