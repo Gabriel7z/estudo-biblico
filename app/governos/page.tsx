@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/page-header";
+import { PolitySlider } from "@/components/polity-slider";
 import { governments } from "@/lib/governments";
 
 export const metadata: Metadata = {
@@ -11,12 +12,13 @@ export const metadata: Metadata = {
 
 export default function GovernmentsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
+    <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
       <PageHeader
         kicker="Quem manda"
         title="Governos da época"
-        lede="Do faraó que não tem nome à província persa que não tem rei. Cada ficha diz onde o poder se sentava, como ele entra na narrativa e o que olhar no mapa."
+        lede="Do clã sem capital à província persa, e, na periferia, à Judeia hasmoneia. O controle percorre as formas de poder. As fichas de baixo continuam sendo os governos nomeados no texto."
       />
+      <PolitySlider />
       <ol className="mt-10 divide-y divide-border border-y border-border">
         {governments.map((government) => (
           <li key={government.slug} className="grid gap-2 py-5 sm:grid-cols-[4rem_1fr]">

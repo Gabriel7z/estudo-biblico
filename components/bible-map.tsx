@@ -57,10 +57,17 @@ type FeatureCollection = {
   }>;
 };
 
+export type MapFocus = {
+  placeIds?: string[];
+  routeIds?: string[];
+  regionIds?: string[];
+};
+
 export type BibleMapProps = {
   mode: "home" | "atlas" | "inset";
   era?: EraId;
   placeId?: string;
+  focus?: MapFocus;
   className?: string;
   empty?: { title: string; text: string } | null;
   onSelectPlace?: (id: string) => void;
@@ -90,7 +97,7 @@ function sample(coords: LngLat[], max: number): LngLat[] {
   return out;
 }
 
-function viewModel(mode: BibleMapProps["mode"], era?: EraId) {
+function viewModel(mode: BibleMapProps["mode"], era?: EraId, focus?: MapFocus) {
   if (mode === "home") {
     return {
       placeList: places.filter((place) => place.eras.includes("exodo")),
@@ -100,13 +107,22 @@ function viewModel(mode: BibleMapProps["mode"], era?: EraId) {
       regionList: regions.filter((region) => region.eras.includes("exodo")),
     };
   }
-  if (!era) {
-    return { placeList: [], routeList: [], regionList: [] };
-  }
+  const byEra = {
+    placeList: era ? places.filter((place) => place.eras.includes(era)) : [],
+    routeList: era ? routes.filter((route) => route.eras.includes(era)) : [],
+    regionList: era ? regions.filter((region) => region.eras.includes(era)) : [],
+  };
+  if (!focus) return byEra;
   return {
-    placeList: places.filter((place) => place.eras.includes(era)),
-    routeList: routes.filter((route) => route.eras.includes(era)),
-    regionList: regions.filter((region) => region.eras.includes(era)),
+    placeList: focus.placeIds
+      ? places.filter((place) => focus.placeIds?.includes(place.id))
+      : byEra.placeList,
+    routeList: focus.routeIds
+      ? routes.filter((route) => focus.routeIds?.includes(route.id))
+      : byEra.routeList,
+    regionList: focus.regionIds
+      ? regions.filter((region) => focus.regionIds?.includes(region.id))
+      : byEra.regionList,
   };
 }
 
@@ -118,6 +134,7 @@ export function BibleMap({
   mode,
   era,
   placeId,
+  focus,
   className,
   empty,
   onSelectPlace,
@@ -136,7 +153,12 @@ export function BibleMap({
   const [attempt, setAttempt] = useState(0);
   const [generation, setGeneration] = useState(0);
 
-  const model = viewModel(mode, era);
+  const focusKey = [
+    focus?.placeIds?.join(",") ?? "",
+    focus?.routeIds?.join(",") ?? "",
+    focus?.regionIds?.join(",") ?? "",
+  ].join("|");
+  const model = viewModel(mode, era, focus);
   const primary: Route | undefined =
     model.routeList.find((route) => route.id === "exodo") ?? model.routeList[0];
 
@@ -251,7 +273,7 @@ export function BibleMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || status !== "ready") return;
-    const view = viewModel(mode, era);
+    const view = viewModel(mode, era, focus);
 
     const placeData: FeatureCollection = {
       type: "FeatureCollection",
@@ -428,14 +450,14 @@ export function BibleMap({
         map.getCanvas().style.cursor = "";
       });
     }
-  }, [generation, status, mode, era]);
+  }, [generation, status, mode, era, focusKey, focus]);
 
   useEffect(() => {
     const map = mapRef.current;
     const lib = libRef.current;
     if (!map || !lib || status !== "ready") return;
-    const view = viewModel(mode, era);
-    const key = `${mode}:${era ?? ""}:${placeId ?? ""}`;
+    const view = viewModel(mode, era, focus);
+    const key = `${mode}:${era ?? ""}:${placeId ?? ""}:${focusKey}`;
     if (aimed.current === key) return;
     aimed.current = key;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -488,7 +510,7 @@ export function BibleMap({
       maxZoom: mode === "inset" ? 7.2 : 5.8,
       pitch: reliefRef.current ? 46 : 0,
     });
-  }, [status, mode, era, placeId, generation]);
+  }, [status, mode, era, placeId, generation, focusKey, focus]);
 
   async function playMarch() {
     const map = mapRef.current;

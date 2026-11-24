@@ -334,6 +334,23 @@ export const regions: Region[] = [
       [34.98, 31.92],
     ]),
   },
+  {
+    id: "judeia-hasmoneia",
+    name: "Judeia",
+    tone: "reino",
+    color: GREEN,
+    largeLabel: false,
+    label: [35.18, 31.78],
+    eras: [],
+    ring: ring([
+      [34.95, 32.25],
+      [35.45, 32.28],
+      [35.55, 31.85],
+      [35.35, 31.4],
+      [34.95, 31.45],
+      [34.9, 31.9],
+    ]),
+  },
 ];
 
 export function regionsInEra(era: string): Region[] {

@@ -1,6 +1,6 @@
 # A Terra e o Livro
 
-Atlas de estudo do Antigo Testamento em português do Brasil. O caminho guiado começa em Moisés, do delta do Nilo ao monte Nebo. O resto do cânon entra pelo mapa, pelos governos, pela geografia, pela linha do tempo e pelos livros.
+Atlas de estudo do Antigo Testamento em português do Brasil. A entrada é o livro no seu chão: o Pentateuco, os doze históricos, os profetas do mesmo século e, marcados à parte, os deuterocanônicos. Cada um tem história, governo, personagens e mapa. Moisés continua sendo o caminho do deserto, do delta ao Nebo.
 
 Não há login nem banco. A marca de “estação lida” fica só no navegador, em `localStorage`.
 
@@ -51,4 +51,5 @@ O build gera o site estático em `./out`. A publicação é o GitHub Actions em 
 - `/geografia` e `/geografia/[slug]`
 - `/tempo` a linha do tempo
 - `/eras/[slug]` os sete períodos
-- `/livros` a ordem protestante e os deuterocanônicos
+- `/livros` a prateleira, e `/livros/[slug]` a página de cada livro do Pentateuco, dos doze históricos, dos profetas ligados ao período e de Tobias, Judite e 1–2 Macabeus
+- `/governos` o mapa geopolítico, do clã à Judeia hasmoneia, e as fichas de cada poder

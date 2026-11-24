@@ -1,4 +1,6 @@
+import { bookStudies } from "@/lib/book-studies";
 import { eras } from "@/lib/eras";
+import { polities } from "@/lib/polities";
 import { geography } from "@/lib/geography";
 import { getGovernment, governments } from "@/lib/governments";
 import { getPlace, places } from "@/lib/places";
@@ -100,6 +102,31 @@ function assertAtlas(): void {
 
   if (!getRoute("exodo")?.color.toLowerCase().includes("8c3d2f")) {
     problems.push("a rota do êxodo não está em cobre");
+  }
+
+  for (const book of bookStudies) {
+    for (const placeId of book.placeIds) {
+      if (!placeIds.has(placeId)) problems.push(`${book.slug} cita lugar ${placeId}`);
+    }
+    for (const routeId of book.routeIds) {
+      if (!routeIds.has(routeId)) problems.push(`${book.slug} cita rota ${routeId}`);
+    }
+    for (const regionId of book.regionIds) {
+      if (!regions.some((region) => region.id === regionId)) {
+        problems.push(`${book.slug} cita região ${regionId}`);
+      }
+    }
+  }
+
+  for (const polity of polities) {
+    for (const placeId of polity.placeIds) {
+      if (!placeIds.has(placeId)) problems.push(`política ${polity.id} cita lugar ${placeId}`);
+    }
+    for (const regionId of polity.regionIds) {
+      if (!regions.some((region) => region.id === regionId)) {
+        problems.push(`política ${polity.id} cita região ${regionId}`);
+      }
+    }
   }
 
   if (regions.some((region) => region.id === "persia" || region.name === "Pérsia")) {
