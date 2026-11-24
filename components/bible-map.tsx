@@ -23,7 +23,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 
 // O bundle do Next não publica o worker ao lado do chunk. Sem este arquivo o
 // MapLibre não lê os tiles vetoriais e o mapa fica em branco.
-const WORKER = "/maplibre-gl-worker.js";
+const WORKER = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/maplibre-gl-worker.js`;
 const POSITRON = "https://tiles.openfreemap.org/styles/positron";
 const GLYPHS = "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf";
 const TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";

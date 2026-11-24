@@ -12,6 +12,8 @@ export function generateStaticParams(): Params[] {
   return governments.map((government) => ({ slug: government.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

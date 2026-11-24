@@ -15,6 +15,8 @@ export function generateStaticParams(): Params[] {
   return stations.map((station) => ({ slug: station.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

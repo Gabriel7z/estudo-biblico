@@ -15,7 +15,7 @@ function query(era: string, lugar?: string): string {
   const params = new URLSearchParams();
   params.set("era", era);
   if (lugar) params.set("lugar", lugar);
-  return `/mapa?${params.toString()}`;
+  return `/mapa/?${params.toString()}`;
 }
 
 export function MapScreen() {

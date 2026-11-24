@@ -14,6 +14,8 @@ export function generateStaticParams(): Params[] {
   return eras.map((era) => ({ slug: era.id }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

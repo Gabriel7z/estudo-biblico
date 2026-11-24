@@ -23,13 +23,14 @@ npm install
 npm run dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000).
+Em desenvolvimento o site fica em [http://localhost:3000/estudo-biblico](http://localhost:3000/estudo-biblico), por causa do `basePath` usado no GitHub Pages.
 
 ```bash
 npm run lint
 npm run build
-npm start
 ```
+
+O build gera o site estático em `./out`. A publicação é o GitHub Actions em `.github/workflows/pages.yml`, no push para `main`. O endereço publicado é [https://gabriel7z.github.io/estudo-biblico/](https://gabriel7z.github.io/estudo-biblico/).
 
 ## Mapa
 

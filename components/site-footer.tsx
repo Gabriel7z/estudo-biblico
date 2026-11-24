@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { stripTrailingSlash } from "@/lib/path";
+
 export function SiteFooter() {
   const pathname = usePathname();
-  if (pathname === "/mapa") return null;
+  if (stripTrailingSlash(pathname) === "/mapa") return null;
 
   return (
     <footer className="mt-16 border-t border-border">

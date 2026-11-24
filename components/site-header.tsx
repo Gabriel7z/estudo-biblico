@@ -14,6 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { stripTrailingSlash } from "@/lib/path";
 import { cn } from "cn";
 
 const links = [
@@ -26,7 +27,9 @@ const links = [
 ];
 
 function isActive(pathname: string, href: string): boolean {
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const current = stripTrailingSlash(pathname);
+  const target = stripTrailingSlash(href);
+  return current === target || current.startsWith(`${target}/`);
 }
 
 export function SiteHeader() {
