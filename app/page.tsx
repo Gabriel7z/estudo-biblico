@@ -1,0 +1,132 @@
+import Link from "next/link";
+
+import { BibleMap } from "@/components/bible-map";
+import { buttonVariants } from "@/components/ui/button";
+import { timeline } from "@/lib/timeline";
+import { cn } from "cn";
+
+const steps = [
+  "Escolha uma estação de Moisés e leia o trecho indicado na sua Bíblia.",
+  "Antes de fechar o capítulo, olhe quem está ao norte e qual estrada não foi tomada.",
+  "Quando aparecer um governo ou uma região, abra a ficha. Ela cabe em poucos minutos.",
+  "Depois do Nebo, percorra o tempo: juízes, reis, exílio, retorno.",
+];
+
+const preview = ["ur", "saida", "nebo", "unido", "onri", "senaqueribe", "jerusalem", "templo"];
+
+export default function HomePage() {
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
+      <p className="kicker">Atlas de estudo · Antigo Testamento</p>
+      <h1 className="mt-3 max-w-3xl font-heading text-4xl tracking-tight text-ink md:text-6xl">
+        A lei foi dada num deserto, entre impérios.
+      </h1>
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        Um caminho para ler o Antigo Testamento com o chão debaixo do texto. Começa em Moisés —
+        do delta do Nilo ao monte Nebo — e segue pelos governos, pelas rotas e pelos séculos,
+        até a pequena Yehud da Pérsia.
+      </p>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link href="/moises" className={cn(buttonVariants({ size: "lg" }), "h-10 px-4")}>
+          Começar por Moisés
+        </Link>
+        <Link
+          href="/mapa?era=exodo"
+          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-10 bg-background px-4")}
+        >
+          Abrir o mapa
+        </Link>
+      </div>
+
+      <section className="mt-12">
+        <div className="mb-3 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="font-heading text-2xl">A marcha de Moisés</h2>
+            <p className="mt-1 max-w-xl text-sm text-muted-foreground">
+              Oito estações, da casa no Egito até a vista do Nebo. Em cada uma, a leitura bíblica
+              vem indicada.
+            </p>
+          </div>
+          <p className="hidden font-sans text-xs tracking-wide text-muted-foreground uppercase md:block">
+            Mapa real
+          </p>
+        </div>
+        <div className="plate">
+          <div className="plate-inner h-[70vh] min-h-[420px] md:h-[560px]">
+            <BibleMap mode="home" era="exodo" />
+          </div>
+        </div>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Arraste para mover. A rota do êxodo é a reconstrução tradicional do sul. A linha
+          tracejada é o caminho dos filisteus, a estrada que o texto diz não ter sido tomada.
+          Mapa: OpenFreeMap, OpenMapTiles e OpenStreetMap.
+        </p>
+      </section>
+
+      <section className="mt-14 grid gap-4 md:grid-cols-3">
+        <Link href="/mapa?era=exodo" className="rounded-xl border border-border bg-card p-5 hover:border-primary">
+          <p className="kicker">Mapa</p>
+          <h2 className="mt-2 font-heading text-2xl">Onde a cena acontece</h2>
+          <p className="mt-2 leading-relaxed text-muted-foreground">
+            Um mapa do Nilo ao Eufrates, para arrastar, aproximar e inclinar. A rota do êxodo, a
+            estrada que não foi tomada, e o chão que muda quando o século muda.
+          </p>
+        </Link>
+        <Link href="/governos" className="rounded-xl border border-border bg-card p-5 hover:border-primary">
+          <p className="kicker">Governos</p>
+          <h2 className="mt-2 font-heading text-2xl">Quem manda na época</h2>
+          <p className="mt-2 leading-relaxed text-muted-foreground">
+            Faraó, cidades-estado, o acampamento sem rei, Judá, Assíria, Babilônia, Pérsia. O
+            texto nomeia poderes. Aqui eles têm capital.
+          </p>
+        </Link>
+        <Link href="/geografia" className="rounded-xl border border-border bg-card p-5 hover:border-primary">
+          <p className="kicker">Geografia</p>
+          <h2 className="mt-2 font-heading text-2xl">Por que o caminho dobra</h2>
+          <p className="mt-2 leading-relaxed text-muted-foreground">
+            Delta, deserto, as quatro faixas de Canaã, o planalto de Moabe, os dois rios. O
+            relevo explica guerras, murmurações e capitais.
+          </p>
+        </Link>
+      </section>
+
+      <section className="mt-14 grid gap-10 md:grid-cols-[1fr_1fr] md:items-start">
+        <div>
+          <p className="kicker">Como estudar</p>
+          <h2 className="mt-2 font-heading text-3xl">A Bíblia aberta, o mapa do lado.</h2>
+          <ol className="mt-6 space-y-4">
+            {steps.map((step, index) => (
+              <li key={step} className="flex gap-3 leading-relaxed">
+                <span className="font-heading text-copper">{index + 1}.</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="font-heading text-3xl">Do clã de Abraão a Neemias</h2>
+            <Link href="/tempo" className="font-sans text-sm text-primary hover:underline">
+              Linha inteira
+            </Link>
+          </div>
+          <ol className="mt-6 border-l border-kingdom/30">
+            {timeline
+              .filter((event) => preview.includes(event.id))
+              .map((event) => (
+                <li key={event.id} className="relative pb-5 pl-6 last:pb-0">
+                  <span className="absolute top-1.5 -left-[5px] size-2.5 rounded-full bg-kingdom" />
+                  <p className="font-sans text-xs text-muted-foreground">{event.when}</p>
+                  <h3 className="font-heading text-lg">
+                    <Link href={`/eras/${event.era}`} className="hover:text-primary">
+                      {event.title}
+                    </Link>
+                  </h3>
+                </li>
+              ))}
+          </ol>
+        </div>
+      </section>
+    </div>
+  );
+}
