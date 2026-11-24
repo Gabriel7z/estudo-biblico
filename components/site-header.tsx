@@ -18,12 +18,12 @@ import { stripTrailingSlash } from "@/lib/path";
 import { cn } from "cn";
 
 const links = [
-  { href: "/moises", label: "Moisés" },
+  { href: "/livros", label: "Livros" },
   { href: "/mapa", label: "Mapa" },
   { href: "/governos", label: "Governos" },
   { href: "/geografia", label: "Geografia" },
   { href: "/tempo", label: "Tempo" },
-  { href: "/livros", label: "Livros" },
+  { href: "/moises", label: "Moisés" },
 ];
 
 function isActive(pathname: string, href: string): boolean {

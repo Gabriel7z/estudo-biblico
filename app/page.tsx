@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { BibleMap } from "@/components/bible-map";
 import { buttonVariants } from "@/components/ui/button";
+import { bookStudies } from "@/lib/book-studies";
 import { timeline } from "@/lib/timeline";
 import { cn } from "cn";
 
@@ -22,21 +23,49 @@ export default function HomePage() {
         A lei foi dada num deserto, entre impérios.
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        Um caminho para ler o Antigo Testamento com o chão debaixo do texto. Começa em Moisés —
-        do delta do Nilo ao monte Nebo — e segue pelos governos, pelas rotas e pelos séculos,
-        até a pequena Yehud da Pérsia.
+        Um livro de cada vez, com a geografia e o governo debaixo do texto. O Pentateuco abre o
+        caminho, os doze históricos atravessam a terra, e os profetas falam no mesmo século.
+        Moisés continua sendo a porta do deserto.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href="/moises" className={cn(buttonVariants({ size: "lg" }), "h-10 px-4")}>
-          Começar por Moisés
+        <Link href="/livros" className={cn(buttonVariants({ size: "lg" }), "h-10 px-4")}>
+          Abrir os livros
         </Link>
         <Link
-          href="/mapa?era=exodo"
+          href="/governos"
           className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-10 bg-background px-4")}
         >
-          Abrir o mapa
+          Mapa dos governos
         </Link>
       </div>
+      <section className="mt-12">
+        <div className="mb-4 flex items-end justify-between gap-4">
+          <h2 className="font-heading text-2xl">Os doze históricos, e o Pentateuco ao lado</h2>
+          <Link href="/livros" className="font-sans text-sm text-primary hover:underline">
+            Prateleira inteira
+          </Link>
+        </div>
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {bookStudies
+            .filter((book) => book.group === "pentateuco" || book.group === "historicos")
+            .map((book) => (
+              <li key={book.slug}>
+                <Link
+                  href={`/livros/${book.slug}`}
+                  className="block h-full rounded-xl border border-border bg-card p-4 hover:border-primary"
+                >
+                  <p className="font-sans text-[11px] tracking-wide text-muted-foreground uppercase">
+                    {book.group === "pentateuco" ? "Pentateuco" : "Histórico"}
+                  </p>
+                  <h3 className="mt-1 font-heading text-xl">{book.name}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                    {book.government}
+                  </p>
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </section>
 
       <section className="mt-12">
         <div className="mb-3 flex items-end justify-between gap-4">
