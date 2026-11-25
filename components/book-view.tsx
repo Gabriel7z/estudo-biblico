@@ -149,6 +149,20 @@ export function BookView({
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          {book.slug === "1-reis" || book.slug === "2-reis" ? (
+            <Link
+              href="/reis"
+              className="folio mt-10 block rounded-[1.25rem] p-6 hover:border-gold/50"
+            >
+              <p className="kicker">Reis ilustrado</p>
+              <p className="mt-2 font-heading text-3xl">Destrinchar 1 e 2 Reis, cena por cena</p>
+              <p className="mt-3 text-muted-foreground">
+                Vinte e cinco pinturas com contexto histórico e arqueologia, a cronologia de todos os
+                reis de Israel e Judá, o mapa do reino dividido e a planta do Templo.
+              </p>
+              <span className="mt-4 inline-block font-sans text-sm text-gold">Abrir Reis →</span>
+            </Link>
+          ) : null}
         </div>
       </div>
 

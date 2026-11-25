@@ -1,0 +1,188 @@
+import type { ReisScene } from "@/lib/reis";
+
+export const cenas1: ReisScene[] = [
+  {
+    slug: "sucessao",
+    order: 1,
+    book: "1 Reis",
+    title: "Davi idoso e a sucessão",
+    ref: "1 Reis 1–2",
+    date: "c. 970 a.C.",
+    placeId: "jerusalem",
+    image: "/reis/sucessao.webp",
+    alt: "Pintura de Salomão jovem montado na mula de Davi, cercado por sacerdotes, guardas e povo tocando trombetas e aclamando o novo rei junto às muralhas de Jerusalém.",
+    happens: [
+      "Davi está velho e não se aquece. Adonias, o filho mais velho vivo, se apresenta como rei: prepara carros, cavaleiros e um banquete junto à pedra de Zoelete, com Joabe e o sacerdote Abiatar ao seu lado (1:5–10). Natã, Zadoque, Benaia e Salomão não são convidados.",
+      "Natã e Bate-Seba lembram Davi da promessa feita a Salomão (1:11–31). Davi manda montar Salomão na sua própria mula e descê-lo a Giom. Zadoque o unge com o óleo do tabernáculo, toca-se a trombeta e o povo grita: viva o rei Salomão (1:38–40). O banquete de Adonias se desfaz. Antes de morrer, Davi encarrega Salomão de guardar a lei de Moisés (2:1–4). Adonias, Joabe e Simei acabam mortos, e Abiatar é banido para Anatote (2:13–46).",
+    ],
+    context: [
+      "Giom é a fonte que abastece a Cidade de Davi, no vale do Cedrom. A sucessão não segue a primogenitura automática: o texto mostra uma disputa de facções na corte, com o exército de Joabe e o sacerdócio de Abiatar de um lado, e a guarda de Benaia, o profeta Natã e o sacerdote Zadoque do outro.",
+      "Fora da Bíblia, a casa de Davi é citada na estela de Tel Dã (século IX a.C., “bytdwd”). Para Salomão não há inscrição contemporânea. O tamanho da Jerusalém do século X é debatido entre arqueólogos que veem um centro modesto e os que veem uma capital real com estruturas como a “Grande Estrutura de Pedra” na Cidade de Davi.",
+    ],
+    means: [
+      "O livro abre com a pergunta que vai atravessar 1 e 2 Reis: quem senta no trono de Davi e se ele anda nos caminhos do Senhor. O encargo de Davi (2:3–4) é a régua pela qual todos os reis serão medidos.",
+      "A promessa a Davi (2 Sm 7) continua de pé, mas o caminho até o trono é humano e violento. O narrador não esconde nenhuma das duas coisas.",
+    ],
+  },
+  {
+    slug: "sabedoria",
+    order: 2,
+    book: "1 Reis",
+    title: "A sabedoria de Salomão e as duas mães",
+    ref: "1 Reis 3",
+    date: "c. 970 a.C.",
+    placeId: "gibeom",
+    image: "/reis/sabedoria.webp",
+    alt: "Pintura de Salomão no trono mandando um guarda erguer a espada sobre um bebê, enquanto uma mãe se lança ao chão implorando e a outra permanece fria.",
+    happens: [
+      "Em Gibeom, onde estava o principal altar, Salomão oferece mil holocaustos. À noite o Senhor aparece em sonho e diz: pede o que queres. Salomão pede um coração que entenda para julgar o povo e discernir entre o bem e o mal (3:4–9). Deus dá sabedoria, e também riquezas e glória que ele não pediu (3:10–14).",
+      "Duas mulheres que moravam na mesma casa chegam ao rei com um bebê vivo e um morto, cada uma afirmando que o vivo é seu. Salomão manda trazer uma espada e partir o menino ao meio. Uma delas se comove e pede que o deem à outra; a outra aceita a divisão. O rei manda entregar o menino à primeira: ela é a mãe (3:16–27). Todo Israel teme o rei, porque via nele a sabedoria de Deus para fazer justiça (3:28).",
+    ],
+    context: [
+      "Gibeom é el-Jib, a noroeste de Jerusalém, onde foram achadas uma grande piscina escavada na rocha e alças de jarros com o nome da cidade. O texto explica que o povo ainda sacrificava nos altos porque o templo não tinha sido construído (3:2).",
+      "O julgamento do rei como última instância é comum no Antigo Oriente: o código de Hamurabi e as inscrições reais apresentam o rei como “pastor justo”. A narrativa tem paralelos em contos populares de outras culturas, mas aqui serve para mostrar o dom recebido no sonho.",
+    ],
+    means: [
+      "A sabedoria pedida não é erudição: é ouvir e julgar com justiça (o hebraico fala de um “coração que ouve”). O caso não se resolve por documento, mas pelo amor que se revela.",
+      "O capítulo também traz uma condição (3:14): se andares nos meus caminhos. A sabedoria de Salomão é dom, não garantia, e o capítulo 11 vai mostrar isso.",
+    ],
+  },
+  {
+    slug: "templo",
+    order: 3,
+    book: "1 Reis",
+    title: "A construção do Templo",
+    ref: "1 Reis 5–7",
+    date: "c. 966–959 a.C.",
+    placeId: "jerusalem",
+    image: "/reis/templo.webp",
+    alt: "Pintura do Templo de Salomão quase pronto, com colunas de bronze na entrada, uma grande bacia de bronze e operários lavrando pedras e carregando toras de cedro.",
+    happens: [
+      "Salomão faz aliança com Hirão, rei de Tiro: cedro e cipreste do Líbano descem em jangadas pelo mar em troca de trigo e azeite (5:1–12). As pedras chegam já lavradas da pedreira, de modo que não se ouve martelo nem machado no local da obra (6:7). A construção começa no quarto ano de Salomão, 480 anos depois da saída do Egito (6:1), e dura sete anos (6:38).",
+      "A casa mede 60 côvados de comprimento, 20 de largura e 30 de altura, com um pórtico na frente, o santo lugar e, ao fundo, o santo dos santos, um cubo de 20 côvados revestido de ouro, com dois querubins de madeira de oliveira de 10 côvados (6:2–28). Hirão, um artífice de bronze de Tiro, funde as colunas Jaquim e Boaz, o mar de fundição sobre doze bois e as bacias com seus suportes (7:13–47). O palácio de Salomão leva treze anos (7:1).",
+    ],
+    context: [
+      "O monte do templo nunca foi escavado, e não restou nada identificável do templo salomônico. O plano em três partes (pórtico, sala, santuário) tem paralelos próximos nos templos de Ain Dara e de Tell Tayinat, na Síria, da Idade do Ferro, com colunas na entrada.",
+      "Os 480 anos de 6:1 são a base de quem data o êxodo no século XV a.C.; outros leem o número como doze gerações de quarenta anos. A ligação fenícia é forte no texto e combina com a arquitetura e o artesanato da costa naquele período. A planta do Templo está nesta seção.",
+    ],
+    means: [
+      "O templo realiza o desejo de Davi e a promessa de 2 Samuel 7: Deus escolhe um lugar para pôr o seu nome. No meio da descrição, a palavra do Senhor lembra a condição (6:11–13): a presença depende da obediência, não da pedra.",
+      "A riqueza do material aponta para a santidade do Deus que habita no meio do povo. Ao mesmo tempo, o palácio maior e mais demorado que o templo já sugere uma tensão que o livro vai explorar.",
+    ],
+  },
+  {
+    slug: "dedicacao",
+    order: 4,
+    book: "1 Reis",
+    title: "A dedicação do Templo e a glória",
+    ref: "1 Reis 8",
+    date: "c. 959 a.C.",
+    placeId: "jerusalem",
+    image: "/reis/dedicacao.webp",
+    alt: "Pintura de Salomão de braços erguidos diante do altar de bronze, enquanto uma nuvem dourada de glória sai do Templo entre as duas colunas e sacerdotes de linho recuam.",
+    happens: [
+      "Na festa do sétimo mês, os sacerdotes levam a arca da aliança para o santo dos santos, debaixo das asas dos querubins. Na arca só estão as duas tábuas de pedra de Horebe (8:1–9). Quando os sacerdotes saem, a nuvem enche a casa, e eles não conseguem ficar para ministrar, porque a glória do Senhor encheu o templo (8:10–11).",
+      "Salomão, de pé diante do altar, estende as mãos para o céu e ora. Reconhece que nem os céus dos céus podem conter Deus, quanto menos aquela casa (8:27), e pede que Deus ouça do céu as orações feitas voltadas para aquele lugar: em julgamento, derrota, seca, fome, guerra, pelo estrangeiro e até no cativeiro, se o povo se arrepender (8:31–53). Depois abençoa o povo, oferece sacrifícios em grande número e celebra a festa por catorze dias (8:54–66).",
+    ],
+    context: [
+      "O sétimo mês é o de etanim (8:2), época da festa das cabanas, depois da colheita. A nuvem repete a cena do tabernáculo no deserto (Êx 40:34–35).",
+      "A oração já prevê o exílio (8:46–50). Muitos estudiosos veem aqui a mão de uma edição do tempo do exílio, que fecha os livros de Reis; outros notam que derrota e deportação já eram temas conhecidos nos tratados e maldições do Antigo Oriente bem antes disso.",
+    ],
+    means: [
+      "Deus habita no meio do povo e, ao mesmo tempo, não cabe em nenhuma casa. O templo é lugar de oração e de perdão, não de controle sobre Deus.",
+      "A oração ensina o caminho de volta depois da queda: voltar-se para Deus, confessar e pedir. Os leitores no exílio, sem templo, ainda podiam orar “voltados para a sua terra” (8:48), como Daniel fará em Babilônia.",
+    ],
+  },
+  {
+    slug: "saba",
+    order: 5,
+    book: "1 Reis",
+    title: "A rainha de Sabá",
+    ref: "1 Reis 10",
+    date: "c. 950 a.C.",
+    placeId: "saba",
+    image: "/reis/saba.webp",
+    alt: "Pintura da rainha de Sabá diante de Salomão no trono de marfim com leões, com sua caravana de camelos carregados de especiarias e ouro ao fundo.",
+    happens: [
+      "A rainha de Sabá ouve falar da fama de Salomão e vem prová-lo com perguntas difíceis, trazendo camelos carregados de especiarias, muito ouro e pedras preciosas (10:1–2). Salomão responde a todas. Ela vê o palácio, a mesa, os servos e os holocaustos, e fica sem fôlego (10:4–5).",
+      "Reconhece que a fama era menor que a realidade e bendiz o Senhor, que pôs Salomão no trono para fazer juízo e justiça (10:6–9). Dá ao rei 120 talentos de ouro e especiarias em quantidade nunca mais vista, e recebe tudo o que desejou (10:10–13). O capítulo segue com o ouro anual de 666 talentos, o trono de marfim com seis degraus e doze leões, e o comércio de cavalos e carros com o Egito e a Cilícia (10:14–29).",
+    ],
+    context: [
+      "Sabá é normalmente identificada com o reino sabeu do sudoeste da Arábia, com capital em Marib, no atual Iêmen, que enriqueceu com o incenso e a mirra. As inscrições sabeias mais antigas são do século VIII a.C., e não há registro dessa rainha fora da Bíblia, por isso a data no século X é debatida.",
+      "A rota do incenso subia pela Arábia até Gaza e Damasco. Uma visita diplomática e comercial a um rei que controlava passagens como Eziom-Geber é plausível no quadro da época, embora não se possa comprovar.",
+    ],
+    means: [
+      "As nações vêm até Israel e reconhecem o Deus de Israel. A cena realiza, por um momento, a vocação de bênção para os povos (Gn 12:3), e Jesus a cita como exemplo de quem buscou a sabedoria (Mt 12:42).",
+      "O mesmo capítulo lista ouro, cavalos e carros do Egito, exatamente o que Deuteronômio 17:16–17 manda o rei não acumular. O brilho tem uma sombra que o capítulo seguinte vai mostrar.",
+    ],
+  },
+  {
+    slug: "apostasia",
+    order: 6,
+    book: "1 Reis",
+    title: "A apostasia de Salomão",
+    ref: "1 Reis 11",
+    date: "c. 940–931 a.C.",
+    placeId: "jerusalem",
+    image: "/reis/apostasia.webp",
+    alt: "Pintura de Salomão idoso sobre um monte diante de Jerusalém, cercado de esposas estrangeiras que queimam incenso a pequenos ídolos, com o Templo na sombra ao longe.",
+    happens: [
+      "Salomão ama muitas mulheres estrangeiras, além da filha do faraó: moabitas, amonitas, edomitas, sidônias e hititas, de povos com quem o Senhor tinha proibido o casamento. Tem setecentas esposas e trezentas concubinas, e na velhice elas desviam o seu coração para outros deuses (11:1–4).",
+      "Ele segue Astarote dos sidônios e Milcom dos amonitas, e constrói altos para Camos, de Moabe, e para Moloque, no monte em frente a Jerusalém (11:5–8). O Senhor anuncia que vai tirar o reino da sua casa, mas não todo, por amor de Davi e de Jerusalém (11:11–13). Levantam-se adversários: Hadade de Edom, Rezom de Damasco e Jeroboão, servo de Salomão, a quem o profeta Aías de Siló rasga uma capa nova em doze pedaços e dá dez (11:14–39).",
+    ],
+    context: [
+      "Casamentos diplomáticos eram a forma normal de selar alianças entre reinos. Camos é o deus nacional de Moabe, citado na estela de Messa. Milcom é o deus dos amonitas. O monte em frente a Jerusalém é o das Oliveiras, chamado depois de monte da destruição (2 Rs 23:13).",
+      "Os números de esposas e concubinas são grandes demais para a maioria dos historiadores, que os leem como expressão do tamanho da corte e das alianças. O texto, de todo modo, usa a cifra para pesar a culpa.",
+    ],
+    means: [
+      "A sabedoria não protege quem divide o coração. O texto diz que o coração de Salomão não era inteiro com o Senhor, como o de Davi (11:4). Esse será o critério de todo rei daqui em diante.",
+      "O juízo vem com misericórdia: uma tribo fica com a casa de Davi “para que haja sempre uma lâmpada” em Jerusalém (11:36). A promessa sobrevive ao pecado do rei.",
+    ],
+  },
+  {
+    slug: "divisao",
+    order: 7,
+    book: "1 Reis",
+    title: "A divisão do reino e os bezerros de ouro",
+    ref: "1 Reis 12",
+    date: "c. 931 a.C.",
+    placeId: "betel",
+    image: "/reis/divisao.webp",
+    alt: "Pintura de Jeroboão erguendo a mão diante de um bezerro de ouro sobre um altar com fogo, enquanto uma multidão agitada se reúne ao pé da muralha.",
+    happens: [
+      "Roboão vai a Siquém para ser proclamado rei. O povo, com Jeroboão, pede que ele alivie o jugo pesado de Salomão. Os anciãos aconselham ceder; os jovens aconselham endurecer, e Roboão responde: meu pai vos castigou com açoites, eu vos castigarei com escorpiões (12:1–14). Israel responde: que parte temos nós em Davi? Às vossas tendas, ó Israel (12:16). Adorão, chefe dos trabalhos forçados, é apedrejado, e Roboão foge para Jerusalém.",
+      "As dez tribos fazem Jeroboão rei. O profeta Semaías impede Roboão de guerrear contra os irmãos (12:21–24). Com medo de que o povo volte a Jerusalém para as festas, Jeroboão faz dois bezerros de ouro, põe um em Betel e outro em Dã e diz: eis aqui os teus deuses, ó Israel, que te fizeram subir da terra do Egito. Nomeia sacerdotes de fora de Levi e cria uma festa no oitavo mês (12:26–33).",
+    ],
+    context: [
+      "Siquém (Tell Balata) era o centro tradicional das tribos do norte. Betel ficava na fronteira com Judá, e Dã no extremo norte, junto às nascentes do Jordão. Em Tel Dã foi escavada uma grande plataforma de culto, um “alto”, com altar de chifres, da Idade do Ferro II, muitas vezes ligada ao santuário real do norte; a datação de cada fase é discutida.",
+      "Poucos anos depois, o faraó Sisaque ataca Judá (14:25–26). É Sheshonq I, cuja lista de cidades conquistadas está gravada no portal bubastita de Karnak, no Egito. O bezerro pode ter sido pensado como pedestal do Deus invisível, como os querubins da arca, mas o texto o condena como idolatria, ecoando Êxodo 32.",
+    ],
+    means: [
+      "A arrogância de Roboão e a política religiosa de Jeroboão rompem o povo de Deus. Daqui em diante cada rei do norte será julgado por andar “no pecado de Jeroboão, filho de Nebate, que fez Israel pecar”.",
+      "O texto também diz que a divisão vinha do Senhor (12:15, 24). O juízo anunciado a Salomão se cumpre através das escolhas livres e erradas dos homens.",
+    ],
+  },
+  {
+    slug: "profeta-leao",
+    order: 8,
+    book: "1 Reis",
+    title: "O homem de Deus de Judá e o leão",
+    ref: "1 Reis 13",
+    date: "c. 930 a.C.",
+    placeId: "betel",
+    image: "/reis/profeta-leao.webp",
+    alt: "Pintura noturna de um profeta caído numa estrada de montanha, com um leão parado de um lado do corpo e um jumento selado do outro, ambos intactos.",
+    happens: [
+      "Um homem de Deus vem de Judá a Betel e clama contra o altar enquanto Jeroboão queima incenso: um filho da casa de Davi, chamado Josias, vai queimar sobre ele os ossos dos sacerdotes. Como sinal, o altar se fende e a cinza se derrama. A mão que Jeroboão estende para prendê-lo seca e só é curada pela oração do profeta (13:1–6).",
+      "O homem de Deus recusa comer em Betel, porque tinha ordem de não comer nem beber ali e de voltar por outro caminho. Um velho profeta de Betel o engana, dizendo que um anjo mandou trazê-lo de volta. Ele come e, na volta, um leão o mata na estrada. O leão fica parado junto ao corpo e ao jumento, sem comer um nem atacar o outro (13:11–28). O velho profeta o sepulta no próprio túmulo (13:29–32).",
+    ],
+    context: [
+      "A profecia nomeia Josias cerca de três séculos antes. O cumprimento está em 2 Reis 23:15–18, quando Josias destrói o altar de Betel e poupa o túmulo dos dois profetas. Para muitos estudiosos, a menção do nome indica que o relato recebeu sua forma final depois de Josias; para a leitura tradicional, é profecia preditiva.",
+      "Leões viviam na região na Idade do Ferro, sobretudo nas matas do Jordão (Jr 49:19). O sinal não é o ataque, que podia acontecer, mas o leão parado, sem comer: é um juízo, não um acaso.",
+    ],
+    means: [
+      "A palavra de Deus vale mais do que a palavra de qualquer profeta que a contradiga, mesmo que ele fale de um anjo. A desobediência do homem de Deus parece pequena e é grave diante da ordem recebida.",
+      "Jeroboão viu o sinal e não mudou (13:33–34). Se até um mensageiro fiel é julgado por desobedecer, quanto mais o rei que fez Israel pecar.",
+    ],
+  },
+];
