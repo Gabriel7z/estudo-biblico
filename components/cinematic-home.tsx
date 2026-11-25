@@ -105,6 +105,27 @@ export function CinematicHome() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pt-16 md:px-8">
+        <Link
+          href="/apocalipse"
+          className="group block overflow-hidden rounded-[1.75rem] border border-gold/30 bg-[#121926]"
+        >
+          <div className="grid gap-6 p-8 md:grid-cols-[1.3fr_0.7fr] md:p-12">
+            <div>
+              <p className="font-sans text-[11px] tracking-[0.22em] text-gold uppercase">
+                Apocalipse
+              </p>
+              <h2 className="mt-3 font-heading text-4xl text-white md:text-6xl">O que João viu</h2>
+              <p className="mt-4 max-w-xl text-[#f4eee6]/80">
+                Dezessete visões, na ordem do livro. Cada cena desenha o que o texto descreve: os
+                sete candelabros, os quatro cavalos, as duas bestas, a cidade em cubo.
+              </p>
+            </div>
+            <p className="self-end font-heading text-6xl text-gold md:text-right md:text-8xl">17</p>
+          </div>
+        </Link>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
         <Reveal>
           <div className="mb-10 flex items-end justify-between gap-4">

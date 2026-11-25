@@ -38,6 +38,9 @@ export function SiteFooter() {
           <Link className="hover:text-primary" href="/livros">
             Livros
           </Link>
+          <Link className="hover:text-primary" href="/apocalipse">
+            Apocalipse
+          </Link>
         </div>
       </div>
     </footer>
