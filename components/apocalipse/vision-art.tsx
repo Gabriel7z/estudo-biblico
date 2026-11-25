@@ -31,7 +31,7 @@ export function VisionArt({ slug }: { slug: string }) {
           className="absolute inset-0 will-change-transform"
         >
           <motion.div
-            initial={reduce ? false : { opacity: 0.65, scale: 1.05 }}
+            initial={false}
             animate={
               reduce
                 ? { opacity: 1, scale: 1 }

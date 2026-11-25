@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
 import { BibleMap } from "@/components/bible-map";
 import { Reveal } from "@/components/reveal";
@@ -29,33 +28,11 @@ const shelves = [
   { id: "deuterocanonicos", title: "Deuterocanônicos", numeral: "04", image: atlasImages.judean },
 ] as const;
 
-function useCount(target: number) {
-  const reduce = useReducedMotion();
-  const [value, setValue] = useState(reduce ? target : 0);
-  const started = useRef(false);
-
-  useEffect(() => {
-    if (reduce || started.current) return;
-    started.current = true;
-    const start = performance.now();
-    let frame = 0;
-    const tick = (now: number) => {
-      const progress = Math.min(1, (now - start) / 900);
-      setValue(Math.round(target * (1 - (1 - progress) ** 3)));
-      if (progress < 1) frame = requestAnimationFrame(tick);
-    };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [reduce, target]);
-
-  return value;
-}
-
 export function CinematicHome() {
   const reduce = useReducedMotion();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 700], [0, reduce ? 0 : 120]);
-  const books = useCount(bookStudies.length);
+  const books = bookStudies.length;
 
   return (
     <div>
@@ -148,13 +125,8 @@ export function CinematicHome() {
                 {bookStudies
                   .filter((book) => book.group === shelf.id)
                   .map((book, index) => (
-                    <motion.li
-                      key={book.slug}
-                      initial={reduce ? false : { opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-40px" }}
-                      transition={{ duration: 0.5, delay: reduce ? 0 : index * 0.05 }}
-                    >
+                    <li key={book.slug}>
+                      <Reveal delay={reduce ? 0 : index * 0.05}>
                       <Link href={`/livros/${book.slug}`} className="group relative block h-72 overflow-hidden rounded-2xl">
                         <Image
                           src={atlasSrc(shelf.image.src)}
@@ -174,7 +146,8 @@ export function CinematicHome() {
                           </p>
                         </div>
                       </Link>
-                    </motion.li>
+                      </Reveal>
+                    </li>
                   ))}
               </ul>
             </div>
