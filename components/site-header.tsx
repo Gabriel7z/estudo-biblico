@@ -20,6 +20,7 @@ import { cn } from "cn";
 
 const links = [
   { href: "/livros", label: "Livros" },
+  { href: "/apocalipse", label: "Apocalipse" },
   { href: "/mapa", label: "Mapa" },
   { href: "/governos", label: "Governos" },
   { href: "/geografia", label: "Geografia" },
