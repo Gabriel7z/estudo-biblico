@@ -126,7 +126,7 @@ export function PolitySlider() {
           key={polity.id}
           className="folio rounded-3xl p-5"
           style={{ borderTop: `3px solid ${tone?.color ?? "#e4c78a"}` }}
-          initial={reduce ? false : { opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reduce ? 0 : 0.35 }}
         >

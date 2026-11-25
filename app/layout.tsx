@@ -40,6 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Suspense fallback={<div className="h-16 border-b border-border bg-background" />}>
           <SiteHeader />
         </Suspense>
+        <noscript>
+          <style>{`main [style*="opacity:0"], main [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
         <main id="conteudo" className="flex-1 pt-16">
           {children}
         </main>

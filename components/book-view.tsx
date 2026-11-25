@@ -62,7 +62,7 @@ export function BookView({
     const nodes = sections
       .map(([id]) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node));
-    if (nodes.length === 0) return;
+    if (nodes.length === 0 || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries

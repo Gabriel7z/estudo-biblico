@@ -1,15 +1,8 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
+// Não animar a opacidade da página inteira. O Framer gravava opacity:0 no HTML
+// e, no Safari do iPhone (e com JavaScript desligado), a animação não concluía:
+// sobrava só o cabeçalho sobre o fundo escuro.
 export default function Template({ children }: { children: ReactNode }) {
-  const reduce = useReducedMotion();
-  if (reduce) return children;
-
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-      {children}
-    </motion.div>
-  );
+  return children;
 }
