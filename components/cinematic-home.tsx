@@ -84,6 +84,37 @@ export function CinematicHome() {
 
       <section className="mx-auto max-w-7xl px-4 pt-16 md:px-8">
         <Link
+          href="/reis"
+          className="group block overflow-hidden rounded-[1.75rem] border border-gold/30 bg-[#121926]"
+        >
+          <div className="relative aspect-[16/7] w-full overflow-hidden border-b border-gold/15 md:aspect-[16/5]">
+            <Image
+              src={atlasSrc("/reis/carmelo.webp")}
+              alt="Elias no monte Carmelo, com fogo descendo sobre o altar de doze pedras."
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#121926] via-[#121926]/20 to-transparent" />
+          </div>
+          <div className="grid gap-6 p-8 md:grid-cols-[1.3fr_0.7fr] md:p-12">
+            <div>
+              <p className="font-sans text-[11px] tracking-[0.22em] text-gold uppercase">
+                1 e 2 Reis
+              </p>
+              <h2 className="mt-3 font-heading text-4xl text-white md:text-6xl">De Salomão ao exílio</h2>
+              <p className="mt-4 max-w-xl text-[#f4eee6]/80">
+                Vinte e cinco cenas pintadas, todos os reis de Israel e Judá lado a lado, o mapa do
+                reino dividido e a planta do Templo de Salomão.
+              </p>
+            </div>
+            <p className="self-end font-heading text-6xl text-gold md:text-right md:text-8xl">25</p>
+          </div>
+        </Link>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pt-16 md:px-8">
+        <Link
           href="/apocalipse"
           className="group block overflow-hidden rounded-[1.75rem] border border-gold/30 bg-[#121926]"
         >
