@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import { Suspense } from "react";
 
 import { SiteFooter } from "@/components/site-footer";
@@ -8,13 +8,14 @@ import { SiteHeader } from "@/components/site-header";
 import "@/lib/atlas";
 import "./globals.css";
 
-const outfit = Outfit({
+const outfit = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-outfit",
 });
 
-const fraunces = Fraunces({
+const fraunces = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-fraunces",
 });
 

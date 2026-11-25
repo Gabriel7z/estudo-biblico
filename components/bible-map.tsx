@@ -395,9 +395,9 @@ export function BibleMap({
         source: "bib-places",
         paint: {
           "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3.5, 8, 6.5],
-          "circle-color": ["case", ["get", "tradition"], "#8c3d2f", "#224b41"],
-          "circle-stroke-width": 1.6,
-          "circle-stroke-color": "#f6efe1",
+          "circle-color": ["case", ["get", "tradition"], "#8c3d2f", "#1e3a5f"],
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#fbf6ec",
         },
       });
       map.addLayer({
@@ -653,7 +653,7 @@ export function BibleMap({
       ) : null}
 
       {status === "ready" && mode !== "atlas" ? (
-        <div className="pointer-events-none absolute bottom-7 left-2 z-10 max-w-[16rem] rounded-md bg-[#f6efe1]/92 px-2.5 py-1.5 text-[11px] leading-relaxed text-ink shadow-sm">
+        <div className="map-legend pointer-events-none absolute bottom-7 left-2 z-10 max-w-[16rem] px-2.5 py-1.5 text-[11px] leading-relaxed text-ink">
           <ul className="space-y-0.5">
             {model.routeList.map((route) => (
               <li key={route.id} className="flex items-center gap-2">

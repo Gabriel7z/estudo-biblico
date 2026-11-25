@@ -73,7 +73,7 @@ export function MapScreen() {
                 "shrink-0 rounded-full border px-3 py-1 font-sans text-xs",
                 active
                   ? "border-primary bg-primary text-primary-foreground"
-                  : "border-border bg-[#f6efe1]/95 text-foreground",
+                  : "border-gold/40 bg-[#fbf6ec]/95 text-foreground",
               )}
             >
               {item.name}

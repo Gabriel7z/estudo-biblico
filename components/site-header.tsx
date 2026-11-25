@@ -39,12 +39,12 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid size-8 place-items-center rounded-sm bg-primary font-heading text-sm text-primary-foreground">
+          <span className="grid size-9 place-items-center border border-gold/70 bg-primary font-heading text-lg text-primary-foreground">
             T
           </span>
-          <span className="leading-tight">
-            <span className="block font-heading text-[15px]">A Terra e o Livro</span>
-            <span className="block font-sans text-[10px] tracking-[0.14em] text-muted-foreground uppercase">
+          <span className="leading-none">
+            <span className="block font-heading text-xl tracking-tight">A Terra e o Livro</span>
+            <span className="mt-0.5 block font-sans text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
               Antigo Testamento
             </span>
           </span>
@@ -55,9 +55,9 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-2.5 py-1.5 font-sans text-sm hover:text-foreground",
+                "rounded-full px-3 py-1.5 font-sans text-sm hover:text-foreground",
                 isActive(pathname, link.href)
-                  ? "bg-secondary text-foreground"
+                  ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground",
               )}
             >

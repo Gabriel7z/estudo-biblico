@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function BooksPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
+    <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
       <PageHeader
         kicker="A prateleira"
         title="Livros no seu chão"
@@ -25,27 +25,28 @@ export default function BooksPage() {
           <section key={section.id}>
             <h2 className="font-heading text-3xl">{section.title}</h2>
             <p className="mt-2 leading-relaxed text-muted-foreground">{section.intro}</p>
-            <ul className="mt-5 divide-y divide-border border-y border-border">
-              {section.books.map((book) => (
-                <li key={section.id + book.name} className="grid gap-1 py-4 sm:grid-cols-[9rem_1fr]">
-                  <h3 className="font-heading text-xl">
-                    {studyForName(book.name) ? (
-                      <Link className="hover:text-primary" href={`/livros/${studyForName(book.name)?.slug}`}>
-                        {book.name}
-                      </Link>
-                    ) : (
-                      book.name
-                    )}
-                  </h3>
-                  <div>
-                    <p className="font-sans text-xs tracking-wide text-copper uppercase">
+            <ul className="mt-5 grid gap-3 md:grid-cols-2">
+              {section.books.map((book) => {
+                const study = studyForName(book.name);
+                return (
+                  <li key={section.id + book.name} className="folio p-4">
+                    <h3 className="font-heading text-2xl">
+                      {study ? (
+                        <Link className="hover:text-primary" href={`/livros/${study.slug}`}>
+                          {book.name}
+                        </Link>
+                      ) : (
+                        book.name
+                      )}
+                    </h3>
+                    <p className="mt-1 font-sans text-xs tracking-wide text-copper uppercase">
                       <Link href={`/eras/${book.era}`}>{eraName(book.era)}</Link>
                     </p>
-                    <p className="mt-1 leading-relaxed">{book.line}</p>
+                    <p className="mt-2 leading-relaxed">{book.line}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{book.ground}</p>
-                  </div>
-                </li>
-              ))}
+                  </li>
+                );
+              })}
             </ul>
           </section>
         ))}
