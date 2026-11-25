@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { Suspense } from "react";
 
 import { SiteFooter } from "@/components/site-footer";
@@ -8,14 +8,13 @@ import { SiteHeader } from "@/components/site-header";
 import "@/lib/atlas";
 import "./globals.css";
 
-const outfit = Source_Sans_3({
+const outfit = Inter({
   subsets: ["latin"],
   variable: "--font-outfit",
 });
 
-const fraunces = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
   variable: "--font-fraunces",
 });
 
@@ -41,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Suspense fallback={<div className="h-16 border-b border-border bg-background" />}>
           <SiteHeader />
         </Suspense>
-        <main id="conteudo" className="flex-1">
+        <main id="conteudo" className="flex-1 pt-16">
           {children}
         </main>
         <Suspense fallback={null}>

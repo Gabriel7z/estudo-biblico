@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { atlasCredits } from "@/lib/imagery";
 import { stripTrailingSlash } from "@/lib/path";
 
 export function SiteFooter() {
@@ -18,6 +19,11 @@ export function SiteFooter() {
             As datas são aproximações de estudo. O faraó do êxodo não é nomeado. A rota em
             cobre segue a reconstrução tradicional do sul, uma leitura entre outras.
           </p>
+          <ul className="mt-4 space-y-1 text-[11px] leading-relaxed text-muted-foreground">
+            {atlasCredits.map((credit) => (
+              <li key={credit}>{credit}</li>
+            ))}
+          </ul>
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-2 font-sans text-sm">
           <Link className="hover:text-primary" href="/moises">
