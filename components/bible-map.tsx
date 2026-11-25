@@ -24,7 +24,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 // O bundle do Next não publica o worker ao lado do chunk. Sem este arquivo o
 // MapLibre não lê os tiles vetoriais e o mapa fica em branco.
 const WORKER = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/maplibre-gl-worker.js`;
-const POSITRON = "https://tiles.openfreemap.org/styles/positron";
+const POSITRON = "https://tiles.openfreemap.org/styles/dark";
 const GLYPHS = "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf";
 const TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 const ESRI =
@@ -345,10 +345,10 @@ export function BibleMap({
             "match",
             ["get", "tone"],
             "reino",
-            0.22,
+            0.34,
             "imperio",
-            0.16,
-            0.12,
+            0.22,
+            0.18,
           ],
         },
       });
@@ -356,7 +356,7 @@ export function BibleMap({
         id: "bib-region-line",
         type: "line",
         source: "bib-regions",
-        paint: { "line-color": ["get", "color"], "line-width": 1.2, "line-opacity": 0.75 },
+        paint: { "line-color": "#e4c78a", "line-width": 1.4, "line-opacity": 0.9 },
       });
       map.addLayer({
         id: "bib-routes-solid",
@@ -395,9 +395,9 @@ export function BibleMap({
         source: "bib-places",
         paint: {
           "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3.5, 8, 6.5],
-          "circle-color": ["case", ["get", "tradition"], "#8c3d2f", "#224b41"],
-          "circle-stroke-width": 1.6,
-          "circle-stroke-color": "#f6efe1",
+          "circle-color": ["case", ["get", "tradition"], "#e07a5f", "#e4c78a"],
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#090d14",
         },
       });
       map.addLayer({
@@ -415,9 +415,9 @@ export function BibleMap({
           "text-padding": 0,
         },
         paint: {
-          "text-color": "#241c16",
-          "text-halo-color": "#f6efe1",
-          "text-halo-width": 1.5,
+          "text-color": "#f6f1e7",
+          "text-halo-color": "#090d14",
+          "text-halo-width": 1.4,
         },
       });
       map.addLayer({
@@ -432,9 +432,9 @@ export function BibleMap({
           "text-transform": "uppercase",
         },
         paint: {
-          "text-color": "#241c16",
-          "text-halo-color": "#f6efe1",
-          "text-halo-width": 2,
+          "text-color": "#e4c78a",
+          "text-halo-color": "#090d14",
+          "text-halo-width": 1.6,
         },
       });
 
@@ -567,17 +567,17 @@ export function BibleMap({
   const creditLine = relief ? `${credit} · Relevo: AWS` : credit;
 
   return (
-    <div className={cn("bible-map relative h-full min-h-64 w-full bg-[#e6e0d2]", className)}>
+    <div className={cn("bible-map relative h-full min-h-64 w-full bg-[#0b1018]", className)}>
       <div ref={containerRef} className="h-full w-full" role="application" aria-label="Mapa do Antigo Testamento" />
 
       {status === "loading" ? (
-        <div className="absolute inset-0 z-20 grid place-items-center bg-[#efe2cc]/80">
+        <div className="absolute inset-0 z-20 grid place-items-center bg-[#090d14]/80">
           <p className="font-sans text-sm text-muted-foreground">Abrindo o mapa…</p>
         </div>
       ) : null}
 
       {status === "error" ? (
-        <div className="absolute inset-0 z-20 grid place-items-center bg-[#f6efe1] p-6 text-center">
+        <div className="absolute inset-0 z-20 grid place-items-center bg-[#090d14] p-6 text-center">
           <div className="max-w-sm">
             <p className="kicker">O mapa não abriu</p>
             <p className="mt-2 leading-relaxed text-muted-foreground">
@@ -653,7 +653,7 @@ export function BibleMap({
       ) : null}
 
       {status === "ready" && mode !== "atlas" ? (
-        <div className="pointer-events-none absolute bottom-7 left-2 z-10 max-w-[16rem] rounded-md bg-[#f6efe1]/92 px-2.5 py-1.5 text-[11px] leading-relaxed text-ink shadow-sm">
+        <div className="map-legend pointer-events-none absolute bottom-7 left-2 z-10 max-w-[16rem] px-2.5 py-1.5 text-[11px] leading-relaxed text-ink">
           <ul className="space-y-0.5">
             {model.routeList.map((route) => (
               <li key={route.id} className="flex items-center gap-2">
@@ -674,7 +674,7 @@ export function BibleMap({
       ) : null}
 
       {status === "ready" && mode === "atlas" ? (
-        <p className="pointer-events-none absolute top-3 left-3 z-10 max-w-[16rem] text-[10px] leading-snug text-[#241c16] md:top-auto md:right-3 md:bottom-2 md:left-auto md:text-right">
+        <p className="pointer-events-none absolute top-3 left-3 z-10 max-w-[16rem] text-[10px] leading-snug text-[#f4eee6] md:top-auto md:right-3 md:bottom-2 md:left-auto md:text-right">
           {creditLine}
         </p>
       ) : null}

@@ -19,9 +19,9 @@ export default function GovernmentsPage() {
         lede="Do clã sem capital à província persa, e, na periferia, à Judeia hasmoneia. O controle percorre as formas de poder. As fichas de baixo continuam sendo os governos nomeados no texto."
       />
       <PolitySlider />
-      <ol className="mt-10 divide-y divide-border border-y border-border">
+      <ol className="mt-14 grid gap-3 md:grid-cols-2">
         {governments.map((government) => (
-          <li key={government.slug} className="grid gap-2 py-5 sm:grid-cols-[4rem_1fr]">
+          <li key={government.slug} className="folio grid gap-2 p-4 sm:grid-cols-[3.5rem_1fr]">
             <p className="font-heading text-copper">
               {String(government.order).padStart(2, "0")}
             </p>
