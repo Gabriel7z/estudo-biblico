@@ -7,7 +7,7 @@
 
 export type XZ = [number, number];
 
-export type BlockKind = "box" | "tiers" | "gate" | "glazed";
+export type BlockKind = "box" | "tiers" | "gate" | "glazed" | "colonnade";
 
 export type Block = {
   id: string;
@@ -33,7 +33,15 @@ export type Block = {
   lift?: number;
   /** o caminhante pode andar por cima (ponte, terraço) */
   walkable?: boolean;
+  /** pórtico: fileiras de colunas ao longo do lado maior (x), sob um teto; muro de fundo opcional (+1 = lado +z, -1 = lado -z) */
+  columns?: { rows: number; spacing: number; radius?: number; color?: string; back?: 1 | -1 };
 };
+
+/** Esplanada artificial: dentro do polígono o terreno fica plano na cota dada; as bordas viram muros de arrimo. */
+export type Platform = { label: string; ring: XZ[]; level: number; color: string; top?: string };
+
+/** Ponto de vista pronto para a vista aérea (posição e alvo em unidades da cena). */
+export type CityView = { label: string; position: [number, number, number]; target: [number, number, number] };
 
 export type RoadDef = { label: string; path: XZ[]; width: number; color: string };
 
@@ -110,10 +118,13 @@ export type CityDef = {
   roads: RoadDef[];
   walls: WallDef[];
   blocks: Block[];
+  platforms?: Platform[];
   zones: Zone[];
   trees: TreeDef[];
   hotspots: CityHotspot[];
   orbit: { position: [number, number, number]; target: [number, number, number]; maxDistance: number };
+  /** vistas prontas além da inicial (ex.: só o Templo) */
+  views?: CityView[];
   walk: { start: XZ; yaw: number };
   sky: {
     background: string;

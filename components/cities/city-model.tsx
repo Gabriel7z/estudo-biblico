@@ -33,11 +33,25 @@ export type CityModelProps = {
   onSelect: (id: string) => void;
   input: React.MutableRefObject<WalkInput>;
   resetKey: number;
+  /** 0 = vista inicial; 1..n = city.views */
+  view?: number;
 };
 
 type Box = { x: number; y: number; z: number; w: number; h: number; d: number; rot: number };
 
-function Instanced({ items, color, colors, roughness = 0.9 }: { items: Box[]; color?: string; colors?: THREE.Color[]; roughness?: number }) {
+function Instanced({
+  items,
+  color,
+  colors,
+  roughness = 0.9,
+  shape = "box",
+}: {
+  items: Box[];
+  color?: string;
+  colors?: THREE.Color[];
+  roughness?: number;
+  shape?: "box" | "cyl";
+}) {
   const ref = useRef<THREE.InstancedMesh>(null);
   useLayoutEffect(() => {
     const mesh = ref.current;
@@ -59,8 +73,8 @@ function Instanced({ items, color, colors, roughness = 0.9 }: { items: Box[]; co
   if (!items.length) return null;
   return (
     <instancedMesh key={items.length} ref={ref} args={[undefined, undefined, items.length]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={colors ? undefined : color} roughness={roughness} flatShading />
+      {shape === "cyl" ? <cylinderGeometry args={[0.5, 0.5, 1, 10]} /> : <boxGeometry args={[1, 1, 1]} />}
+      <meshStandardMaterial color={colors ? undefined : color} roughness={roughness} flatShading={shape === "box"} />
     </instancedMesh>
   );
 }
@@ -85,7 +99,9 @@ function Terrain({ city }: { city: CityDef }) {
       const x = pos.getX(i) * U;
       const z = pos.getZ(i) * U;
       const h = city.elevation(x, z);
-      pos.setY(i, h / U);
+      // sob uma esplanada, o terreno desce um pouco para não brigar com o piso dela
+      const under = city.platforms?.some((p) => pointInRing(x, z, p.ring));
+      pos.setY(i, (under ? h - 2 : h) / U);
       const slope = Math.abs(city.elevation(x + 8, z) - city.elevation(x - 8, z)) + Math.abs(city.elevation(x, z + 8) - city.elevation(x, z - 8));
       const f = Math.max(0, Math.min(1, h / city.ground.highAt));
       c.copy(low).lerp(mid, Math.min(1, f * 2)).lerp(high, Math.max(0, f * 2 - 1));
@@ -265,7 +281,80 @@ function friezeItems(city: CityDef, b: Block): Box[] {
   return out;
 }
 
+/** Colunas de um pórtico, em coordenadas do mundo. */
+function columnItems(city: CityDef, b: Block): Box[] {
+  if (b.kind !== "colonnade" || !b.columns) return [];
+  const [w, h, d] = b.size;
+  const { rows, spacing, radius = 0.6 } = b.columns;
+  const y0 = baseY(city, b);
+  const rot = b.rot ?? 0;
+  const cos = Math.cos(rot);
+  const sin = Math.sin(rot);
+  const out: Box[] = [];
+  for (let r = 0; r < rows; r += 1) {
+    const lz = rows === 1 ? 0 : -d / 2 + 1.2 + ((d - 2.4) * r) / (rows - 1);
+    for (let lx = -w / 2 + spacing / 2; lx < w / 2; lx += spacing) {
+      out.push({ x: b.at[0] + lx * cos + lz * sin, z: b.at[1] - lx * sin + lz * cos, y: y0 - 0.5, w: radius * 2, h: h - 1, d: radius * 2, rot });
+    }
+  }
+  return out;
+}
+
+function Colonnade({ city, b }: { city: CityDef; b: Block }) {
+  const y = baseY(city, b) / U;
+  const [w, h, d] = b.size;
+  const back = b.columns?.back;
+  return (
+    <group position={[b.at[0] / U, y, b.at[1] / U]} rotation={[0, b.rot ?? 0, 0]}>
+      {/* piso */}
+      <mesh position={[0, -0.9 / U, 0]}>
+        <boxGeometry args={[w / U, 2 / U, d / U]} />
+        <meshStandardMaterial color="#d8cdb6" roughness={0.9} flatShading />
+      </mesh>
+      {/* teto */}
+      <mesh position={[0, (h - 0.2) / U, 0]}>
+        <boxGeometry args={[(w + 1) / U, 1.6 / U, (d + 1) / U]} />
+        <meshStandardMaterial color={b.roof ?? b.color} roughness={0.85} flatShading />
+      </mesh>
+      {back ? (
+        <mesh position={[0, (h / 2 - 1) / U, (back * (d / 2 + 0.6)) / U]}>
+          <boxGeometry args={[w / U, (h + 2) / U, 1.6 / U]} />
+          <meshStandardMaterial color={b.color} roughness={0.9} flatShading />
+        </mesh>
+      ) : null}
+    </group>
+  );
+}
+
+function Platforms({ city }: { city: CityDef }) {
+  const meshes = useMemo(
+    () =>
+      (city.platforms ?? []).map((p) => {
+        const shape = new THREE.Shape(p.ring.map(([x, z]) => new THREE.Vector2(x / U, -z / U)));
+        const bottom = p.level - 90;
+        const geo = new THREE.ExtrudeGeometry(shape, { depth: (p.level + 0.15 - bottom) / U, bevelEnabled: false });
+        geo.rotateX(-Math.PI / 2);
+        geo.translate(0, bottom / U, 0);
+        geo.computeVertexNormals();
+        return { p, geo };
+      }),
+    [city],
+  );
+  return (
+    <group>
+      {meshes.map(({ p, geo }) => (
+        <mesh key={p.label} geometry={geo}>
+          {/* grupo 0: tampas (o piso da esplanada); grupo 1: as laterais (muros de arrimo) */}
+          <meshStandardMaterial attach="material-0" color={p.top ?? p.color} roughness={0.95} />
+          <meshStandardMaterial attach="material-1" color={p.color} roughness={0.92} flatShading />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
 function BlockMesh({ city, b }: { city: CityDef; b: Block }) {
+  if (b.kind === "colonnade") return <Colonnade city={city} b={b} />;
   const y = baseY(city, b) / U;
   const [w, h, d] = b.size;
   const mat = <meshStandardMaterial color={b.color} roughness={b.kind === "glazed" || b.frieze ? 0.45 : 0.88} metalness={b.frieze ? 0.05 : 0} flatShading />;
@@ -346,6 +435,17 @@ function BlockMesh({ city, b }: { city: CityDef; b: Block }) {
 }
 
 function Blocks({ city }: { city: CityDef }) {
+  const columns = useMemo(() => {
+    const byColor = new Map<string, Box[]>();
+    for (const b of city.blocks) {
+      if (b.kind !== "colonnade") continue;
+      const color = b.columns?.color ?? "#efe6d2";
+      const list = byColor.get(color) ?? [];
+      list.push(...columnItems(city, b));
+      byColor.set(color, list);
+    }
+    return [...byColor.entries()];
+  }, [city]);
   const frieze = useMemo(() => {
     const byColor = new Map<string, Box[]>();
     for (const b of city.blocks) {
@@ -363,6 +463,9 @@ function Blocks({ city }: { city: CityDef }) {
       ))}
       {frieze.map(([color, items]) => (
         <Instanced key={color} items={items} color={color} roughness={0.4} />
+      ))}
+      {columns.map(([color, items]) => (
+        <Instanced key={`c${color}`} items={items} color={color} roughness={0.6} shape="cyl" />
       ))}
     </group>
   );
@@ -497,10 +600,13 @@ function HotspotMarker({ city, spot, active, onSelect, walk }: { city: CityDef; 
   );
 }
 
-function OrbitRig({ city, resetKey }: { city: CityDef; resetKey: number }) {
+function OrbitRig({ city, resetKey, view }: { city: CityDef; resetKey: number; view: number }) {
   const { camera } = useThree();
   const controls = useRef<React.ComponentRef<typeof OrbitControls>>(null);
-  const { position, target, maxDistance } = city.orbit;
+  const preset = view > 0 ? city.views?.[view - 1] : undefined;
+  const position = preset?.position ?? city.orbit.position;
+  const target = preset?.target ?? city.orbit.target;
+  const { maxDistance } = city.orbit;
   useEffect(() => {
     camera.position.set(...position);
     camera.lookAt(...target);
@@ -640,7 +746,7 @@ function WalkRig({ city, input, resetKey }: { city: CityDef; input: React.Mutabl
   return null;
 }
 
-export function CityModel({ slug, mode, selected, onSelect, input, resetKey }: CityModelProps) {
+export function CityModel({ slug, mode, selected, onSelect, input, resetKey, view = 0 }: CityModelProps) {
   const city = getCity(slug);
 
   const walk = mode === "caminhar";
@@ -660,6 +766,7 @@ export function CityModel({ slug, mode, selected, onSelect, input, resetKey }: C
       <ambientLight intensity={0.42} />
       <Terrain city={city} />
       <Waters city={city} />
+      <Platforms city={city} />
       <Walls city={city} />
       <Blocks city={city} />
       <Houses city={city} />
@@ -671,7 +778,7 @@ export function CityModel({ slug, mode, selected, onSelect, input, resetKey }: C
       {city.hotspots.map((spot) => (
         <HotspotMarker key={spot.id} city={city} spot={spot} active={spot.id === selected} onSelect={onSelect} walk={walk} />
       ))}
-      {walk ? <WalkRig city={city} input={input} resetKey={resetKey} /> : <OrbitRig city={city} resetKey={resetKey} />}
+      {walk ? <WalkRig city={city} input={input} resetKey={resetKey} /> : <OrbitRig city={city} resetKey={resetKey} view={view} />}
     </Canvas>
   );
 }

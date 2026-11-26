@@ -82,6 +82,9 @@ export function CityPlan({ slug }: { slug: string }) {
         {lines.map((l) => (
           <path key={l.level} d={l.d} fill="none" stroke={l.major ? "#6d6450" : "#3a3a33"} strokeWidth={(l.major ? 2.4 : 1.2) * unit} />
         ))}
+        {(city.platforms ?? []).map((p) => (
+          <polygon key={p.label} points={line(p.ring)} fill="#d8cdb6" fillOpacity={0.18} stroke="#e4c78a" strokeWidth={2.5 * unit} />
+        ))}
         {city.zones.map((zone) => (
           <polygon key={zone.seed} points={line(zone.ring)} fill="#e4c78a" fillOpacity={0.05} stroke="none" />
         ))}

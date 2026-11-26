@@ -40,6 +40,10 @@ type Props = {
   bounds: [number, number, number, number];
   poster: string;
   title: string;
+  /** Maquetes por lugar; por padrão, as do Antigo Testamento. */
+  models?: Record<string, { href: string; label: string }>;
+  /** Nomes dos tipos de parada; por padrão, os dos mapas de guerra. */
+  kinds?: Record<StopKind, string>;
 };
 
 const BATTLE: StopKind[] = ["batalha", "cerco"];
@@ -74,7 +78,7 @@ function quietBase(map: MapLibreMap) {
   }
 }
 
-export function EpisodeMap({ stops, routes, areas, labels, bounds, poster, title }: Props) {
+export function EpisodeMap({ stops, routes, areas, labels, bounds, poster, title, models = modelForSite, kinds = kindLabel }: Props) {
   const node = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [active, setActive] = useState(0);
@@ -386,7 +390,7 @@ export function EpisodeMap({ stops, routes, areas, labels, bounds, poster, title
         <aside className="folio flex flex-col rounded-[1.5rem] p-5" aria-live="polite">
           <div className="flex items-center justify-between gap-3">
             <p className="font-sans text-[11px] tracking-[0.18em] text-gold uppercase">
-              {stop.n} de {stops.length} · {kindLabel[stop.kind]}
+              {stop.n} de {stops.length} · {kinds[stop.kind]}
             </p>
             <div className="flex gap-1.5">
               <button type="button" onClick={() => go(-1)} className="rounded-full border border-gold/30 px-3 py-1 font-sans text-sm hover:bg-gold hover:text-[#1a140c]" aria-label="Parada anterior">
@@ -409,12 +413,12 @@ export function EpisodeMap({ stops, routes, areas, labels, bounds, poster, title
             </p>
           ) : null}
           <p className="mt-3 font-sans text-xs tracking-[0.12em] text-gold uppercase">{stop.refs}</p>
-          {modelForSite[stop.siteId] ? (
+          {models[stop.siteId] ? (
             <Link
-              href={modelForSite[stop.siteId].href}
+              href={models[stop.siteId].href}
               className="mt-4 inline-flex w-fit rounded-full bg-gold px-4 py-2 font-sans text-sm font-semibold text-[#1a140c]"
             >
-              {modelForSite[stop.siteId].label}
+              {models[stop.siteId].label}
             </Link>
           ) : null}
           <ol className="mt-5 flex flex-wrap gap-1.5 border-t border-white/10 pt-4">
