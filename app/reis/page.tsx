@@ -14,6 +14,12 @@ export const metadata: Metadata = {
 
 const extras = [
   {
+    href: "/historia",
+    kicker: "Mapas e guerras",
+    title: "Um mapa para cada episódio",
+    text: "Samuel e Reis em 23 mapas com marchas e cercos, a linha do tempo sincronizada com Assíria, Babilônia e Egito, o índice das guerras e a maquete 3D de Jerusalém.",
+  },
+  {
     href: "/reis/cronologia",
     kicker: "Cronologia",
     title: "Todos os reis, lado a lado",
@@ -74,7 +80,7 @@ export default function ReisPage() {
         lede="Cerca de quatro séculos, de Davi idoso (c. 970 a.C.) até um rei de Judá comendo à mesa do rei de Babilônia (c. 561 a.C.). O reino de Salomão se divide, o norte cai diante da Assíria, o sul diante de Babilônia. Pelo caminho, Elias e Eliseu. Cada cena abaixo tem o que acontece no texto, o contexto histórico e geográfico com o que a arqueologia diz e onde ela diverge, e o que a passagem significa no livro."
       />
 
-      <section className="mt-10 grid gap-4 md:grid-cols-3">
+      <section className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {extras.map((item) => (
           <Link key={item.href} href={item.href} className="folio block rounded-[1.25rem] p-6 hover:border-gold/50">
             <p className="kicker">{item.kicker}</p>

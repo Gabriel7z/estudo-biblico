@@ -149,6 +149,20 @@ export function BookView({
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          {["1-samuel", "2-samuel", "1-reis", "2-reis"].includes(book.slug) ? (
+            <Link
+              href={`/historia#${book.slug}`}
+              className="folio mt-10 block rounded-[1.25rem] p-6 hover:border-gold/50"
+            >
+              <p className="kicker">Mapas do contexto</p>
+              <p className="mt-2 font-heading text-3xl">Um mapa para cada episódio de {book.name}</p>
+              <p className="mt-3 text-muted-foreground">
+                Marchas, batalhas e cercos parada por parada, a linha do tempo com os impérios vizinhos, as guerras com
+                suas fontes e a maquete 3D de Jerusalém.
+              </p>
+              <span className="mt-4 inline-block font-sans text-sm text-gold">Abrir os mapas →</span>
+            </Link>
+          ) : null}
           {book.slug === "1-reis" || book.slug === "2-reis" ? (
             <Link
               href="/reis"
