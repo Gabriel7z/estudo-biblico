@@ -154,7 +154,7 @@ export function CityStage({ fallback }: { fallback: ReactNode }) {
 
   const pill = (active: boolean) =>
     cn(
-      "rounded-full px-3 py-1.5 font-sans text-xs transition md:text-sm",
+      "shrink-0 rounded-full px-2 py-1.5 font-sans text-[11.5px] whitespace-nowrap transition md:px-3 md:text-sm",
       active ? "bg-gold text-[#1a140c]" : "bg-[#090d14]/70 text-[#f4eee6] hover:bg-[#090d14]/90",
     );
 
@@ -209,16 +209,17 @@ export function CityStage({ fallback }: { fallback: ReactNode }) {
           >
             <CityModel era={era} mode={mode} selected={selected} onSelect={setSelected} input={input} resetKey={resetKey} />
             <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex flex-wrap items-start justify-between gap-2 p-3">
-              <div className="pointer-events-auto flex flex-wrap gap-1.5 rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur">
+              <div className="pointer-events-auto flex max-w-full flex-nowrap gap-1 overflow-x-auto rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur md:flex-wrap md:gap-1.5">
                 {eras.map((item) => (
                   <button key={item.id} type="button" className={pill(era === item.id)} onClick={() => setEra(item.id)}>
                     {item.label} <span className="opacity-70">{item.date.replace(" a.C.", "")}</span>
                   </button>
                 ))}
               </div>
-              <div className="pointer-events-auto flex flex-wrap gap-1.5 rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur">
+              <div className="pointer-events-auto flex max-w-full flex-nowrap gap-1 overflow-x-auto rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur md:flex-wrap md:gap-1.5">
                 <button type="button" className={pill(mode === "orbita")} onClick={() => setMode("orbita")}>
-                  Vista aérea
+                  <span className="md:hidden">Aérea</span>
+                  <span className="hidden md:inline">Vista aérea</span>
                 </button>
                 <button type="button" className={pill(mode === "caminhar")} onClick={() => setMode("caminhar")}>
                   Caminhar
