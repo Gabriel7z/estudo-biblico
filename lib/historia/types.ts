@@ -19,6 +19,13 @@ export type Side =
   | "ptolomeus"
   | "arabes"
   | "lidia"
+  | "jesus"
+  | "roma"
+  | "antipas"
+  | "filipe"
+  | "judeia"
+  | "decapolis"
+  | "nabateus"
   | "neutro";
 
 /** Grau de certeza da identificação de um sítio antigo com um lugar moderno. */
@@ -117,6 +124,13 @@ export const sideColor: Record<Side, string> = {
   ptolomeus: "#c9a0dc",
   arabes: "#e3c46b",
   lidia: "#d8a0b4",
+  jesus: "#f6e3a8",
+  roma: "#d9705f",
+  antipas: "#8fd0b4",
+  filipe: "#9fc7e8",
+  judeia: "#e4c78a",
+  decapolis: "#b9a4e0",
+  nabateus: "#e3a86b",
   neutro: "#c9bfb2",
 };
 
@@ -140,6 +154,13 @@ export const sideLabel: Record<Side, string> = {
   ptolomeus: "Ptolomeus (rei do sul)",
   arabes: "Árabes",
   lidia: "Lídia",
+  jesus: "Jesus e os discípulos",
+  roma: "Roma",
+  antipas: "Herodes Antipas (Galileia e Pereia)",
+  filipe: "Filipe, o tetrarca",
+  judeia: "Judeia e Samaria (Arquelau, depois prefeitos romanos)",
+  decapolis: "Decápolis",
+  nabateus: "Nabateus",
   neutro: "Outros",
 };
 
