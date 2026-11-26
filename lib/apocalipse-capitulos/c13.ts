@@ -18,6 +18,7 @@ export const c13: Chapter = {
     { school: "Idealista", text: "As bestas são o Estado que se absolutiza e a religião/propaganda que lhe dá culto, presentes em toda época; a marca é a lealdade (pensamento e ação) a esse sistema, em oposição ao selo de Deus; 666 é o número da humanidade que fica aquém da perfeição (7) e se diviniza." },
   ],
   scenes: ["bestas"],
+  extras: [{ href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" }],
   sections: [
     { from: 1, title: "A besta que sobe do mar" },
     { from: 3, title: "A ferida mortal curada" },
@@ -86,7 +87,7 @@ export const c13: Chapter = {
         "Quarenta e dois meses: o mesmo período de 11:2 e 12:6, 14.",
       ],
       echoes: ["Dn 7:8, 20, 25", "Dn 11:36"],
-      symbols: ["besta-mar", "n3-e-meio"],
+      symbols: ["besta-mar", "n3-e-meio", "setenta-semanas"],
     },
     {
       v: 6,
@@ -175,7 +176,7 @@ export const c13: Chapter = {
       ],
       terms: [{ gr: "εἰκών", tr: "eikōn", mean: "imagem, estátua" }],
       echoes: ["Dn 3:1–7"],
-      symbols: ["besta-terra", "besta-mar", "imagem-da-besta", "espada", "habitantes-da-terra"],
+      symbols: ["besta-terra", "besta-mar", "imagem-da-besta", "espada", "habitantes-da-terra", "abominacao-desoladora"],
     },
     {
       v: 15,

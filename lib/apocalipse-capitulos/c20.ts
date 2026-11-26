@@ -20,7 +20,8 @@ export const c20: Chapter = {
     { school: "Preterista e idealista", text: "O preterista costuma combinar com a leitura amilenarista ou pós-milenarista: os capítulos 17–19 cumpriram-se no século I e o capítulo 20 descreve a era seguinte. O idealista vê no capítulo uma verdade permanente: o mal está limitado, os mártires estão vivos e reinam com Cristo, e o juízo final virá." },
   ],
   scenes: ["milenio"],
-  extras: [{ href: "/apocalipse#series", label: "Diagrama dos três setenários" }],
+  extras: [
+    { href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" },{ href: "/apocalipse#series", label: "Diagrama dos três setenários" }],
   sections: [
     { from: 1, title: "Satanás amarrado por mil anos" },
     { from: 4, title: "Tronos: a primeira ressurreição" },

@@ -40,7 +40,30 @@ export function chapterVerseHref(c: number, v?: number): string {
   return v ? `/apocalipse/capitulo/${c}#v${v}` : `/apocalipse/capitulo/${c}`;
 }
 
-export function linkifyRefs(text: string): RefSegment[] {
+/** Trechos estudados fora do Apocalipse: Daniel 9:24–27 e Mateus 24–25. */
+const MT_SECTIONS: [number, number, number][] = [
+  [24, 1, 3], [24, 4, 8], [24, 9, 14], [24, 15, 22], [24, 23, 28], [24, 29, 31],
+  [24, 32, 35], [24, 36, 44], [24, 45, 51], [25, 1, 13], [25, 14, 30], [25, 31, 46],
+];
+
+function otherBookHref(book: string, c: number, v: number): string | undefined {
+  if ((book === "Dn" || book === "Daniel") && c === 9 && v >= 24 && v <= 27) {
+    return `/apocalipse/tribulacao/daniel-9#dn-9-${v}`;
+  }
+  if (book === "Mt" || book === "Mateus") {
+    const section = MT_SECTIONS.find(([sc, from, to]) => sc === c && v >= from && v <= to);
+    if (section) return `/apocalipse/tribulacao/mateus-24#mt-${section[0]}-${section[1]}`;
+  }
+  return undefined;
+}
+
+export type LinkifyOptions = {
+  /** referência solta ("ver 3:14") conta como Apocalipse (padrão: sim) */
+  bareIsAp?: boolean;
+};
+
+export function linkifyRefs(text: string, options: LinkifyOptions = {}): RefSegment[] {
+  const bareIsAp = options.bareIsAp ?? true;
   const out: RefSegment[] = [];
   let last = 0;
   let lastRef = 0;
@@ -54,16 +77,17 @@ export function linkifyRefs(text: string): RefSegment[] {
     let book = bookBefore(gap);
     if (!book) {
       if (prevBook && /^\s*[;,]\s*(e\s+)?$/.test(gap)) book = prevBook;
-      else book = "Ap";
+      else book = bareIsAp ? "Ap" : "?";
     }
     prevBook = book;
     lastRef = start + m[0].length;
     const c = Number(m[1]);
     const v = Number(m[2]);
-    const valid = book === "Ap" && c >= 1 && c <= 22 && v >= 1 && v <= VERSE_COUNTS[c - 1];
-    if (!valid) continue;
+    const isAp = book === "Ap" && c >= 1 && c <= 22 && v >= 1 && v <= VERSE_COUNTS[c - 1];
+    const href = isAp ? chapterVerseHref(c, v) : otherBookHref(book, c, v);
+    if (!href) continue;
     if (start > last) out.push(text.slice(last, start));
-    out.push({ href: chapterVerseHref(c, v), label: m[0] });
+    out.push({ href, label: m[0] });
     last = start + m[0].length;
   }
   if (last < text.length) out.push(text.slice(last));

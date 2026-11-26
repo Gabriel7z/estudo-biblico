@@ -22,7 +22,7 @@ export default function SymbolsPage() {
         lede={`${symbols.length} símbolos do livro: números, cores, seres, objetos e lugares. Cada verbete diz o que o símbolo significa no Apocalipse, de onde ele vem no Antigo Testamento e em quais versículos aparece. Onde as escolas divergem, a divergência fica registrada.`}
       />
 
-      <ChapterNav className="mt-8" />
+      <ChapterNav active="simbolos" className="mt-8" />
 
       <nav aria-label="Grupos de símbolos" className="mt-8 flex flex-wrap gap-2 font-sans text-sm">
         {symbolGroups.map((group) => (
@@ -73,7 +73,7 @@ export default function SymbolsPage() {
                         <span className="mr-2 text-[11px] tracking-[0.14em] text-gold uppercase">
                           Fontes
                         </span>
-                        {entry.refs.join(" · ")}
+                        <RefText text={entry.refs.join(" · ")} bareIsAp={false} />
                       </p>
                     ) : null}
                     {places.length ? (
@@ -93,6 +93,14 @@ export default function SymbolsPage() {
                           ))}
                         </span>
                       </div>
+                    ) : null}
+                    {entry.more ? (
+                      <Link
+                        href={entry.more.href}
+                        className="mt-4 inline-block font-sans text-sm text-gold hover:underline"
+                      >
+                        {entry.more.label} →
+                      </Link>
                     ) : null}
                   </article>
                 );

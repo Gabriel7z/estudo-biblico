@@ -6,7 +6,15 @@ import { cn } from "cn";
  * Barra de capítulos fixa no topo (abaixo do cabeçalho do site).
  * Só links renderizados no servidor: funciona sem JavaScript e rola na horizontal no celular.
  */
-export function ChapterNav({ current, className }: { current?: number; className?: string }) {
+export function ChapterNav({
+  current,
+  active,
+  className,
+}: {
+  current?: number;
+  active?: "tribulacao" | "simbolos";
+  className?: string;
+}) {
   return (
     <nav
       aria-label="Capítulos do Apocalipse"
@@ -28,7 +36,7 @@ export function ChapterNav({ current, className }: { current?: number; className
             href={`/apocalipse/capitulo/${n}`}
             aria-current={n === current ? "page" : undefined}
             className={cn(
-              "grid h-8 min-w-8 shrink-0 place-items-center rounded-full px-1.5 font-sans text-sm tabular-nums",
+              "grid h-8 min-w-7 shrink-0 place-items-center rounded-full px-1 font-sans text-sm tabular-nums",
               n === current
                 ? "bg-gold font-semibold text-[#1a140c]"
                 : "text-muted-foreground hover:bg-white/5 hover:text-foreground",
@@ -38,8 +46,26 @@ export function ChapterNav({ current, className }: { current?: number; className
           </Link>
         ))}
         <Link
+          href="/apocalipse/tribulacao"
+          aria-current={active === "tribulacao" ? "page" : undefined}
+          className={cn(
+            "ml-1 shrink-0 rounded-full border px-3 py-1.5 font-sans text-[11px] tracking-[0.16em] uppercase",
+            active === "tribulacao"
+              ? "border-gold bg-gold text-[#1a140c]"
+              : "border-gold/30 text-gold hover:border-gold",
+          )}
+        >
+          Tribulação
+        </Link>
+        <Link
           href="/apocalipse/simbolos"
-          className="ml-1 shrink-0 rounded-full border border-gold/30 px-3 py-1.5 font-sans text-[11px] tracking-[0.16em] text-gold uppercase hover:border-gold"
+          aria-current={active === "simbolos" ? "page" : undefined}
+          className={cn(
+            "ml-1 shrink-0 rounded-full border px-3 py-1.5 font-sans text-[11px] tracking-[0.16em] uppercase",
+            active === "simbolos"
+              ? "border-gold bg-gold text-[#1a140c]"
+              : "border-gold/30 text-gold hover:border-gold",
+          )}
         >
           Símbolos
         </Link>
