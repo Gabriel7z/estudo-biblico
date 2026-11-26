@@ -6,6 +6,7 @@ import { ChurchesMap } from "@/components/apocalipse/churches-map";
 import { JerusalemStage } from "@/components/apocalipse/jerusalem-stage";
 import { VisionArt } from "@/components/apocalipse/vision-art";
 import { getVision, visions } from "@/lib/apocalipse";
+import { chapters } from "@/lib/apocalipse-capitulos";
 
 export const dynamicParams = false;
 
@@ -38,6 +39,7 @@ export default async function VisionPage({
   const index = visions.findIndex((item) => item.slug === vision.slug);
   const previous = visions[index - 1];
   const next = visions[index + 1];
+  const studyChapters = chapters.filter((chapter) => chapter.scenes.includes(vision.slug)).map((c) => c.n);
 
   return (
     <article className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
@@ -83,6 +85,26 @@ export default async function VisionPage({
       </div>
 
       {vision.slug === "jerusalem" ? <JerusalemStage /> : null}
+
+      {studyChapters.length ? (
+        <section className="folio mt-10 flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-muted-foreground">
+            <span className="kicker mr-2">Estudo</span>
+            Cada versículo desta cena, com símbolos, termos gregos e ecos do Antigo Testamento.
+          </p>
+          <div className="flex shrink-0 flex-wrap gap-2 font-sans text-sm">
+            {studyChapters.map((n) => (
+              <Link
+                key={n}
+                href={`/apocalipse/capitulo/${n}`}
+                className="rounded-full border border-gold/40 px-4 py-2 text-gold hover:border-gold"
+              >
+                Apocalipse {n} →
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <nav className="mt-12 flex items-center justify-between gap-4 border-t border-white/10 pt-6 font-sans text-sm">
         {previous ? (

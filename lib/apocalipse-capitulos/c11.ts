@@ -1,0 +1,234 @@
+import type { Chapter } from "./types";
+
+export const c11: Chapter = {
+  n: 11,
+  title: "O templo medido, as duas testemunhas e a sétima trombeta",
+  parts: ["conflito", "trombetas"],
+  summary:
+    "João mede o templo, o altar e os adoradores; o pátio de fora é entregue às nações, que pisarão a cidade santa por quarenta e dois meses. Duas testemunhas profetizam por 1.260 dias, com poderes de Elias e de Moisés; a besta do abismo as mata, e os corpos ficam três dias e meio na praça da grande cidade, \"onde também o Senhor deles foi crucificado\". Deus as ressuscita e elas sobem ao céu. A sétima trombeta proclama: o reino do mundo passou a ser do nosso Senhor e do seu Cristo.",
+  context: [
+    "Medir é proteger e reivindicar posse (Ez 40–42: um homem mede o templo futuro; Zc 2:1–5: um homem mede Jerusalém, que Deus protegerá como muro de fogo).",
+    "Os números vêm de Daniel: \"um tempo, tempos e metade de um tempo\" (Dn 7:25; 12:7), três anos e meio, é o tempo em que o poder perseguidor oprime os santos. No livro aparecem as três formas: 42 meses (11:2; 13:5), 1.260 dias (11:3; 12:6) e \"um tempo, tempos e metade\" (12:14). Historicamente, lembra a perseguição de Antíoco IV Epifânio e os cerca de três anos de profanação do templo (167–164 a.C.), a que Daniel alude, e a pregação de Elias durante a seca, que o Novo Testamento conta como três anos e meio (Lc 4:25; Tg 5:17).",
+    "A data do livro pesa aqui: se o livro é anterior a 70 d.C., o templo de Jerusalém ainda estava de pé; se é de c. 95, o templo já tinha sido destruído e a medição é simbólica (ou uma profecia de um templo futuro).",
+  ],
+  readings: [
+    { school: "Preterista", text: "O templo é o de Jerusalém antes de 70 d.C.; os 42 meses correspondem aproximadamente à guerra judaica (de 66/67 a 70); a grande cidade é Jerusalém." },
+    { school: "Historicista", text: "Os 1.260 dias são 1.260 anos de domínio papal (por exemplo, de 538 a 1798, data da prisão do papa Pio VI pelas tropas francesas); as duas testemunhas, o Antigo e o Novo Testamento, ou testemunhas fiéis como os valdenses; a morte e ressurreição, a supressão da Bíblia na Revolução Francesa e sua restauração." },
+    { school: "Futurista", text: "Um templo reconstruído em Jerusalém no futuro; duas testemunhas individuais e literais (muitas vezes Moisés e Elias, ou Enoque e Elias, que não morreram) profetizando durante a primeira ou a segunda metade de uma tribulação de sete anos." },
+    { school: "Idealista e amilenarista", text: "O templo medido é a igreja protegida espiritualmente, enquanto sofre externamente; as duas testemunhas são a igreja em sua função profética (dois, número do testemunho válido em Dt 19:15; dois candelabros, isto é, igrejas: 1:20), durante todo o tempo entre as duas vindas." },
+  ],
+  scenes: ["testemunhas"],
+  sections: [
+    { from: 1, title: "O templo medido" },
+    { from: 3, title: "As duas testemunhas" },
+    { from: 7, title: "Morte e ressurreição das testemunhas" },
+    { from: 14, title: "Passou o segundo ai" },
+    { from: 15, title: "A sétima trombeta" },
+  ],
+  verses: [
+    {
+      v: 1,
+      text: "Deram-me uma cana semelhante a uma vara, e me disseram: Levanta-te, mede o templo de Deus, o altar e os que nele adoram.",
+      notes: [
+        "A cana (kalamos) era uma vara de medir de cerca de seis côvados, uns 3 m (Ez 40:5). Volta em 21:15–16, para medir a nova Jerusalém.",
+        "\"Templo\" é naos, o santuário propriamente dito (santo lugar e santo dos santos), não todo o complexo (hieron).",
+        "Medir os adoradores mostra que o templo representa um povo, não só um edifício (1Co 3:16; Ef 2:21; 1Pe 2:5).",
+      ],
+      terms: [
+        { gr: "κάλαμος", tr: "kalamos", mean: "cana, vara de medir" },
+        { gr: "ναός", tr: "naos", mean: "santuário (a casa de Deus)" },
+      ],
+      echoes: ["Ez 40:3–5", "Zc 2:1–5", "1Co 3:16"],
+      symbols: ["templo", "altar"],
+    },
+    {
+      v: 2,
+      text: "Mas deixa de fora o pátio que está fora do templo e não o meças, porque foi dado às nações, e elas pisarão a cidade santa por quarenta e dois meses.",
+      notes: [
+        "No templo de Herodes, o pátio dos gentios era a parte externa, aberta a não judeus.",
+        "\"Pisarão a cidade santa\": Jesus diz que Jerusalém será \"pisada pelos gentios até que se completem os tempos dos gentios\" (Lc 21:24). Daniel 8:13 fala do santuário \"pisado\". Zacarias 12:3 (nos Setenta) também.",
+        "Quarenta e dois meses = três anos e meio (ver o contexto). O mesmo período é o de autoridade da besta (13:5).",
+      ],
+      echoes: ["Lc 21:24", "Dn 8:13", "Dn 7:25", "Is 63:18"],
+      symbols: ["n3-e-meio", "nacoes", "templo"],
+    },
+    {
+      v: 3,
+      text: "Darei poder às minhas duas testemunhas, e elas profetizarão por mil duzentos e sessenta dias, vestidas de pano de saco.",
+      notes: [
+        "Duas testemunhas: a lei exigia duas testemunhas para validar um testemunho (Dt 19:15). Jesus enviou os discípulos dois a dois (Lc 10:1).",
+        "1.260 dias = 42 meses de 30 dias, isto é, três anos e meio: o mesmo tempo em que a cidade é pisada. Testemunho e opressão são simultâneos.",
+        "Pano de saco: veste de luto e de arrependimento, a roupa dos profetas que chamam à conversão (Jn 3:5–8; Is 20:2). Elias usava roupa de pelos (2Rs 1:8).",
+      ],
+      terms: [{ gr: "μάρτυς", tr: "martys", mean: "testemunha (daí mártir)" }],
+      echoes: ["Dt 19:15", "Jn 3:5–8", "2Rs 1:8"],
+      symbols: ["duas-testemunhas", "n3-e-meio"],
+    },
+    {
+      v: 4,
+      text: "Estas são as duas oliveiras e os dois candelabros que estão diante do Senhor da terra.",
+      notes: [
+        "Zacarias 4:2–14: um candelabro de ouro e duas oliveiras que o alimentam de azeite. O anjo explica que as oliveiras são \"os dois ungidos que estão diante do Senhor de toda a terra\", isto é, Zorobabel (o governador, da linhagem real) e Josué (o sumo sacerdote). As testemunhas têm assim função régia e sacerdotal (1:6).",
+        "João transforma o candelabro único de Zacarias em dois candelabros. Como em 1:20 candelabros são igrejas, muitos veem nas testemunhas a igreja que testemunha; outros, dois indivíduos.",
+      ],
+      echoes: ["Zc 4:2–3, 11–14"],
+      symbols: ["duas-testemunhas", "candelabros"],
+    },
+    {
+      v: 5,
+      text: "Se alguém quiser fazer-lhes mal, sai fogo da boca delas e devora os seus inimigos; se alguém quiser fazer-lhes mal, assim deve morrer.",
+      notes: [
+        "Elias fez descer fogo do céu sobre os soldados enviados para prendê-lo (2Rs 1:10–12).",
+        "Jeremias 5:14: \"farei das minhas palavras na tua boca um fogo\". O fogo da boca indica que o poder está na palavra profética.",
+        "Durante o tempo do seu testemunho, são invencíveis.",
+      ],
+      echoes: ["2Rs 1:10–12", "Jr 5:14"],
+      symbols: ["duas-testemunhas", "fogo"],
+    },
+    {
+      v: 6,
+      text: "Elas têm poder de fechar o céu, para que não chova durante os dias da sua profecia, e têm poder sobre as águas para transformá-las em sangue e para ferir a terra com toda sorte de pragas, quantas vezes quiserem.",
+      notes: [
+        "Fechar o céu é o sinal de Elias (1Rs 17:1; Tg 5:17: três anos e meio sem chuva).",
+        "Águas em sangue e pragas são os sinais de Moisés no Egito (Êx 7:17–20).",
+        "Moisés e Elias aparecem juntos com Jesus na transfiguração (Mt 17:3) e no fim de Malaquias (Ml 4:4–6). Representam a Lei e os Profetas.",
+      ],
+      echoes: ["1Rs 17:1", "Tg 5:17", "Êx 7:17–20", "Ml 4:4–6", "Mt 17:3"],
+      symbols: ["duas-testemunhas", "sangue"],
+    },
+    {
+      v: 7,
+      text: "Quando tiverem terminado o seu testemunho, a besta que sobe do abismo fará guerra contra elas, as vencerá e as matará.",
+      notes: [
+        "Só quando o testemunho acaba elas podem ser mortas.",
+        "Primeira menção da besta, com artigo, como se os ouvintes já a conhecessem; será descrita em 13:1 e 17:8. Sobe do abismo (9:1–2).",
+        "\"Fará guerra… vencerá\" vem de Daniel 7:21: o chifre pequeno \"fazia guerra contra os santos e prevalecia contra eles\". Repete-se em 13:7.",
+      ],
+      echoes: ["Dn 7:3, 7, 21"],
+      symbols: ["besta-mar", "abismo", "duas-testemunhas"],
+    },
+    {
+      v: 8,
+      text: "Os seus cadáveres ficarão na praça da grande cidade, que espiritualmente se chama Sodoma e Egito, onde também o Senhor deles foi crucificado.",
+      notes: [
+        "Deixar corpos sem sepultura era a maior desonra no mundo antigo (Sl 79:2–3; Tobias 1–2).",
+        "\"Espiritualmente\" (pneumatikōs): o próprio texto avisa que os nomes são simbólicos. Sodoma é a cidade da maldade e da violência contra hóspedes (Gn 19); Isaías 1:9–10 chama Jerusalém de Sodoma. Egito é a terra da opressão e da escravidão.",
+        "\"Onde também o Senhor deles foi crucificado\" aponta para Jerusalém. Mas \"a grande cidade\" no resto do livro é Babilônia/Roma (16:19; 17:18; 18:10). Por isso muitos entendem que \"a grande cidade\" é o mundo rebelde em todas as suas formas, que inclui a Jerusalém que crucificou Jesus e a Roma que o executou. Preteristas e futuristas costumam ler Jerusalém literalmente.",
+      ],
+      terms: [{ gr: "πνευματικῶς", tr: "pneumatikōs", mean: "espiritualmente, em sentido figurado" }],
+      echoes: ["Is 1:9–10", "Ez 16:46–49", "Gn 19"],
+      symbols: ["sodoma-egito", "duas-testemunhas", "babilonia"],
+    },
+    {
+      v: 9,
+      text: "Gente de todos os povos, tribos, línguas e nações verá os seus cadáveres por três dias e meio, e não permitirá que sejam postos em sepulcro.",
+      notes: [
+        "Três dias e meio: um tempo curto, que espelha os três anos e meio do testemunho (um dia para cada ano) e lembra os três dias de Jesus no túmulo.",
+        "O mundo inteiro assiste: a lista dos quatro (5:9).",
+      ],
+      echoes: ["Sl 79:2–3"],
+      symbols: ["n3-e-meio", "nacoes"],
+    },
+    {
+      v: 10,
+      text: "Os que habitam sobre a terra se alegrarão por causa delas, farão festa e trocarão presentes, porque esses dois profetas atormentaram os que habitam sobre a terra.",
+      notes: [
+        "Uma festa ao contrário. Em Ester 9:19, 22, os judeus trocam presentes celebrando a libertação dos inimigos (Purim). Aqui são os inimigos que celebram.",
+        "\"Atormentaram\": a palavra profética incomoda (1Rs 18:17, Acabe chama Elias de \"perturbador de Israel\").",
+      ],
+      echoes: ["Et 9:19, 22", "1Rs 18:17"],
+      symbols: ["habitantes-da-terra"],
+    },
+    {
+      v: 11,
+      text: "Depois dos três dias e meio, um espírito de vida vindo de Deus entrou neles, e eles se puseram de pé, e grande temor caiu sobre os que os viram.",
+      notes: [
+        "Cita Ezequiel 37:5, 10, o vale dos ossos secos: \"o espírito entrou neles, e viveram, e se puseram de pé\".",
+        "Ressurreição como a de Cristo: o destino das testemunhas segue o do seu Senhor (morte, exposição, ressurreição, ascensão).",
+      ],
+      echoes: ["Ez 37:5, 10", "Gn 2:7"],
+      symbols: ["duas-testemunhas", "n3-e-meio"],
+    },
+    {
+      v: 12,
+      text: "Ouviram uma grande voz do céu que lhes dizia: Subi aqui. E subiram ao céu numa nuvem, e os seus inimigos os viram.",
+      notes: [
+        "\"Subi aqui\" repete o chamado de João em 4:1.",
+        "A subida numa nuvem lembra a ascensão de Elias (2Rs 2:11) e a de Jesus (At 1:9).",
+        "Os inimigos veem: vindicação pública. Futuristas pré-tribulacionistas distinguem esse evento do arrebatamento da igreja; pós-tribulacionistas e outros às vezes o ligam a ele (1Ts 4:17).",
+      ],
+      echoes: ["2Rs 2:11", "At 1:9", "1Ts 4:17"],
+      symbols: ["duas-testemunhas", "nuvens"],
+    },
+    {
+      v: 13,
+      text: "Naquela hora houve um grande terremoto, e caiu a décima parte da cidade. No terremoto morreram sete mil pessoas, e os demais ficaram aterrorizados e deram glória ao Deus do céu.",
+      notes: [
+        "A décima parte e sete mil: juízo limitado. Em 1 Reis 19:18, Deus preservou sete mil fiéis que não se dobraram a Baal; aqui sete mil morrem e o restante (nove décimos) dá glória a Deus. É uma inversão.",
+        "\"Dar glória ao Deus do céu\" costuma indicar arrependimento genuíno no livro (14:7; 16:9 mostra o oposto). Alguns intérpretes leem como mero reconhecimento forçado; muitos veem aqui a única cena de conversão em massa no livro, resultado do testemunho das testemunhas, ao contrário das pragas (9:20–21).",
+        "\"Pessoas\" é literalmente \"nomes de homens\" (onomata anthrōpōn).",
+      ],
+      echoes: ["1Rs 19:18", "Js 7:19", "Dn 2:18–19"],
+      symbols: ["terremoto", "n7", "n1000", "n10"],
+    },
+    {
+      v: 14,
+      text: "Passou o segundo ai. Eis que o terceiro ai vem depressa.",
+      notes: ["O segundo ai abrangeu a sexta trombeta e o interlúdio dos capítulos 10–11. O terceiro ai não é anunciado de forma explícita depois; muitos o identificam com a sétima trombeta e seus desdobramentos (a ira do dragão em 12:12, que diz \"ai da terra e do mar\")."],
+      symbols: ["n3"],
+    },
+    {
+      v: 15,
+      text: "O sétimo anjo tocou a trombeta, e houve no céu grandes vozes que diziam: O reino do mundo passou a ser do nosso Senhor e do seu Cristo, e ele reinará para todo o sempre.",
+      notes: [
+        "Cumpre-se o anúncio de 10:7. A sétima trombeta não descreve uma praga, mas o resultado final: o reino.",
+        "\"Passou a ser\" (egeneto, aoristo): fala do futuro como já realizado.",
+        "\"O seu Cristo\" (o seu Ungido) vem do Salmo 2:2 (\"contra o Senhor e contra o seu Ungido\"). \"Reinará para sempre\" ecoa Êxodo 15:18 (o cântico do mar), Daniel 2:44 e 7:14, 27.",
+        "O \"Aleluia\" do Messias de Händel cita este versículo (\"The kingdom of this world is become…\") e 19:6, 16.",
+      ],
+      terms: [{ gr: "Χριστός", tr: "Christos", mean: "Ungido, Messias" }],
+      echoes: ["Sl 2:2", "Êx 15:18", "Dn 2:44", "Dn 7:14, 27", "Zc 14:9"],
+      symbols: ["trombetas", "n7"],
+    },
+    {
+      v: 16,
+      text: "Os vinte e quatro anciãos que estão sentados nos seus tronos diante de Deus prostraram-se sobre o rosto e adoraram a Deus,",
+      notes: ["A última aparição dos anciãos em adoração antes de 19:4."],
+      symbols: ["anciaos", "n24"],
+    },
+    {
+      v: 17,
+      text: "dizendo: Graças te damos, Senhor Deus Todo-Poderoso, que és e que eras, porque assumiste o teu grande poder e passaste a reinar.",
+      notes: [
+        "O título de 1:8 e 4:8 aparece agora sem \"e que vem\": ele já veio. Algumas cópias tardias acrescentam \"e que hás de vir\"; os melhores manuscritos não têm.",
+        "\"Passaste a reinar\" (ebasileusas, aoristo ingressivo): começaste a reinar abertamente. O Salmo 99:1 diz \"o Senhor reina; tremam os povos\".",
+      ],
+      echoes: ["Sl 99:1", "Sl 97:1"],
+      symbols: ["alfa-omega"],
+    },
+    {
+      v: 18,
+      text: "As nações se enfureceram, mas chegou a tua ira e o tempo de julgar os mortos, de dar a recompensa aos teus servos, os profetas, aos santos e aos que temem o teu nome, pequenos e grandes, e de destruir os que destroem a terra.",
+      notes: [
+        "O versículo resume o resto do livro: a fúria das nações (cap. 12–13; 16:14; 20:8), a ira de Deus (cap. 14–16), o julgamento dos mortos (20:11–15), a recompensa dos servos (cap. 21–22) e a destruição dos destruidores (Babilônia, as bestas, o dragão).",
+        "\"As nações se enfureceram\" (ōrgisthēsan): Salmo 2:1 e 99:1 (Setenta). A ira das nações encontra a ira (orgē) de Deus.",
+        "\"Pequenos e grandes\": Salmo 115:13.",
+        "\"Destruir os que destroem a terra\" (diaphtheirai tous diaphtheirontas): jogo de palavras; a pena corresponde ao crime. Jeremias 51:25 chama Babilônia de \"monte destruidor que destrói toda a terra\".",
+      ],
+      terms: [{ gr: "διαφθείρω", tr: "diaphtheirō", mean: "destruir, corromper" }],
+      echoes: ["Sl 2:1, 5", "Sl 115:13", "Jr 51:25", "Dn 7:10"],
+      symbols: ["nacoes"],
+    },
+    {
+      v: 19,
+      text: "Abriu-se o templo de Deus que está no céu, e apareceu no seu templo a arca da sua aliança. E houve relâmpagos, vozes, trovões, um terremoto e grande granizo.",
+      notes: [
+        "A arca da aliança desapareceu com a destruição de Jerusalém em 586 a.C.; 2 Macabeus 2:4–8 conta a lenda de que Jeremias a escondeu numa caverna do monte Nebo até que Deus reunisse o seu povo. Aqui ela aparece no céu: a aliança de Deus continua.",
+        "A arca ficava no santo dos santos, inacessível. O templo celeste aberto mostra acesso.",
+        "A fórmula de 4:5 e 8:5 cresce mais uma vez, agora com granizo (ver 16:21). Muitos veem aqui o fim de um grande ciclo e o começo de outro (cap. 12–22).",
+      ],
+      echoes: ["2Mc 2:4–8", "Êx 25:10–22", "Êx 19:16", "Hb 9:4"],
+      symbols: ["templo", "arca", "trovoes", "terremoto"],
+    },
+  ],
+};
