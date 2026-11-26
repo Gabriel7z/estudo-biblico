@@ -547,8 +547,8 @@ export const jerusalemHerodes: CityDef = {
     { ring: BEZETA, count: 60, size: [7, 11], height: [3.5, 6], colors: ["#cdbd99", "#ab9a78"], seed: 304 },
   ],
   trees: [
-    { kind: "oliveira", count: 1100, area: [380, 1350, -1250, 400], seed: 41 },
-    { kind: "oliveira", count: 70, area: [470, 560, -650, -555], seed: 42 },
+    { kind: "oliveira", count: 1100, area: [380, 1350, -1250, 400], seed: 41, avoid: [rect(486, -624, 536, -574)] },
+    { kind: "oliveira", count: 70, area: [470, 560, -650, -555], seed: 42, avoid: [rect(486, -624, 536, -574)] },
     { kind: "oliveira", count: 260, area: [-950, -660, -1250, 800], seed: 43 },
     { kind: "oliveira", count: 30, area: [-450, -380, -520, -460], seed: 44, avoid: [rect(-447, -497, -387, -483)] },
     { kind: "palmeira", count: 26, area: [-600, -490, -150, -40], seed: 45 },

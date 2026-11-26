@@ -235,7 +235,7 @@ export function CityStage({ slug, fallback }: { slug: string; fallback: ReactNod
               </div>
             </div>
             {city.views?.length && mode === "orbita" ? (
-              <div className="pointer-events-auto absolute top-14 left-3 z-20 flex flex-wrap gap-1.5 rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur">
+              <div className="pointer-events-auto absolute right-3 bottom-16 left-3 z-20 flex max-w-max flex-nowrap gap-1.5 overflow-x-auto rounded-full border md:right-auto md:bottom-auto md:top-14 md:flex-wrap [&>button]:shrink-0 [&>button]:whitespace-nowrap border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur">
                 {[city.name, ...city.views.map((item) => item.label)].map((label, i) => (
                   <button key={label} type="button" className={pill(view === i)} onClick={() => setView(i)}>
                     {i === 0 ? "Cidade" : label}
