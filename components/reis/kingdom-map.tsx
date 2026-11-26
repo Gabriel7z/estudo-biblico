@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import Link from "next/link";
 
+import { modelForSite } from "@/lib/historia/maquetes/links";
 import { reisPlaces, reisScenes } from "@/lib/reis";
 
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -161,9 +162,9 @@ export function KingdomMap({ focus, compact = false }: { focus?: string; compact
         <p className="font-sans text-[11px] tracking-[0.18em] text-gold uppercase">{place.site}</p>
         <h3 className="mt-2 font-heading text-3xl">{place.name}</h3>
         <p className="mt-3 leading-relaxed text-muted-foreground">{place.note}</p>
-        {place.id === "jerusalem" ? (
+        {modelForSite[place.id] ? (
           <Link
-            href="/historia/jerusalem#entrar"
+            href={modelForSite[place.id].href}
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-gold/50 px-3 py-1.5 font-sans text-sm text-gold hover:bg-gold/10"
           >
             Entrar na maquete 3D →

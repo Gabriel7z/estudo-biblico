@@ -549,6 +549,10 @@ export function CityModel({ era, mode, selected, onSelect, input, resetKey }: Mo
       {era === "davi" ? null : <Temple />}
       <Buildings era={era} />
       <Water era={era} />
+      {/* O primeiro rótulo drei Html montado fica vazio; este rótulo oculto absorve o problema. */}
+      <Html position={[0, -500, 0]} zIndexRange={[0, 0]} style={{ display: "none" }}>
+        <span aria-hidden />
+      </Html>
       {visible.map((spot) => (
         <HotspotMarker key={spot.id} spot={spot} active={spot.id === selected} onSelect={onSelect} walk={walk} />
       ))}

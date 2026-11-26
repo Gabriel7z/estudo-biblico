@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Map as MapLibreMap } from "maplibre-gl";
 
 import { atlasSrc } from "@/lib/imagery";
+import { modelForSite } from "@/lib/historia/maquetes/links";
 import { certaintyLabel, kindLabel, sideColor, type Area, type Certainty, type LngLat, type MapLabel, type Side, type StopKind } from "@/lib/historia/types";
 import { cn } from "cn";
 
@@ -408,12 +409,12 @@ export function EpisodeMap({ stops, routes, areas, labels, bounds, poster, title
             </p>
           ) : null}
           <p className="mt-3 font-sans text-xs tracking-[0.12em] text-gold uppercase">{stop.refs}</p>
-          {stop.siteId === "jerusalem" ? (
+          {modelForSite[stop.siteId] ? (
             <Link
-              href="/historia/jerusalem#entrar"
+              href={modelForSite[stop.siteId].href}
               className="mt-4 inline-flex w-fit rounded-full bg-gold px-4 py-2 font-sans text-sm font-semibold text-[#1a140c]"
             >
-              Entrar na maquete 3D de Jerusalém
+              {modelForSite[stop.siteId].label}
             </Link>
           ) : null}
           <ol className="mt-5 flex flex-wrap gap-1.5 border-t border-white/10 pt-4">

@@ -14,6 +14,11 @@ export type Side =
   | "amom"
   | "persia"
   | "grecia"
+  | "media"
+  | "seleucidas"
+  | "ptolomeus"
+  | "arabes"
+  | "lidia"
   | "neutro";
 
 /** Grau de certeza da identificação de um sítio antigo com um lugar moderno. */
@@ -64,7 +69,7 @@ export type MapLabel = {
   kind?: "regiao" | "mar" | "rio" | "povo";
 };
 
-export type HistoriaBook = "1 Samuel" | "2 Samuel" | "1 Reis" | "2 Reis";
+export type HistoriaBook = "1 Samuel" | "2 Samuel" | "1 Reis" | "2 Reis" | "Isaías" | "Jeremias" | "Ezequiel" | "Daniel";
 
 export type Episode = {
   slug: string;
@@ -107,6 +112,11 @@ export const sideColor: Record<Side, string> = {
   amom: "#a7b48a",
   persia: "#9fd1a0",
   grecia: "#a9b8f0",
+  media: "#c6d98f",
+  seleucidas: "#f2b36b",
+  ptolomeus: "#c9a0dc",
+  arabes: "#e3c46b",
+  lidia: "#d8a0b4",
   neutro: "#c9bfb2",
 };
 
@@ -124,7 +134,12 @@ export const sideLabel: Record<Side, string> = {
   edom: "Edom",
   amom: "Amom",
   persia: "Pérsia",
-  grecia: "Gregos",
+  grecia: "Macedônios e gregos",
+  media: "Medos",
+  seleucidas: "Selêucidas (rei do norte)",
+  ptolomeus: "Ptolomeus (rei do sul)",
+  arabes: "Árabes",
+  lidia: "Lídia",
   neutro: "Outros",
 };
 
