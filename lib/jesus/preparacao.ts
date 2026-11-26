@@ -14,6 +14,8 @@ const baseLabels = [
 export const preparacaoEpisodes: JesusEpisode[] = [
   {
     slug: "batismo-no-jordao",
+    image: "/historia/jesus/batismo-no-jordao.webp",
+    imageAlt: "João, vestido de pelos de camelo, está no Jordão com Jesus, que sobe da água olhando para o céu aberto, de onde desce uma pomba; o povo assiste da margem (Mc 1:9–11; Lc 3:21–22).",
     part: "preparacao",
     title: "João Batista e o batismo de Jesus no Jordão",
     ref: "Mt 3; Mc 1:1–11; Lc 3:1–22; Jo 1:19–34",
@@ -147,6 +149,8 @@ export const preparacaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "mulher-samaritana",
+    image: "/historia/jesus/mulher-samaritana.webp",
+    imageAlt: "Ao meio-dia, Jesus, cansado, sentado na borda do poço de Jacó, fala com a samaritana que traz um cântaro; ao fundo, o Gerizim e a aldeia de Sicar entre os campos (Jo 4:5–15).",
     part: "preparacao",
     title: "A mulher samaritana no poço de Jacó",
     ref: "Jo 4:1–54",

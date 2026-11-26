@@ -104,6 +104,8 @@ export const galileiaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "sermao-da-montanha",
+    image: "/historia/jesus/sermao-da-montanha.webp",
+    imageAlt: "Jesus, sentado numa rocha da encosta, ensina os discípulos e a multidão; abaixo, o Mar da Galileia (Mt 5:1–2).",
     part: "galileia",
     title: "O Sermão da Montanha",
     ref: "Mt 5–7; Lc 6:17–49",
@@ -131,6 +133,8 @@ export const galileiaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "tempestade-e-gadara",
+    image: "/historia/jesus/tempestade-e-gadara.webp",
+    imageAlt: "Num barco de pesca galileu inundado pelas ondas, os discípulos acordam Jesus, que dorme na popa sobre um travesseiro (Mc 4:37–38).",
     part: "galileia",
     title: "A tempestade acalmada e o endemoninhado na terra dos gadarenos",
     ref: "Mc 4:35–5:20; Mt 8:23–34; Lc 8:22–39",
@@ -195,6 +199,8 @@ export const galileiaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "multiplicacao-dos-paes",
+    image: "/historia/jesus/multiplicacao-dos-paes.webp",
+    imageAlt: "Na relva verde junto ao lago, Jesus olha para o céu com os pães de cevada; um menino traz dois peixes, e os discípulos levam cestos às turmas sentadas (Mc 6:39–43; Jo 6:9–11).",
     part: "galileia",
     title: "A morte de João Batista e a multiplicação dos pães",
     ref: "Mc 6:14–44; Mt 14:1–21; Lc 9:7–17; Jo 6:1–15",
@@ -234,6 +240,8 @@ export const galileiaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "andando-sobre-o-mar",
+    image: "/historia/jesus/andando-sobre-o-mar.webp",
+    imageAlt: "De madrugada, com o vento forte, Jesus, de pé sobre as ondas, segura a mão de Pedro, que afunda; os discípulos olham do barco (Mt 14:25–31).",
     part: "galileia",
     title: "Jesus anda sobre o mar; o pão da vida em Cafarnaúm",
     ref: "Mt 14:22–36; Mc 6:45–56; Jo 6:16–71",
