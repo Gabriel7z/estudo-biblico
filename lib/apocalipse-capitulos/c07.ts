@@ -18,6 +18,7 @@ export const c07: Chapter = {
     { school: "Idealista e amilenarista", text: "João ouve um número (144.000, o Israel organizado como exército, 12 × 12 × 1.000) e vê uma multidão incontável: como em 5:5–6 (ouve Leão, vê Cordeiro), é a mesma realidade, o povo de Deus completo, judeus e gentios." },
   ],
   scenes: ["multidao"],
+  extras: [{ href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" }],
   sections: [
     { from: 1, title: "Os quatro ventos retidos" },
     { from: 4, title: "Os 144.000 selados" },

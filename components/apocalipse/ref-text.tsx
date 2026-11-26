@@ -3,8 +3,8 @@ import Link from "next/link";
 import { linkifyRefs } from "@/lib/apocalipse-capitulos/refs";
 
 /** Texto com as referências ao Apocalipse transformadas em links para o versículo. */
-export function RefText({ text }: { text: string }) {
-  const segments = linkifyRefs(text);
+export function RefText({ text, bareIsAp = true }: { text: string; bareIsAp?: boolean }) {
+  const segments = linkifyRefs(text, { bareIsAp });
   return (
     <>
       {segments.map((segment, index) =>

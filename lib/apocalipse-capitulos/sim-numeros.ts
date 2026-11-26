@@ -15,6 +15,7 @@ export const numeros: SymbolEntry[] = [
     meaning: "Metade de sete: um tempo limitado, interrompido, de perseguição e provação. Aparece em três formas: 42 meses (11:2; 13:5), 1.260 dias (11:3; 12:6) e \"um tempo, tempos e metade de um tempo\" (12:14), e ainda nos três dias e meio dos corpos das testemunhas (11:9, 11). Vem de Daniel (7:25; 12:7), onde se refere à perseguição de Antíoco IV Epífanes (167–164 a.C.).",
     note: "Futuristas costumam ler como a metade de uma \"semana\" de sete anos (Dn 9:27) no fim dos tempos; historicistas, como 1.260 anos (um dia por ano); preteristas, como os cerca de três anos e meio da guerra judaica (66–70 d.C.) ou da perseguição de Nero; idealistas, como toda a era da igreja.",
     refs: ["Dn 7:25", "Dn 9:27", "Dn 12:7", "1Rs 17:1", "Lc 4:25", "Tg 5:17"],
+    more: { href: "/apocalipse/tribulacao/daniel-9#numeros", label: "A metade da semana em Daniel" },
   },
   {
     id: "n4",

@@ -18,6 +18,7 @@ export const c12: Chapter = {
     { school: "Idealista", text: "Uma visão de toda a história da salvação: o nascimento, a ascensão e a vitória de Cristo derrotam Satanás, que, já vencido, persegue a igreja durante todo o tempo até o fim (o \"pouco tempo\" do v. 12)." },
   ],
   scenes: ["dragao"],
+  extras: [{ href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" }],
   sections: [
     { from: 1, title: "A mulher vestida de sol" },
     { from: 3, title: "O grande dragão vermelho" },
@@ -86,7 +87,7 @@ export const c12: Chapter = {
       ],
       terms: [{ gr: "ἁρπάζω", tr: "harpazō", mean: "arrebatar, tomar com força" }],
       echoes: ["Is 66:7", "Sl 2:9", "At 1:9"],
-      symbols: ["mulher", "vara-de-ferro", "nacoes", "trono"],
+      symbols: ["mulher", "vara-de-ferro", "nacoes", "trono", "arrebatamento"],
     },
     {
       v: 6,
@@ -97,7 +98,7 @@ export const c12: Chapter = {
         "O versículo antecipa o que será contado em detalhes em 12:13–17.",
       ],
       echoes: ["Êx 16", "1Rs 17:2–6", "Os 2:14"],
-      symbols: ["mulher", "deserto", "n3-e-meio"],
+      symbols: ["mulher", "deserto", "n3-e-meio", "setenta-semanas"],
     },
     {
       v: 7,

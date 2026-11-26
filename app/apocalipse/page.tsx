@@ -23,7 +23,7 @@ export default function ApocalipsePage() {
         lede="Dezessete cenas, na ordem em que o livro as conta: de Patmos até a cidade que desce. Cada pintura segue os detalhes do texto. Onde o próprio livro explica o símbolo, a página repete essa explicação. Onde as tradições divergem, preterismo, historicismo, futurismo e idealismo aparecem lado a lado, sem que o atlas escolha uma."
       />
 
-      <section className="mt-10 grid gap-4 md:grid-cols-[1.6fr_1fr]">
+      <section className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <Link
           href="/apocalipse/capitulo/1"
           className="folio group block p-6 hover:border-gold/50 md:p-7"
@@ -48,6 +48,17 @@ export default function ApocalipsePage() {
           </p>
           <span className="mt-4 inline-block font-sans text-sm text-gold group-hover:underline">
             Abrir o glossário →
+          </span>
+        </Link>
+        <Link href="/apocalipse/tribulacao" className="folio group block p-6 hover:border-gold/50 md:p-7">
+          <p className="kicker">Tribulação</p>
+          <h2 className="mt-2 font-heading text-3xl md:text-4xl">Pré, meio e pós</h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            As posições sobre o arrebatamento lado a lado, com as 70 semanas de Daniel 9 e o sermão de
+            Mateus 24–25.
+          </p>
+          <span className="mt-4 inline-block font-sans text-sm text-gold group-hover:underline">
+            Abrir o estudo →
           </span>
         </Link>
       </section>

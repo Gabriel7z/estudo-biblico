@@ -18,6 +18,7 @@ export const c11: Chapter = {
     { school: "Idealista e amilenarista", text: "O templo medido é a igreja protegida espiritualmente, enquanto sofre externamente; as duas testemunhas são a igreja em sua função profética (dois, número do testemunho válido em Dt 19:15; dois candelabros, isto é, igrejas: 1:20), durante todo o tempo entre as duas vindas." },
   ],
   scenes: ["testemunhas"],
+  extras: [{ href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" }],
   sections: [
     { from: 1, title: "O templo medido" },
     { from: 3, title: "As duas testemunhas" },
@@ -50,7 +51,7 @@ export const c11: Chapter = {
         "Quarenta e dois meses = três anos e meio (ver o contexto). O mesmo período é o de autoridade da besta (13:5).",
       ],
       echoes: ["Lc 21:24", "Dn 8:13", "Dn 7:25", "Is 63:18"],
-      symbols: ["n3-e-meio", "nacoes", "templo"],
+      symbols: ["n3-e-meio", "nacoes", "templo", "setenta-semanas", "abominacao-desoladora"],
     },
     {
       v: 3,
@@ -158,7 +159,7 @@ export const c11: Chapter = {
         "Os inimigos veem: vindicação pública. Futuristas pré-tribulacionistas distinguem esse evento do arrebatamento da igreja; pós-tribulacionistas e outros às vezes o ligam a ele (1Ts 4:17).",
       ],
       echoes: ["2Rs 2:11", "At 1:9", "1Ts 4:17"],
-      symbols: ["duas-testemunhas", "nuvens"],
+      symbols: ["duas-testemunhas", "nuvens", "arrebatamento"],
     },
     {
       v: 13,

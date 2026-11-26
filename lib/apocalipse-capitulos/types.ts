@@ -76,4 +76,6 @@ export type SymbolEntry = {
   note?: string;
   /** fontes no Antigo Testamento e em outros textos */
   refs?: string[];
+  /** link para um estudo relacionado */
+  more?: { href: string; label: string };
 };

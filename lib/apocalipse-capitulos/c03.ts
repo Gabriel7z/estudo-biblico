@@ -15,7 +15,8 @@ export const c03: Chapter = {
     { school: "Outras leituras de 3:10", text: "Para a maioria dos não dispensacionalistas, \"guardar da hora\" (tērēsō ek) significa proteger durante a provação, não retirar antes dela, como na oração de Jesus em João 17:15, que usa as mesmas palavras: \"não peço que os tires do mundo, mas que os guardes do mal\". Para os preteristas, a \"hora da provação\" é uma crise do século I." },
   ],
   scenes: ["igrejas"],
-  extras: [{ href: "/apocalipse/igrejas", label: "Mapa das sete igrejas" }],
+  extras: [
+    { href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" },{ href: "/apocalipse/igrejas", label: "Mapa das sete igrejas" }],
   sections: [
     { from: 1, title: "Sardes" },
     { from: 7, title: "Filadélfia" },
@@ -121,7 +122,7 @@ export const c03: Chapter = {
         { gr: "πειρασμός", tr: "peirasmos", mean: "provação, teste" },
       ],
       echoes: ["Jo 17:15", "Dn 12:1"],
-      symbols: ["habitantes-da-terra"],
+      symbols: ["habitantes-da-terra", "arrebatamento"],
     },
     {
       v: 11,

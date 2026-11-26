@@ -18,6 +18,7 @@ export const c19: Chapter = {
     { school: "Historicista", text: "A vitória final de Cristo sobre os poderes anticristãos ao fim da história da igreja, depois da queda de Babilônia." },
   ],
   scenes: ["cavaleiro"],
+  extras: [{ href: "/apocalipse/tribulacao", label: "Pré, meio e pós-tribulação: as posições lado a lado" }],
   sections: [
     { from: 1, title: "Aleluias no céu" },
     { from: 6, title: "As bodas do Cordeiro" },

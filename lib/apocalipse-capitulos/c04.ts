@@ -33,7 +33,7 @@ export const c04: Chapter = {
         "\"O que deve acontecer depois destas coisas\" retoma 1:19 e Daniel 2:29.",
       ],
       echoes: ["Ez 1:1", "Dn 2:29", "Êx 19:20, 24"],
-      symbols: ["trombetas"],
+      symbols: ["trombetas", "arrebatamento"],
     },
     {
       v: 2,
