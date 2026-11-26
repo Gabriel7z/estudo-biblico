@@ -69,7 +69,7 @@ export const galileiaEpisodes: JesusEpisode[] = [
       { siteId: "tabga", title: "Um lugar deserto", date: "de madrugada", kind: "santuario", text: "“Levantando-se de manhã muito cedo, saiu e foi para um lugar deserto, e ali orava.”", refs: "Mc 1:35–39" },
       { siteId: "corazim", title: "Pelas aldeias vizinhas", date: "", kind: "cidade", text: "“Vamos às aldeias vizinhas, para que eu ali também pregue.” Corazim, Betsaida e Cafarnaúm formam o “triângulo” do ministério.", refs: "Mc 1:38; Mt 11:20–24" },
     ],
-    routes: [{ label: "Pelas aldeias vizinhas", side: "jesus", path: ["cafarnaum", "tabga", "cafarnaum", "corazim", "betsaida"], dashed: true }],
+    routes: [{ label: "Pelas aldeias vizinhas", side: "jesus", path: ["cafarnaum", "tabga", "cafarnaum", "corazim"], dashed: true }],
     areas: lagoAreas,
     labels: lago,
     bounds: [35.48, 32.8, 35.68, 32.93],
