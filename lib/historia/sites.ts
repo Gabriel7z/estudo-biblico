@@ -115,6 +115,60 @@ export const sites: Site[] = [
   { id: "tafnes", name: "Tafnes", modern: "Tell Defenneh", lat: 30.8606, lng: 32.1714, certainty: "segura" },
   { id: "bubastis", name: "Bubástis", modern: "Tell Basta", lat: 30.5728, lng: 31.5097, certainty: "segura" },
   { id: "menfis", name: "Mênfis", modern: "Mit Rahina", lat: 29.8494, lng: 31.255, certainty: "segura" },
+  { id: "tanis", name: "Zoã (Tânis)", modern: "San el-Hagar", lat: 30.976, lng: 31.88, certainty: "segura" },
+  { id: "heliopolis", name: "Om / Áven (Heliópolis)", modern: "Matariya, Cairo", lat: 30.1294, lng: 31.3075, certainty: "segura" },
+  { id: "migdol", name: "Migdol", modern: "Tell el-Ḥer ou Tell Kedua (propostas)", lat: 30.93, lng: 32.43, certainty: "debatida" },
+  { id: "tebas", name: "Nô (Tebas)", modern: "Luxor", lat: 25.7206, lng: 32.6103, certainty: "segura" },
+  { id: "elefantina", name: "Siene e Elefantina", modern: "Assuã", lat: 24.09, lng: 32.89, certainty: "segura" },
+  { id: "alexandria", name: "Alexandria", modern: "Alexandria", lat: 31.2001, lng: 29.9187, certainty: "segura" },
+
+  // Profetas: Judá e vizinhos
+  { id: "hinom", name: "Vale de Ben-Hinom (Tofete)", modern: "Wadi er-Rababi, Jerusalém", lat: 31.7686, lng: 35.2293, certainty: "segura" },
+  { id: "anatote", name: "Anatote", modern: "Ras el-Kharrubeh, junto a Anata", lat: 31.8141, lng: 35.2647, certainty: "provavel" },
+  { id: "perate", name: "Perate (Ein Prat)", modern: "nascente de Ein Prat, wadi Qelt (uma das leituras)", lat: 31.833, lng: 35.309, certainty: "debatida" },
+  { id: "modim", name: "Modim", modern: "perto de el-Midya", lat: 31.93, lng: 35.04, certainty: "provavel" },
+  { id: "umeiri", name: "Tell el-Umeiri", modern: "ao sul de Amã", lat: 31.884, lng: 35.866, certainty: "segura" },
+  { id: "asdode-yam", name: "Asdode-Yam", modern: "porto de Asdode", lat: 31.7803, lng: 34.6222, certainty: "segura" },
+  { id: "rafia", name: "Ráfia", modern: "Rafah", lat: 31.2886, lng: 34.2519, certainty: "segura" },
+  { id: "panias", name: "Pânias", modern: "Banias, nascentes do Jordão", lat: 33.2472, lng: 35.6939, certainty: "segura" },
+  { id: "cades", name: "Cades (Meribá-Cades)", modern: "Ein el-Qudeirat", lat: 30.6483, lng: 34.4222, certainty: "provavel" },
+  { id: "tamar", name: "Tamar", modern: "Ein Hatzeva (proposta)", lat: 30.7981, lng: 35.2467, certainty: "provavel" },
+  { id: "ribeiro-egito", name: "Ribeiro do Egito", modern: "wadi el-Arish", lat: 31.1457, lng: 33.8065, certainty: "provavel" },
+  { id: "lebo-hamate", name: "Lebo-Hamate", modern: "Lebweh, vale do Beqaa", lat: 34.19, lng: 36.35, certainty: "provavel" },
+  { id: "zedade", name: "Zedade", modern: "Sadad", lat: 34.3135, lng: 36.9242, certainty: "provavel" },
+  { id: "hazar-enom", name: "Hazar-Enom", modern: "Qaryatein (proposta)", lat: 34.23, lng: 37.24, certainty: "debatida" },
+
+  // Fenícia, Chipre, Síria
+  { id: "arvade", name: "Arvade", modern: "ilha de Arwad", lat: 34.8561, lng: 35.8583, certainty: "segura" },
+  { id: "gebal", name: "Gebal (Biblos)", modern: "Jbeil", lat: 34.1167, lng: 35.65, certainty: "segura" },
+  { id: "quitim", name: "Quitim (Cítio)", modern: "Lárnaca, Chipre", lat: 34.9233, lng: 33.6305, certainty: "segura" },
+  { id: "antioquia", name: "Antioquia", modern: "Antakya", lat: 36.2047, lng: 36.1817, certainty: "segura" },
+  { id: "isso", name: "Isso", modern: "planície junto ao golfo de İskenderun", lat: 36.8379, lng: 36.2111, certainty: "provavel" },
+
+  // Arábia
+  { id: "tema", name: "Temá", modern: "Tayma", lat: 27.6261, lng: 38.5476, certainty: "segura" },
+  { id: "deda", name: "Dedã", modern: "al-Khuraybah, Al-Ula", lat: 26.65, lng: 37.92, certainty: "segura" },
+  { id: "duma", name: "Dumá", modern: "Dumat al-Jandal", lat: 29.8114, lng: 39.8683, certainty: "provavel" },
+
+  // Mesopotâmia, Irã
+  { id: "borsipa", name: "Borsipa", modern: "Birs Nimrud", lat: 32.392, lng: 44.3417, certainty: "segura" },
+  { id: "kish", name: "Quis", modern: "Tell al-Uhaymir", lat: 32.5403, lng: 44.6047, certainty: "segura" },
+  { id: "sipar", name: "Sipar", modern: "Abu Habbah", lat: 33.0588, lng: 44.2522, certainty: "segura" },
+  { id: "opis", name: "Ópis", modern: "junto ao Tigre, perto da foz do Diyala (local exato desconhecido)", lat: 33.2, lng: 44.5, certainty: "debatida" },
+  { id: "nipur", name: "Nipur", modern: "Nuffar", lat: 32.1261, lng: 45.2308, certainty: "segura" },
+  { id: "tel-abibe", name: "Tel-Abibe, junto ao Quebar", modern: "região de Nipur (local exato desconhecido)", lat: 32.2, lng: 45.05, certainty: "debatida" },
+  { id: "gaugamela", name: "Gaugamela", modern: "Tel Gomel (provável)", lat: 36.57, lng: 43.44, certainty: "provavel" },
+  { id: "susa", name: "Susã", modern: "Shush, Irã", lat: 32.1894, lng: 48.2575, certainty: "segura" },
+  { id: "ecbatana", name: "Ecbátana", modern: "Hamadã", lat: 34.8065, lng: 48.5162, certainty: "segura" },
+  { id: "ansa", name: "Ansã", modern: "Tall-i Malyan", lat: 30.0117, lng: 52.4078, certainty: "segura" },
+  { id: "pasargada", name: "Pasárgada", modern: "Fars, Irã", lat: 30.2, lng: 53.1794, certainty: "segura" },
+  { id: "persepolis", name: "Persépolis", modern: "Takht-e Jamshid", lat: 29.935, lng: 52.89, certainty: "segura" },
+
+  // Ásia Menor
+  { id: "sardes", name: "Sardes", modern: "Sart, Turquia", lat: 38.488, lng: 28.04, certainty: "segura" },
+  { id: "granico", name: "Rio Grânico", modern: "rio Biga, Turquia", lat: 40.2281, lng: 27.2422, certainty: "provavel" },
+  { id: "ipso", name: "Ipso", modern: "perto de Afyon, Turquia", lat: 38.95, lng: 30.99, certainty: "provavel" },
+  { id: "magnesia", name: "Magnésia do Sípilo", modern: "Manisa, Turquia", lat: 38.6131, lng: 27.4258, certainty: "segura" },
 ];
 
 const byId = new Map(sites.map((site) => [site.id, site]));

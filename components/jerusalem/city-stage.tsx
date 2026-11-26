@@ -232,7 +232,9 @@ export function CityStage({ fallback }: { fallback: ReactNode }) {
               </div>
             </div>
             {mode === "caminhar" && touch ? <Joystick onMove={moveJoy} /> : null}
-            <p className="pointer-events-none absolute right-3 bottom-3 z-10 max-w-[16rem] rounded-xl bg-[#090d14]/60 px-3 py-2 text-right font-sans text-[11px] leading-snug text-[#f4eee6]/85 backdrop-blur">
+            <p className="pointer-events-none absolute right-3 bottom-3 z-10 max-w-[16rem] rounded-xl bg-[#090d14]/60 px-3 py-2 text-right font-sans text-[11px] leading-snug text-[#f4eee6]/85 backdrop-blur"
+              style={mode === "caminhar" && touch ? { bottom: "8.5rem" } : undefined}
+            >
               {mode === "caminhar"
                 ? touch
                   ? "Joystick para andar, arraste a tela para olhar."

@@ -1,3 +1,4 @@
+import { profetasWars } from "@/lib/historia/guerras-profetas";
 import type { Side } from "@/lib/historia/types";
 
 export type WarSource = { name: string; where: string; says: string };
@@ -48,7 +49,7 @@ const lachishReliefs: WarSource = {
   says: "O cerco de Laquis em pedra: rampa, aríetes, defensores nos muros, deportação das famílias e Senaqueribe no trono recebendo o butim.",
 };
 
-export const wars: War[] = [
+const baseWars: War[] = [
   {
     slug: "afeque-ebenezer",
     name: "Batalhas de Ebenézer e Afeque",
@@ -500,6 +501,8 @@ export const wars: War[] = [
     episode: "cercos-de-jerusalem",
   },
 ];
+
+export const wars: War[] = [...baseWars, ...profetasWars];
 
 export function getWar(slug: string): War | undefined {
   return wars.find((war) => war.slug === slug);

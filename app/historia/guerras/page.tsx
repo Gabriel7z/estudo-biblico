@@ -8,9 +8,9 @@ import { sideColor } from "@/lib/historia/types";
 import { atlasSrc } from "@/lib/imagery";
 
 export const metadata: Metadata = {
-  title: "Guerras de Samuel a Reis",
+  title: "Guerras de Samuel a Daniel",
   description:
-    "Todas as guerras, batalhas e cercos de 1 Samuel a 2 Reis: data, lados, causa, desfecho, textos bíblicos e as fontes fora da Bíblia que os confirmam.",
+    "Todas as guerras, batalhas e cercos de 1 Samuel a 2 Reis e dos profetas Isaías, Jeremias, Ezequiel e Daniel: data, lados, causa, desfecho, textos bíblicos e as fontes fora da Bíblia que os confirmam.",
 };
 
 const kindLabel = { batalha: "Batalha", cerco: "Cerco", campanha: "Campanha", guerra: "Guerra" } as const;
@@ -30,7 +30,7 @@ export default function GuerrasPage() {
       <PageHeader
         kicker={`${wars.length} conflitos · ${withSources} com fontes fora da Bíblia`}
         title="As guerras"
-        lede="De Afeque, onde a arca foi tomada, ao último cerco de Jerusalém. Para cada conflito: quem lutou, por quê, como terminou, onde a Bíblia conta e o que dizem as pedras, os relevos e as crônicas dos outros povos."
+        lede="De Afeque, onde a arca foi tomada, ao último cerco de Jerusalém, e daí a Ciro, Alexandre e os macabeus que Daniel descreve. Para cada conflito: quem lutou, por quê, como terminou, onde a Bíblia conta e o que dizem as pedras, os relevos e as crônicas dos outros povos."
       />
 
       <nav className="mt-8 flex flex-wrap gap-2 font-sans text-xs" aria-label="Índice das guerras">
