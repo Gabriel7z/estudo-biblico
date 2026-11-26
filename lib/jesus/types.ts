@@ -1,4 +1,4 @@
-import type { Episode } from "@/lib/historia/types";
+import type { Episode, StopKind } from "@/lib/historia/types";
 
 export type JesusPart = "panorama" | "infancia" | "preparacao" | "galileia" | "caminho" | "paixao" | "ressurreicao";
 
@@ -19,3 +19,11 @@ export const gospelSlug: Record<Gospel, string> = { Mateus: "mateus", Marcos: "m
 export function yearLabel(year: number): string {
   return year < 0 ? `${-year} a.C.` : `${year} d.C.`;
 }
+
+export const jesusKindLabel: Record<StopKind, string> = {
+  cidade: "Lugar",
+  batalha: "Confronto",
+  cerco: "Violência",
+  evento: "Episódio",
+  santuario: "Templo e lugares santos",
+};

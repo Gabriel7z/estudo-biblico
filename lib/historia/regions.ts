@@ -5,6 +5,16 @@ import type { LngLat } from "@/lib/historia/types";
  * As fronteiras antigas mudavam de década em década e quase nunca são conhecidas com precisão.
  */
 export const region = {
+  /** Jerusalém murada c. 30 d.C. (Primeiro e Segundo Muro; traçado do Segundo Muro debatido). */
+  jerusalemHerodes: [
+    [35.2274, 31.7766], [35.2302, 31.7772], [35.2306, 31.7795], [35.2334, 31.7808], [35.2341, 31.7805],
+    [35.2368, 31.7804], [35.2372, 31.7759], [35.2366, 31.7735], [35.2353, 31.7699], [35.233, 31.7695],
+    [35.2291, 31.7704], [35.2271, 31.7724], [35.2269, 31.775],
+  ] as [number, number][],
+  /** Esplanada do Templo. */
+  esplanada: [
+    [35.2341, 31.7761], [35.2372, 31.7759], [35.2368, 31.7804], [35.2341, 31.7805],
+  ] as [number, number][],
   galileia: [
     [35.17, 32.62], [35.18, 32.95], [35.25, 33.1], [35.55, 33.12], [35.6, 33.0], [35.6, 32.9], [35.55, 32.8], [35.56, 32.7], [35.5, 32.63], [35.35, 32.57],
   ],

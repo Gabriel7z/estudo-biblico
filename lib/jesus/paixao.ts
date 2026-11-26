@@ -1,0 +1,266 @@
+import { region } from "@/lib/historia/regions";
+import type { JesusEpisode } from "@/lib/jesus/types";
+
+const cidade = [
+  { label: "Jerusalém murada (c. 30 d.C., aprox.)", side: "judeia" as const, polygon: region.jerusalemHerodes },
+  { label: "Esplanada do Templo", side: "jesus" as const, polygon: region.esplanada },
+];
+
+const rotulos = [
+  { text: "Vale do Cedrom", lng: 35.2385, lat: 31.7755, kind: "rio" as const },
+  { text: "Vale do Hinom", lng: 35.2295, lat: 31.7688, kind: "rio" as const },
+  { text: "Cidade Alta", lng: 35.2295, lat: 31.7745, kind: "regiao" as const },
+  { text: "Cidade Baixa", lng: 35.2345, lat: 31.7725, kind: "regiao" as const },
+  { text: "Monte das Oliveiras", lng: 35.2445, lat: 31.7795, kind: "regiao" as const },
+  { text: "Bezeta", lng: 35.2335, lat: 31.7825, kind: "regiao" as const },
+];
+
+const jerusalemBounds: [number, number, number, number] = [35.2245, 31.7675, 35.2485, 31.7865];
+
+const maquete = { href: "/historia/maquetes/jerusalem-herodes", label: "Maquete 3D da Jerusalém de Herodes" };
+
+/** A última semana: de domingo a sexta-feira, em Jerusalém. */
+export const paixaoEpisodes: JesusEpisode[] = [
+  {
+    slug: "entrada-triunfal",
+    part: "paixao",
+    title: "A entrada em Jerusalém",
+    ref: "Mt 21:1–11; Mc 11:1–11; Lc 19:28–44; Jo 12:12–19",
+    gospels: { Mateus: "21:1–11", Marcos: "11:1–11", Lucas: "19:28–44", João: "12:12–19" },
+    date: "domingo antes da Páscoa, 30 d.C. (ou 33)",
+    year: 30,
+    summary:
+      "De Betânia e Betfagé, no Monte das Oliveiras, Jesus manda buscar um jumentinho e entra em Jerusalém montado nele, como em Zacarias 9:9. A multidão estende mantos e ramos: “Hosana ao Filho de Davi! Bendito o que vem em nome do Senhor!” Na descida do monte, vendo a cidade, ele chora sobre ela. Entra no Templo, olha tudo e, já tarde, volta a Betânia.",
+    context: [
+      "Para a Páscoa, a população de Jerusalém, talvez de 40 a 80 mil pessoas, crescia muito com os peregrinos; Josefo dá números exagerados, mas fala de multidões imensas. Muitos acampavam no Monte das Oliveiras e nas aldeias em volta.",
+      "O prefeito romano subia de Cesareia para Jerusalém nas festas, com tropas, para vigiar a multidão. Jesus entra pelo leste, sobre um jumento; Pilatos, provavelmente, pelo oeste, a cavalo.",
+      "O caminho tradicional desce de Betfagé pela encosta oeste das Oliveiras, passa perto de Dominus Flevit, onde a tradição põe o choro sobre Jerusalém, atravessa o Cedrom e sobe ao Templo.",
+    ],
+    stops: [
+      { siteId: "betania", title: "Saída de Betânia", date: "domingo", kind: "cidade", text: "“Ide à aldeia que está defronte de vós; achareis preso um jumentinho.”", refs: "Mc 11:1–3; Jo 12:1, 12" },
+      { siteId: "betfage", title: "Betfagé", date: "", kind: "evento", text: "Os discípulos põem seus mantos sobre o jumentinho. “Dizei à filha de Sião: eis que o teu Rei aí te vem, manso.”", refs: "Mt 21:1–7; Zc 9:9", archaeology: "Igreja franciscana de 1883 sobre restos dos cruzados; a pedra pintada do “montar” é medieval." },
+      { siteId: "dominus-flevit", title: "O choro sobre a cidade", date: "", kind: "evento", text: "“Se tu conhecesses, ao menos neste dia, o que à tua paz pertence!” Profetiza o cerco: não ficará pedra sobre pedra.", refs: "Lc 19:37–44", archaeology: "Escavações de 1953–55 acharam uma necrópole do período do Segundo Templo, com ossuários com nomes como Maria, Marta e Simeão." },
+      { siteId: "templo-herodes", title: "“Hosana!”", date: "", kind: "santuario", text: "“Quem é este?” “Este é Jesus, o profeta de Nazaré da Galileia.” Ele entra no Templo, observa tudo e sai.", refs: "Mt 21:10–11; Mc 11:11" },
+      { siteId: "betania", title: "À tarde, de volta a Betânia", date: "", kind: "cidade", text: "Jesus passa as noites da semana em Betânia ou no Monte das Oliveiras.", refs: "Mc 11:11; Lc 21:37" },
+    ],
+    routes: [{ label: "Caminho de Betânia ao Templo", side: "jesus", path: ["betania", "betfage", "eleona", "dominus-flevit", "getsemani", "templo-herodes"] }],
+    areas: cidade,
+    labels: rotulos,
+    bounds: [35.224, 31.765, 35.268, 31.787],
+    caveat: "O caminho exato pelo Monte das Oliveiras é tradição; a porta de entrada no Templo não é dita.",
+    related: [maquete],
+  },
+  {
+    slug: "purificacao-do-templo",
+    part: "paixao",
+    title: "A figueira, a purificação do Templo e os debates",
+    ref: "Mc 11:12–12:44; Mt 21:12–23:39; Lc 19:45–21:4",
+    gospels: { Mateus: "21:12–23:39", Marcos: "11:12–12:44", Lucas: "19:45–21:4", João: "2:13–22 (no início do ministério)" },
+    date: "segunda a quarta-feira",
+    year: 30,
+    summary:
+      "Na segunda-feira, a caminho, Jesus amaldiçoa uma figueira sem fruto. No Templo, expulsa os que vendem e compram e derruba as mesas dos cambistas: “A minha casa será chamada casa de oração para todos os povos, mas vós a tornastes um covil de ladrões.” Nos dias seguintes, no Templo, responde aos sacerdotes, fariseus, herodianos e saduceus: a autoridade, o tributo a César, a ressurreição, o maior mandamento. Elogia a viúva pobre que dá duas moedinhas.",
+    context: [
+      "Jesus cita Isaías 56:7 e Jeremias 7:11. Jeremias tinha anunciado a destruição do primeiro Templo no mesmo lugar.",
+      "O denário de Tibério, com a imagem e a inscrição do imperador como filho do divino Augusto, era a moeda do tributo: “Dai a César o que é de César e a Deus o que é de Deus.”",
+      "As treze caixas de ofertas em forma de trombeta ficavam no Pátio das Mulheres, segundo a Mishná; ali Jesus vê a viúva.",
+    ],
+    stops: [
+      { siteId: "betfage", title: "A figueira sem fruto", date: "segunda-feira", kind: "evento", text: "“Nunca mais coma alguém fruto de ti.” Na terça de manhã está seca: “Tende fé em Deus.”", refs: "Mc 11:12–14, 20–25; Mt 21:18–22" },
+      { siteId: "portico-real", title: "As mesas dos cambistas", date: "segunda-feira", kind: "evento", text: "Derruba as mesas e as cadeiras dos que vendiam pombas e não deixa ninguém carregar objetos pelo Templo.", refs: "Mc 11:15–19; Mt 21:12–17; Lc 19:45–48", archaeology: "O Pórtico Real, basílica de três naves ao longo do muro sul, era o maior edifício da esplanada (Josefo, Antiguidades 15.411–416); restos de seus capitéis foram achados ao pé do muro sul." },
+      { siteId: "templo-herodes", title: "César, a ressurreição, o maior mandamento", date: "terça-feira", kind: "santuario", text: "“Amarás o Senhor teu Deus de todo o teu coração… e o teu próximo como a ti mesmo.” Os ais contra os escribas e fariseus: “Jerusalém, Jerusalém, que matas os profetas.”", refs: "Mc 11:27–12:40; Mt 22–23" },
+      { siteId: "templo-herodes", title: "As duas moedinhas da viúva", date: "terça-feira", kind: "evento", text: "“Esta viúva pobre deu mais do que todos.”", refs: "Mc 12:41–44; Lc 21:1–4" },
+      { siteId: "arco-robinson", title: "A rua sob o arco", date: "", kind: "cidade", text: "As escadas sobre o Arco de Robinson levavam da rua do Tiropeão ao Pórtico Real. Na rua, ao pé do muro, havia lojas.", refs: "Josefo, Antiguidades 15.410", archaeology: "A rua herodiana e o arco foram escavados por Benjamin Mazar e Ronny Reich; as pedras do parapeito caídas em 70 d.C. continuam lá." },
+    ],
+    routes: [{ label: "Cada manhã, de Betânia ao Templo", side: "jesus", path: ["betfage", "eleona", "getsemani", "templo-herodes"] }],
+    areas: cidade,
+    labels: rotulos,
+    bounds: [35.224, 31.765, 35.256, 31.786],
+    related: [maquete],
+  },
+  {
+    slug: "sermao-do-monte-das-oliveiras",
+    part: "paixao",
+    title: "O sermão do Monte das Oliveiras",
+    ref: "Mt 24–25; Mc 13; Lc 21:5–38",
+    gospels: { Mateus: "24:1–25:46", Marcos: "13:1–37", Lucas: "21:5–38" },
+    date: "terça-feira à tarde",
+    year: 30,
+    summary:
+      "Saindo do Templo, um discípulo admira as pedras: “Mestre, olha que pedras e que edifícios!” “Não ficará pedra sobre pedra.” Sentado no Monte das Oliveiras, de frente para o Templo, Jesus responde a Pedro, Tiago, João e André: guerras, perseguições, a abominação da desolação, Jerusalém cercada de exércitos, a vinda do Filho do Homem; e as parábolas das dez virgens, dos talentos e do juízo das nações.",
+    context: [
+      "As pedras do Templo eram enormes: no Muro das Lamentações há uma de uns 13,6 m de comprimento e cerca de 570 toneladas (estimativa), no túnel do muro ocidental.",
+      "Em 70 d.C., quarenta anos depois, as legiões de Tito cercaram e destruíram Jerusalém e o Templo. Lucas fala explicitamente de “Jerusalém cercada de exércitos” (Lc 21:20). Como cada leitura entende o sermão (cumprido em 70, futuro, ou as duas coisas) está discutido na seção do Apocalipse.",
+      "A tradição cristã antiga lembrava o ensino de Jesus no Monte das Oliveiras numa gruta onde Constantino e Helena construíram a igreja Eleona; no mesmo lugar está hoje a Igreja do Pai-Nosso.",
+    ],
+    stops: [
+      { siteId: "arco-robinson", title: "“Olha que pedras!”", date: "", kind: "evento", text: "“Vês estes grandes edifícios? Não ficará pedra sobre pedra que não seja derribada.”", refs: "Mc 13:1–2; Mt 24:1–2; Lc 21:5–6", archaeology: "As pedras jogadas da esplanada pelos romanos em 70 d.C. ainda estão empilhadas na rua herodiana, ao pé do canto sudoeste." },
+      { siteId: "eleona", title: "Sentado em frente ao Templo", date: "", kind: "evento", text: "“Dize-nos quando serão essas coisas e que sinal haverá.” “Vigiai, porque não sabeis o dia nem a hora.”", refs: "Mc 13:3–37; Mt 24:3–25:46", archaeology: "Eleona: fundação de Constantino (c. 330) sobre uma gruta; a peregrina Egéria a descreve. Igreja atual do Pai-Nosso (século 19)." },
+      { siteId: "antonia", title: "A fortaleza Antônia", date: "", kind: "cidade", text: "A guarnição romana vigiava o Templo da torre ao norte da esplanada. Em 70 d.C. foi tomada e arrasada por Tito para atacar o Templo.", refs: "Josefo, Guerra 5.238–247; 6.93" },
+    ],
+    routes: [{ label: "Do Templo ao Monte das Oliveiras", side: "jesus", path: ["arco-robinson", "templo-herodes", "getsemani", "eleona"] }],
+    areas: cidade,
+    labels: rotulos,
+    bounds: jerusalemBounds,
+    related: [
+      { href: "/apocalipse/tribulacao/mateus-24", label: "Mateus 24 na seção do Apocalipse: as leituras da tribulação" },
+      maquete,
+    ],
+  },
+  {
+    slug: "ultima-ceia",
+    part: "paixao",
+    title: "A Última Ceia",
+    ref: "Mt 26:17–35; Mc 14:12–31; Lc 22:7–38; Jo 13–17",
+    gospels: { Mateus: "26:14–35", Marcos: "14:10–31", Lucas: "22:1–38", João: "13:1–17:26" },
+    date: "quinta-feira à noite",
+    year: 30,
+    summary:
+      "Judas combina com os principais sacerdotes entregar Jesus por trinta moedas de prata. Pedro e João preparam a Páscoa num grande cenáculo mobiliado, achado seguindo um homem com um cântaro de água. À mesa, Jesus lava os pés dos discípulos, anuncia a traição, toma o pão: “Isto é o meu corpo”, e o cálice: “Este é o meu sangue da nova aliança.” Avisa Pedro: antes que o galo cante, ele o negará três vezes.",
+    context: [
+      "Para Mateus, Marcos e Lucas a ceia é a refeição pascal (14 de nisã à noite); para João, a crucificação ocorre na tarde em que se imolavam os cordeiros (Jo 18:28; 19:14), e a ceia é na véspera. As soluções incluem calendários diferentes em uso (essênio, fariseu, saduceu) ou uma ceia de despedida com caráter pascal.",
+      "Os comensais ficavam reclinados em divãs baixos, apoiados no cotovelo esquerdo, em volta de mesas em U (triclinium), não sentados em cadeiras de um lado só como em pinturas medievais. Por isso o discípulo amado podia reclinar-se sobre o peito de Jesus (Jo 13:23).",
+      "O Cenáculo mostrado hoje no monte Sião é uma sala gótica dos cruzados (século 14). A tradição de que a igreja de Jerusalém se reunia no monte Sião é antiga (Epifânio, século 4), mas o lugar exato da ceia é desconhecido.",
+    ],
+    stops: [
+      { siteId: "templo-herodes", title: "Trinta moedas de prata", date: "quarta-feira", kind: "evento", text: "“Que me quereis dar, e eu vo-lo entregarei?”", refs: "Mt 26:14–16; Mc 14:10–11; Lc 22:3–6; Zc 11:12" },
+      { siteId: "siloe", title: "O homem com o cântaro", date: "quinta-feira", kind: "cidade", text: "“Ide à cidade, e um homem que leva um cântaro de água vos encontrará; segui-o.”", refs: "Mc 14:13–16; Lc 22:10–13" },
+      { siteId: "cenaculo", title: "No cenáculo", date: "quinta à noite", kind: "evento", text: "O lava-pés. “Um de vós me trairá.” O pão e o cálice: “Fazei isto em memória de mim.” “Um novo mandamento vos dou: que vos ameis uns aos outros.”", refs: "Mt 26:20–29; Mc 14:17–25; Lc 22:14–23; Jo 13:1–35; 1 Co 11:23–26", archaeology: "O edifício atual (Cenáculo, séc. 14) fica sobre a chamada “Tumba de Davi”, de época cruzada. Por baixo há paredes que alguns datam do período romano." },
+      { siteId: "cenaculo", title: "O discurso de despedida", date: "", kind: "evento", text: "“Não se turbe o vosso coração.” “Eu sou a videira, vós os ramos.” A oração: “Que todos sejam um.” Cantam um hino e saem.", refs: "Jo 14–17; Mc 14:26" },
+    ],
+    routes: [{ label: "Pedro e João vão preparar a Páscoa", side: "jesus", path: ["siloe", [35.2325, 31.7712], "cenaculo"], dashed: true }],
+    areas: cidade,
+    labels: rotulos,
+    bounds: jerusalemBounds,
+    caveat: "O cenáculo do monte Sião é tradição (“?”). O dia da ceia (Páscoa ou véspera) é discutido.",
+    related: [maquete],
+  },
+  {
+    slug: "getsemani",
+    part: "paixao",
+    title: "Getsêmani: a agonia e a prisão",
+    ref: "Mt 26:36–56; Mc 14:32–52; Lc 22:39–53; Jo 18:1–12",
+    gospels: { Mateus: "26:30–56", Marcos: "14:26–52", Lucas: "22:39–53", João: "18:1–12" },
+    date: "quinta para sexta-feira, à noite",
+    year: 30,
+    summary:
+      "Depois da ceia, Jesus sai “para além do ribeiro do Cedrom”, a um horto chamado Getsêmani, no Monte das Oliveiras. Afastado um tiro de pedra, ora: “Pai, se queres, passa de mim este cálice; contudo, não se faça a minha vontade, mas a tua.” Os discípulos dormem. Judas chega com uma multidão armada, mandada pelos sacerdotes, e o beija. Pedro fere o servo do sumo sacerdote. Todos fogem.",
+    context: [
+      "Getsêmani (gat shemanim) quer dizer “lagar de azeite”. O monte tinha olivais e prensas.",
+      "Na lua cheia da Páscoa, a noite era clara; a multidão leva tochas e lanternas (Jo 18:3). João fala também de uma coorte (speira) e de um tribuno, mas não está claro se eram soldados romanos ou a guarda do Templo.",
+      "Atravessar o Cedrom era refazer o caminho de Davi fugindo de Absalão, chorando, pelo Monte das Oliveiras (2 Sm 15:23, 30).",
+    ],
+    stops: [
+      { siteId: "cenaculo", title: "Saem cantando", date: "", kind: "cidade", text: "“Tendo cantado um hino, saíram para o Monte das Oliveiras.” Jesus prevê: “Ferirei o pastor, e as ovelhas se dispersarão.”", refs: "Mc 14:26–31; Zc 13:7" },
+      { siteId: "getsemani", title: "“Passa de mim este cálice”", date: "noite", kind: "evento", text: "“A minha alma está profundamente triste até a morte.” Lucas: o seu suor era como grandes gotas de sangue.", refs: "Mc 14:32–42; Mt 26:36–46; Lc 22:39–46", archaeology: "A Igreja de Todas as Nações (1924) está sobre restos de uma basílica do século 4. As oliveiras do jardim têm entre 800 e 900 anos (datação de 2012), não são do tempo de Jesus." },
+      { siteId: "getsemani", title: "O beijo de Judas", date: "", kind: "batalha", text: "“Judas, com um beijo trais o Filho do Homem?” Pedro corta a orelha de Malco; Jesus o cura. Um jovem foge nu, deixando o lençol.", refs: "Mc 14:43–52; Lc 22:47–53; Jo 18:2–12" },
+      { siteId: "caifas", title: "Levado à casa do sumo sacerdote", date: "", kind: "cidade", text: "Prendem Jesus e o levam, primeiro, a Anás.", refs: "Jo 18:12–13" },
+    ],
+    routes: [
+      { label: "Do cenáculo ao Getsêmani, pelo Cedrom", side: "jesus", path: ["cenaculo", "siloe", [35.2375, 31.7745], "getsemani"] },
+      { label: "Levado preso à casa do sumo sacerdote", side: "roma", path: ["getsemani", [35.2375, 31.7745], "siloe", "caifas"], dashed: true },
+    ],
+    areas: cidade,
+    labels: rotulos,
+    bounds: jerusalemBounds,
+    related: [maquete],
+  },
+  {
+    slug: "os-julgamentos",
+    part: "paixao",
+    title: "Os julgamentos: Anás, Caifás, o Sinédrio, Pilatos e Herodes",
+    ref: "Mt 26:57–27:26; Mc 14:53–15:15; Lc 22:54–23:25; Jo 18:13–19:16",
+    gospels: { Mateus: "26:57–27:26", Marcos: "14:53–15:15", Lucas: "22:54–23:25", João: "18:13–19:16" },
+    date: "noite de quinta e manhã de sexta-feira",
+    year: 30,
+    summary:
+      "Jesus é levado a Anás, sogro de Caifás, e depois a Caifás, onde o Sinédrio procura testemunhas. “És tu o Cristo?” “Eu sou.” No pátio, Pedro nega três vezes e o galo canta. De manhã, o Sinédrio o entrega a Pilatos. Pilatos o manda a Herodes Antipas, que está em Jerusalém para a festa, e Herodes o devolve. Pilatos oferece soltar Jesus ou Barrabás; a multidão grita “Crucifica-o!”. Pilatos lava as mãos, manda açoitar Jesus e o entrega.",
+    context: [
+      "Sob os prefeitos, o Sinédrio julgava casos religiosos, mas só o governador podia condenar à morte (Jo 18:31). Caifás foi sumo sacerdote de 18 a 36 d.C., o mais longo do período romano, sinal de boa relação com Pilatos.",
+      "Pilatos foi prefeito de 26 a 36 d.C. A “pedra de Pilatos”, achada no teatro de Cesareia em 1961, traz [PON]TIVS PILATVS [PRAEF]ECTVS IVDA[EAE]. Josefo e Fílon o descrevem como duro e provocador.",
+      "O pretório (Mc 15:16) era a residência do governador em Jerusalém. A maioria dos estudiosos pensa no antigo palácio de Herodes, na Cidade Alta, onde Fílon diz que Pilatos ficava (Legação 299) e onde o prefeito Floro julgou em 66 d.C. (Josefo, Guerra 2.301). A tradição medieval o situava na fortaleza Antônia. O “Lithostrotos”, lajeado com jogos de soldados no Convento das Irmãs de Sião, é do século 2 (Adriano), não do tempo de Jesus.",
+      "Herodes Antipas ficaria no palácio dos hasmoneus, na Cidade Alta, de frente para o Templo. Lucas, único a contar o episódio, diz que Herodes e Pilatos se tornaram amigos nesse dia (Lc 23:12).",
+    ],
+    stops: [
+      { siteId: "caifas", title: "Diante de Anás e de Caifás", date: "noite", kind: "evento", text: "Anás interroga Jesus. No Sinédrio, falsas testemunhas. “Vereis o Filho do Homem assentado à direita do Poder.” “Blasfemou!”", refs: "Jo 18:13–24; Mc 14:53–65; Mt 26:57–68", archaeology: "Gallicantu: escadaria antiga e cisternas; a tradição da prisão de Jesus ali é discutida. Em 1990, foi achado no sul de Jerusalém um ossuário com o nome “José, filho de Caifás”." },
+      { siteId: "caifas", title: "As negações de Pedro", date: "ao cantar do galo", kind: "evento", text: "“Não conheço esse homem.” O galo canta; Jesus olha para Pedro, e ele chora amargamente.", refs: "Mc 14:66–72; Lc 22:54–62; Jo 18:15–27" },
+      { siteId: "templo-herodes", title: "O Sinédrio de manhã", date: "ao amanhecer", kind: "evento", text: "Amarram Jesus e o entregam a Pilatos. Judas devolve as moedas e se enforca; compram com elas o campo do oleiro.", refs: "Lc 22:66–71; Mt 27:1–10" },
+      { siteId: "palacio-herodes", title: "Pilatos no pretório", date: "manhã", kind: "evento", text: "“És tu o Rei dos Judeus?” “O meu reino não é deste mundo.” “Que é a verdade?”", refs: "Jo 18:28–38; Mc 15:1–5; Lc 23:1–7", archaeology: "Do palácio restam a base da torre de Fasael (no “Torre de Davi”), muros de sustentação e o pódio, sob a Cidadela e o jardim armênio." },
+      { siteId: "palacio-hasmoneu", title: "Diante de Herodes Antipas", date: "", kind: "evento", text: "Herodes espera ver um milagre; Jesus não lhe responde. Os soldados o vestem com uma roupa resplandecente e o devolvem.", refs: "Lc 23:6–12" },
+      { siteId: "palacio-herodes", title: "Barrabás e o açoite", date: "", kind: "evento", text: "“Que farei de Jesus, chamado Cristo?” “Crucifica-o!” Pilatos lava as mãos. A coroa de espinhos, o manto de púrpura. “Eis o homem!”", refs: "Mt 27:15–31; Mc 15:6–20; Jo 18:39–19:16" },
+      { siteId: "antonia", title: "A Antônia, a tradição", date: "", kind: "cidade", text: "Desde a Idade Média, a Via Dolorosa começa aqui, onde se mostrava o pretório. O arco “Ecce Homo” é do arco triunfal de Adriano (séc. 2).", refs: "Jo 19:13" },
+    ],
+    routes: [
+      { label: "De Caifás ao pretório", side: "roma", path: ["caifas", "cenaculo", "palacio-herodes"] },
+      { label: "Ao palácio hasmoneu e de volta", side: "roma", path: ["palacio-herodes", "palacio-hasmoneu", "palacio-herodes"], dashed: true },
+    ],
+    areas: cidade,
+    labels: rotulos,
+    bounds: [35.224, 31.768, 35.24, 31.7815],
+    caveat: "A casa de Caifás e o palácio hasmoneu são incertos (“?”). O pretório mais provável é o palácio de Herodes; a Antônia é a tradição medieval.",
+    related: [maquete],
+  },
+  {
+    slug: "via-dolorosa",
+    part: "paixao",
+    title: "O caminho da cruz",
+    ref: "Mt 27:27–32; Mc 15:16–22; Lc 23:26–33; Jo 19:16–17",
+    gospels: { Mateus: "27:27–33", Marcos: "15:16–22", Lucas: "23:26–33", João: "19:16–17" },
+    date: "sexta-feira de manhã",
+    year: 30,
+    summary:
+      "Os soldados levam Jesus, carregando ele mesmo a cruz, para fora da cidade. No caminho obrigam Simão, de Cirene, que vinha do campo, a carregá-la. Muitas mulheres o seguem chorando: “Filhas de Jerusalém, não choreis por mim; chorai antes por vós mesmas.” Dois malfeitores vão com ele para o lugar chamado Gólgota, “lugar da Caveira”.",
+    context: [
+      "O condenado normalmente levava a trave horizontal (patibulum); a estaca vertical ficava fixa no lugar da execução.",
+      "O caminho depende de onde ficava o pretório. Se foi o palácio de Herodes, o trajeto era curto, cerca de 500 a 600 m, pela porta de Genat, ao norte do palácio. A Via Dolorosa atual, com 14 estações, sai da Antônia e foi fixada pelos franciscanos entre os séculos 14 e 18.",
+      "Simão de Cirene (na Líbia) é “pai de Alexandre e de Rufo” (Mc 15:21), nomes que os primeiros leitores de Marcos conheciam. Um ossuário do vale do Cedrom, de uma família de Cirene, traz o nome Alexandre, filho de Simão; a ligação é possível, não provada.",
+    ],
+    stops: [
+      { siteId: "palacio-herodes", title: "A coorte zomba", date: "manhã", kind: "evento", text: "“Salve, Rei dos Judeus!” Batem-lhe com uma cana e cospem nele.", refs: "Mc 15:16–20; Mt 27:27–31" },
+      { siteId: "palacio-herodes", title: "Saída pela porta de Genat (caminho provável)", date: "", kind: "cidade", text: "Do palácio, para o norte, pela porta do Primeiro Muro, até fora do Segundo Muro.", refs: "Josefo, Guerra 5.146 (porta de Genat)" },
+      { siteId: "antonia", title: "A Via Dolorosa tradicional", date: "", kind: "cidade", text: "As 14 estações começam junto à Antônia e passam pelo vale do Tiropeão até o Santo Sepulcro: uma devoção medieval, não uma rota documentada.", refs: "Jo 19:13–17" },
+      { siteId: "golgota", title: "Simão de Cirene e as mulheres", date: "", kind: "evento", text: "Obrigam Simão a levar a cruz. “Se ao madeiro verde fazem isto, que se fará ao seco?” Chegam ao lugar chamado Gólgota.", refs: "Lc 23:26–33; Mc 15:21–22; Jo 19:17" },
+    ],
+    routes: [
+      { label: "Caminho provável (a partir do palácio de Herodes)", side: "jesus", path: ["palacio-herodes", [35.2285, 31.7772], [35.2295, 31.778], "golgota"] },
+      { label: "Via Dolorosa tradicional (a partir da Antônia)", side: "neutro", path: ["antonia", [35.2335, 31.7802], [35.2318, 31.7796], [35.2312, 31.7789], [35.2305, 31.7787], "golgota"], dashed: true },
+    ],
+    areas: cidade,
+    labels: rotulos,
+    bounds: [35.2245, 31.7735, 35.238, 31.7835],
+    caveat: "As duas rotas são reconstruções: o ponto de partida depende de onde ficava o pretório. A linha do Segundo Muro também é debatida.",
+    related: [maquete],
+  },
+  {
+    slug: "crucificacao-e-sepultamento",
+    part: "paixao",
+    title: "A crucificação e o sepultamento",
+    ref: "Mt 27:33–66; Mc 15:22–47; Lc 23:33–56; Jo 19:17–42",
+    gospels: { Mateus: "27:33–66", Marcos: "15:22–47", Lucas: "23:33–56", João: "19:17–42" },
+    date: "sexta-feira, da hora terceira à nona",
+    year: 30,
+    summary:
+      "No Gólgota, crucificam Jesus entre dois ladrões, com a inscrição em hebraico, latim e grego: “Jesus Nazareno, Rei dos Judeus.” As sete palavras: “Pai, perdoa-lhes”, “Hoje estarás comigo no paraíso”, “Mulher, eis aí o teu filho”, “Eloí, Eloí, lamá sabactâni?”, “Tenho sede”, “Está consumado”, “Pai, nas tuas mãos entrego o meu espírito”. Trevas ao meio-dia; o véu do santuário se rasga. José de Arimateia e Nicodemos põem o corpo num túmulo novo, num jardim perto dali, e fecham com uma pedra.",
+    context: [
+      "A crucificação era o castigo romano para escravos, rebeldes e bandidos, feita à beira de caminhos para servir de aviso. Em 1968, em Giv'at ha-Mivtar, Jerusalém, foi achado o ossuário de Yehohanan com o calcanhar ainda atravessado por um prego de ferro: a única prova física de uma crucificação na Judeia do século 1.",
+      "O lugar ficava “perto da cidade” e fora dela (Jo 19:20; Hb 13:12), junto a um jardim com um túmulo novo cavado na rocha (Jo 19:41).",
+      "Igreja do Santo Sepulcro: uma pedreira antiga fora do Segundo Muro, com túmulos do século 1 (um ainda visível, o “túmulo de José de Arimateia”). A comunidade cristã lembrava o lugar; Adriano construiu um templo pagão em cima (c. 135), e Constantino o derrubou em 326 e achou o túmulo. É a identificação aceita pela maioria dos arqueólogos.",
+      "Túmulo do Jardim: proposto no século 19 (sobretudo pelo general Gordon, em 1883) por estar fora do muro atual e ao lado de um penhasco que lembra uma caveira. O túmulo, porém, é da Idade do Ferro (séculos 8–7 a.C.), segundo Gabriel Barkay, e não era “novo”. É um lugar de oração bem cuidado, mas não o lugar histórico.",
+      "Ano: os Evangelhos põem a morte numa sexta-feira, véspera de um sábado, na Páscoa, com Pilatos e Caifás no cargo (26–36). As datas astronômicas mais propostas são 7 de abril de 30 e 3 de abril de 33 d.C.",
+    ],
+    stops: [
+      { siteId: "golgota", title: "Crucificado entre dois", date: "hora terceira (9h)", kind: "evento", text: "Dividem as vestes, lançam sortes sobre a túnica. “Salvou os outros, a si mesmo não pode salvar.”", refs: "Mc 15:22–32; Lc 23:33–43; Jo 19:17–27", archaeology: "No Santo Sepulcro, a rocha do Calvário, com uns 5 m de altura, aparece sob vidro; era um afloramento da pedreira deixado de lado por ser de má qualidade." },
+      { siteId: "golgota", title: "“Está consumado”", date: "hora nona (15h)", kind: "evento", text: "Trevas sobre a terra desde a hora sexta. Jesus clama e expira. O centurião: “Verdadeiramente este homem era Filho de Deus.”", refs: "Mc 15:33–39; Mt 27:45–54; Lc 23:44–49; Jo 19:28–30" },
+      { siteId: "templo-herodes", title: "O véu se rasga", date: "", kind: "santuario", text: "“E o véu do santuário se rasgou em dois, de alto a baixo.” A cortina separava o Lugar Santo do Santo dos Santos.", refs: "Mc 15:38; Mt 27:51; Hb 10:19–20" },
+      { siteId: "palacio-herodes", title: "José de Arimateia pede o corpo", date: "à tarde", kind: "evento", text: "José, membro do Conselho, pede o corpo a Pilatos, que se admira de ele já estar morto.", refs: "Mc 15:42–45; Jo 19:38" },
+      { siteId: "golgota", title: "O túmulo novo no jardim", date: "antes do pôr do sol", kind: "evento", text: "Nicodemos traz cem libras de mirra e aloés. Envolvem o corpo em lençóis e o põem num túmulo novo; rolam uma pedra. As mulheres observam onde ele foi posto.", refs: "Jo 19:38–42; Mc 15:46–47; Lc 23:50–56; Mt 27:57–66" },
+      { siteId: "tumulo-jardim", title: "O Túmulo do Jardim", date: "", kind: "santuario", text: "A alternativa protestante do século 19, junto ao “Calvário de Gordon”. Muito visitada, mas com túmulo da Idade do Ferro.", refs: "Jo 19:41", archaeology: "Gabriel Barkay (1986) datou o túmulo dos séculos 8–7 a.C., reutilizado no período bizantino." },
+    ],
+    routes: [],
+    areas: cidade,
+    labels: [...rotulos, { text: "Segundo Muro (traçado debatido)", lng: 35.2312, lat: 31.7795, kind: "povo" }],
+    bounds: [35.2245, 31.7725, 35.2395, 31.7855],
+    caveat: "Gólgota: o Santo Sepulcro é o lugar provável; o Túmulo do Jardim é uma proposta moderna (“?”). Ano: 30 ou 33 d.C.",
+    related: [maquete],
+  },
+];

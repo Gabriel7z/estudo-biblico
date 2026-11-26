@@ -193,6 +193,7 @@ export const sites: Site[] = [
   { id: "abila", name: "Abila de Lisânias", modern: "Suq Wadi Barada, Síria", lat: 33.6267, lng: 36.1058, certainty: "segura" },
 
   // Novo Testamento: Samaria, Judeia e Pereia
+  { id: "ginae", name: "Ginae (En-Ganim)", modern: "Jenin, fronteira norte da Samaria", lat: 32.4606, lng: 35.3009, certainty: "provavel" },
   { id: "sicar", name: "Sicar", modern: "Askar (provável)", lat: 32.2158, lng: 35.2875, certainty: "provavel" },
   { id: "poco-jaco", name: "Poço de Jacó", modern: "Bir Ya'qub, Nablus", lat: 32.2094, lng: 35.2854, certainty: "segura" },
   { id: "gerizim", name: "Monte Gerizim", modern: "Jabal at-Tur", lat: 32.1994, lng: 35.2728, certainty: "segura" },
