@@ -22,6 +22,7 @@ const links = [
   { href: "/livros", label: "Livros" },
   { href: "/reis", label: "Reis" },
   { href: "/historia", label: "História" },
+  { href: "/jesus", label: "Jesus" },
   { href: "/apocalipse", label: "Apocalipse" },
   { href: "/mapa", label: "Mapa" },
   { href: "/governos", label: "Governos" },

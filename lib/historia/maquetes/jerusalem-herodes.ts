@@ -39,7 +39,7 @@ function natural(x: number, z: number): number {
   const leste = z > -449 ? 742 - 0.13 * (z + 449) : 742 + 0.045 * (-449 - z);
   const oeste = 772 - 0.05 * Math.max(0, z + 100) - 0.03 * Math.max(0, -z - 300);
   let h = oeste + (leste - oeste) * smooth(-260, 40, x);
-  h += Math.min(78, 0.3 * Math.max(0, x - 380));
+  h += Math.min(78, 0.13 * Math.max(0, x - 380));
   h += 0.04 * Math.max(0, -x - 760);
   for (const vale of VALES) {
     let best = Infinity;
@@ -120,17 +120,19 @@ const templo: Block[] = [
   tb("porta-norte-mulheres", 101.5, -35.4, [14, 20, 6], pedra, { kind: "gate", opening: 6 }),
   tb("porta-sul-mulheres", 101.5, 35.4, [14, 20, 6], pedra, { kind: "gate", opening: 6 }),
   // altar dos holocaustos (32 côvados de base) e rampa ao sul; pia de bronze
-  tb("altar", 46.2, 0, [16.8, 12, 16.8], "#bdb4a2", { solid: true }),
-  tb("rampa", 46.2, 16.8, [8.4, 9, 16.8], "#b6ad9b", { solid: true }),
-  tb("pia", 33, 9, [3, 9, 3], "#b08d57"),
+  tb("altar", 46.2, 0, [16.8, 5.2, 16.8], "#bdb4a2", { solid: true, lift: 7 }),
+  tb("rampa", 46.2, 16.8, [8.4, 2.6, 16.8], "#b6ad9b", { solid: true, lift: 7 }),
+  tb("pia", 33, 9, [3, 2.5, 3], "#b08d57", { lift: 7 }),
   // divisa entre o Pátio de Israel e o dos Sacerdotes
-  tb("balaustrada", 60.4, 0, [0.8, 8, 70], "#e9e0cc"),
+  tb("balaustrada", 60.4, 0, [0.8, 1, 70], "#e9e0cc", { lift: 7 }),
   // santuário: pórtico de 100 côvados de largura e altura; corpo de 70 côvados
-  tb("santuario-corpo", -5.6, 0, [41.2, 50, 36.8], marmore, { solid: true, roof: ouro }),
-  tb("santuario-portico", 20.6, 0, [11.3, 62, 52.5], marmore, { solid: true, roof: ouro }),
-  tb("portal-santuario", 26.5, 0, [0.5, 31, 10.5], "#2a1d10"),
-  tb("videira-de-ouro", 26.6, 0, [0.5, 34, 14], ouro),
-  tb("cornija", -5.6, 0, [42, 51, 37.6], ouro),
+  tb("santuario-corpo", -5.6, 0, [41.2, 42, 36.8], marmore, { solid: true, roof: "#e6d6a6", lift: 10 }),
+  tb("santuario-portico", 20.6, 0, [11.3, 52.5, 52.5], marmore, { solid: true, roof: "#e6d6a6", lift: 10 }),
+  // a abertura do pórtico, sem portas, de 70 × 25 côvados (Josefo, Guerra 5.208)
+  tb("portal-santuario", 26.8, 0, [0.5, 36.7, 13.1], "#2a1d10", { lift: 10 }),
+  tb("cornija", -5.6, 0, [42, 1.6, 37.6], ouro, { lift: 51 }),
+  tb("cornija-portico", 20.6, 0, [12, 1.6, 53.2], ouro, { lift: 61.5 }),
+  tb("portico-ouro", 26.6, 0, [0.4, 30, 26], "#cfa94f", { lift: 10 }),
 ];
 
 /* Pórticos em volta do Pátio dos Gentios. */
@@ -555,8 +557,8 @@ export const jerusalemHerodes: CityDef = {
   hotspots,
   orbit: { position: [-48, 64, 22], target: [12, 14, -45], maxDistance: 260 },
   views: [
-    { label: "Templo", position: [0, 30, -14], target: [13, 15, -44] },
-    { label: "Do Monte das Oliveiras", position: [80, 27, -46], target: [0, 15, -40] },
+    { label: "Templo", position: [31, 23, -37], target: [11, 15, -44.6] },
+    { label: "Do Monte das Oliveiras", position: [58, 33, -50], target: [8, 14, -42] },
     { label: "Gólgota e palácio", position: [-26, 30, -70], target: [-48, 17, -32] },
   ],
   walk: { start: [86, -324], yaw: -0.26 },

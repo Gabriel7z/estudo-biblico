@@ -32,6 +32,13 @@ export default function JerusalemPage() {
         <CityStage fallback={<CityPlan />} />
       </div>
 
+      <p className="mt-4 text-sm text-muted-foreground">
+        Mil anos depois, no tempo de Jesus:{" "}
+        <Link href="/historia/maquetes/jerusalem-herodes" className="text-gold hover:underline">
+          a Jerusalém de Herodes e o Segundo Templo, c. 30 d.C. →
+        </Link>
+      </p>
+
       <section className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <h2 className="font-heading text-3xl md:text-4xl">Planta</h2>

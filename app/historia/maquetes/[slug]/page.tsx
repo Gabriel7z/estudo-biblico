@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 
 import { CityPlan } from "@/components/cities/city-plan";
 import { CityStage } from "@/components/cities/city-stage";
+import { modelForSiteNT } from "@/lib/historia/maquetes/links";
+import { jesusEpisodes } from "@/lib/jesus";
 import { PageHeader } from "@/components/page-header";
 import { cities, getCity } from "@/lib/historia/maquetes";
 
@@ -42,6 +44,23 @@ export default async function MaquetePage({ params }: { params: Promise<{ slug: 
       <div className="mt-10" id="entrar">
         <CityStage slug={city.slug} fallback={<CityPlan slug={city.slug} />} />
       </div>
+
+      {city.slug === "jerusalem-herodes" ? (
+        <section className="mt-6 rounded-[1.25rem] border border-gold/25 p-5">
+          <p className="kicker">Na Vida de Jesus em mapas</p>
+          <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+            {jesusEpisodes
+              .filter((episode) => episode.part !== "panorama" && episode.stops.some((stop) => stop.siteId in modelForSiteNT))
+              .map((episode) => (
+                <li key={episode.slug}>
+                  <Link href={`/jesus/${episode.slug}`} className="text-gold hover:underline">
+                    {episode.title}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <div>

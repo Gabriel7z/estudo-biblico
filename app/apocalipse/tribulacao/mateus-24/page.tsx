@@ -39,6 +39,13 @@ export default function MateusPage() {
             <span className="kicker mr-2">Nota</span>
             {sermaoNote}
           </p>
+          <Link
+            href="/jesus/sermao-do-monte-das-oliveiras"
+            className="rounded-xl border border-gold/25 p-4 text-sm leading-relaxed text-gold hover:bg-gold/[0.06]"
+          >
+            <span className="kicker mr-2">Mapa</span>
+            Onde e quando: o Templo, o Monte das Oliveiras e a última semana, na Vida de Jesus em mapas →
+          </Link>
           <div className="folio p-5">
             <h2 className="kicker">Roteiro</h2>
             <ol className="mt-3 space-y-1">

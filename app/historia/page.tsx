@@ -56,6 +56,24 @@ export default function HistoriaPage() {
         </Link>
       </section>
 
+      <Link href="/jesus" className="folio group mt-4 grid gap-4 overflow-hidden p-0 md:grid-cols-[1fr_1.4fr]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={atlasSrc("/historia/maquetes/jerusalem-herodes.webp")}
+          alt=""
+          className="h-44 w-full object-cover opacity-90 transition group-hover:opacity-100 md:h-full"
+        />
+        <div className="p-6">
+          <p className="kicker">Novo Testamento · c. 6 a.C.–33 d.C.</p>
+          <p className="mt-1 font-heading text-2xl md:text-3xl">Vida de Jesus em mapas</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Os quatro Evangelhos episódio por episódio, cada um com seu mapa; a linha do tempo de Herodes a Pilatos; e a Jerusalém de
+            Herodes com o Segundo Templo em 3D.
+          </p>
+          <p className="mt-3 font-sans text-sm text-gold">Abrir →</p>
+        </div>
+      </Link>
+
       {bookGroups.map((group, gi) => (
         <div key={group.title} className="mt-16">
           <div className="flex items-center gap-4">
