@@ -113,6 +113,23 @@ export function CinematicHome() {
         </Link>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pt-6 md:px-8">
+        <Link
+          href="/historia"
+          className="group grid gap-4 rounded-[1.75rem] border border-gold/30 bg-[#121926] p-8 md:grid-cols-[1.3fr_0.7fr] md:p-12"
+        >
+          <div>
+            <p className="font-sans text-[11px] tracking-[0.22em] text-gold uppercase">Samuel a Reis · mapas, guerras, maquete</p>
+            <h2 className="mt-3 font-heading text-4xl text-white md:text-5xl">A história, mapa por mapa</h2>
+            <p className="mt-4 max-w-xl text-[#f4eee6]/80">
+              Um mapa para cada episódio, a linha do tempo com Assíria, Babilônia e Egito lado a lado, e Jerusalém em 3D para
+              atravessar a pé.
+            </p>
+          </div>
+          <p className="self-end font-sans text-sm text-gold md:text-right">Entrar na maquete e nos mapas →</p>
+        </Link>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 pt-16 md:px-8">
         <Link
           href="/apocalipse"
