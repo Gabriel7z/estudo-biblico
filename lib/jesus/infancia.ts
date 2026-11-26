@@ -76,6 +76,8 @@ export const infanciaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "nascimento-em-belem",
+    image: "/historia/jesus/nascimento-em-belem.webp",
+    imageAlt: "Na sala de baixo de uma casa de Belém, Maria se ajoelha junto a uma manjedoura de pedra onde o menino está envolto em faixas; José segura uma lamparina e pastores entram pela porta, à noite (Lc 2:7, 16).",
     part: "infancia",
     title: "O nascimento em Belém e a apresentação no Templo",
     ref: "Lc 2:1–39; Mt 1:18–2:1",
@@ -113,6 +115,8 @@ export const infanciaEpisodes: JesusEpisode[] = [
   },
   {
     slug: "os-magos",
+    image: "/historia/jesus/os-magos.webp",
+    imageAlt: "Magos em trajes partos se prostram numa casa simples de Belém diante do menino, já com cerca de um ano, no colo de Maria, e oferecem ouro, incenso e mirra (Mt 2:11).",
     part: "infancia",
     title: "Os magos do Oriente e a matança dos inocentes",
     ref: "Mt 2:1–18",

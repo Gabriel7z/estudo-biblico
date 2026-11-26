@@ -53,6 +53,8 @@ export const caminhoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "lazaro-em-betania",
+    image: "/historia/jesus/lazaro-em-betania.webp",
+    imageAlt: "Diante do túmulo aberto em Betânia, Jesus chama, e Lázaro sai envolto em faixas, com o rosto coberto; Marta, Maria e os vizinhos olham, espantados (Jo 11:38–44).",
     part: "caminho",
     title: "Lázaro em Betânia e a unção de Maria",
     ref: "Jo 11:1–12:11; Lc 10:38–42; Mc 14:3–9",

@@ -60,7 +60,7 @@ export function SiteHeader() {
               A Terra e o Livro
             </span>
             <span className="mt-0.5 block font-sans text-[10px] tracking-[0.22em] text-muted-foreground uppercase">
-              Antigo Testamento
+              Atlas bíblico
             </span>
           </span>
         </Link>
@@ -96,7 +96,7 @@ export function SiteHeader() {
           <SheetContent side="right" className="bg-background">
             <SheetHeader>
               <SheetTitle>A Terra e o Livro</SheetTitle>
-              <SheetDescription>Antigo Testamento, com o mapa ao lado do texto.</SheetDescription>
+              <SheetDescription>Atlas bíblico: Antigo e Novo Testamento, com o mapa ao lado do texto.</SheetDescription>
             </SheetHeader>
             <nav className="flex flex-col gap-1 px-4">
               {links.map((link) => (

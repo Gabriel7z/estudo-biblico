@@ -49,7 +49,7 @@ export function CinematicHome() {
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#090d14] via-[#090d14]/55 to-[#090d14]/25" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-28 pb-16 md:px-8 md:pb-20">
-          <p className="kicker">Atlas de estudo · Antigo Testamento</p>
+          <p className="kicker">Atlas de estudo bíblico</p>
           <h1 className="mt-4 max-w-5xl font-heading text-5xl leading-[0.95] tracking-tight text-white md:text-8xl">
             A lei foi dada num deserto, entre impérios.
           </h1>

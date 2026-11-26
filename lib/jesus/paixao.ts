@@ -23,6 +23,8 @@ const maquete = { href: "/historia/maquetes/jerusalem-herodes", label: "Maquete 
 export const paixaoEpisodes: JesusEpisode[] = [
   {
     slug: "entrada-triunfal",
+    image: "/historia/jesus/entrada-triunfal.webp",
+    imageAlt: "Jesus desce o Monte das Oliveiras montado num jumentinho, entre ramos e mantos estendidos; ao fundo, a esplanada do Templo de Herodes, com os pórticos, o santuário e a Antônia.",
     part: "paixao",
     title: "A entrada em Jerusalém",
     ref: "Mt 21:1–11; Mc 11:1–11; Lc 19:28–44; Jo 12:12–19",
@@ -52,6 +54,8 @@ export const paixaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "purificacao-do-templo",
+    image: "/historia/jesus/purificacao-do-templo.webp",
+    imageAlt: "Sob as colunas do Pórtico Real, Jesus derruba a mesa dos cambistas; moedas se espalham, pombas escapam das gaiolas e os vendedores recuam (Mc 11:15–17).",
     part: "paixao",
     title: "A figueira, a purificação do Templo e os debates",
     ref: "Mc 11:12–12:44; Mt 21:12–23:39; Lc 19:45–21:4",
@@ -109,6 +113,8 @@ export const paixaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "ultima-ceia",
+    image: "/historia/jesus/ultima-ceia.webp",
+    imageAlt: "Jesus e os doze, reclinados em almofadas ao redor de mesas baixas numa sala iluminada por lamparinas, enquanto Jesus parte o pão; à direita, Judas com a bolsa à cintura (Mc 14:15–22).",
     part: "paixao",
     title: "A Última Ceia",
     ref: "Mt 26:17–35; Mc 14:12–31; Lc 22:7–38; Jo 13–17",
@@ -137,6 +143,8 @@ export const paixaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "getsemani",
+    image: "/historia/jesus/getsemani.webp",
+    imageAlt: "À luz da lua de Páscoa, Jesus ora ajoelhado junto a uma pedra no olival; Pedro, Tiago e João dormem; ao longe, tochas descem de Jerusalém (Lc 22:41–45; Jo 18:3).",
     part: "paixao",
     title: "Getsêmani: a agonia e a prisão",
     ref: "Mt 26:36–56; Mc 14:32–52; Lc 22:39–53; Jo 18:1–12",
@@ -167,6 +175,8 @@ export const paixaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "os-julgamentos",
+    image: "/historia/jesus/os-julgamentos.webp",
+    imageAlt: "Pilatos, em túnica com faixas estreitas de equestre, apresenta Jesus coroado de espinhos e com o manto vermelho à multidão e aos sacerdotes, diante do palácio de Herodes; atrás, soldados auxiliares (Jo 19:5, 13).",
     part: "paixao",
     title: "Os julgamentos: Anás, Caifás, o Sinédrio, Pilatos e Herodes",
     ref: "Mt 26:57–27:26; Mc 14:53–15:15; Lc 22:54–23:25; Jo 18:13–19:16",
@@ -233,6 +243,8 @@ export const paixaoEpisodes: JesusEpisode[] = [
   },
   {
     slug: "crucificacao-e-sepultamento",
+    image: "/historia/jesus/crucificacao-e-sepultamento.webp",
+    imageAlt: "No Gólgota, uma pedreira fora do muro com túmulos escavados na rocha, Jesus é crucificado entre dois homens; soldados, um centurião e mulheres ao pé e à distância; ao fundo, as torres do palácio e o santuário do Templo.",
     part: "paixao",
     title: "A crucificação e o sepultamento",
     ref: "Mt 27:33–66; Mc 15:22–47; Lc 23:33–56; Jo 19:17–42",

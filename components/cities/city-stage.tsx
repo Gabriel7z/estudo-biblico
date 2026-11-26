@@ -154,7 +154,7 @@ export function CityStage({ slug, fallback }: { slug: string; fallback: ReactNod
 
   const pill = (active: boolean) =>
     cn(
-      "rounded-full px-3 py-1.5 font-sans text-xs transition md:text-sm",
+      "shrink-0 rounded-full px-2 py-1.5 font-sans text-[11.5px] whitespace-nowrap transition md:px-3 md:text-sm",
       active ? "bg-gold text-[#1a140c]" : "bg-[#090d14]/70 text-[#f4eee6] hover:bg-[#090d14]/90",
     );
 
@@ -212,9 +212,10 @@ export function CityStage({ slug, fallback }: { slug: string; fallback: ReactNod
               <p className="pointer-events-none rounded-full border border-gold/30 bg-[#090d14]/55 px-3 py-1.5 font-sans text-xs text-[#f4eee6] backdrop-blur md:text-sm">
                 {city.name} <span className="opacity-70">{city.date}</span>
               </p>
-              <div className="pointer-events-auto flex flex-wrap gap-1.5 rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur">
+              <div className="pointer-events-auto flex max-w-full flex-nowrap gap-1 overflow-x-auto rounded-full border border-gold/30 bg-[#090d14]/55 p-1 backdrop-blur md:flex-wrap md:gap-1.5">
                 <button type="button" className={pill(mode === "orbita")} onClick={() => setMode("orbita")}>
-                  Vista aérea
+                  <span className="md:hidden">Aérea</span>
+                  <span className="hidden md:inline">Vista aérea</span>
                 </button>
                 <button type="button" className={pill(mode === "caminhar")} onClick={() => setMode("caminhar")}>
                   Caminhar

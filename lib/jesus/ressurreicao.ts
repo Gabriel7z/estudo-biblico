@@ -5,6 +5,8 @@ import type { JesusEpisode } from "@/lib/jesus/types";
 export const ressurreicaoEpisodes: JesusEpisode[] = [
   {
     slug: "ressurreicao-e-emaus",
+    image: "/historia/jesus/ressurreicao-e-emaus.webp",
+    imageAlt: "Ao nascer do sol, três mulheres com frascos de especiarias encontram a pedra do túmulo rolada; dentro, um jovem de branco está sentado à direita (Mc 16:2–5).",
     part: "ressurreicao",
     title: "O túmulo vazio e o caminho de Emaús",
     ref: "Mt 28:1–15; Mc 16:1–8; Lc 24:1–49; Jo 20:1–29",

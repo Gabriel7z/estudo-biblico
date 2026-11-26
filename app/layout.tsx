@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s · A Terra e o Livro",
   },
   description:
-    "Atlas de estudo do Antigo Testamento, começando por Moisés: mapas, governos e geografia da época.",
+    "Atlas de estudo bíblico, do Antigo Testamento à vida de Jesus e ao Apocalipse: mapas, maquetes 3D, governos e geografia de cada época.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
